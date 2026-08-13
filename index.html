@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOVA — Personal Dashboard</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#07090d;color:#f5f7fb;font-family:Inter,Arial,sans-serif}
+.wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{width:min(900px,100%);background:#0d1118;border:1px solid #1c2430;border-radius:24px;padding:28px;box-shadow:0 25px 80px #0008}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:30px}
+.logo{font-size:24px;font-weight:800;letter-spacing:.12em}.pill{font-size:12px;color:#8df5b3;border:1px solid #245b3b;padding:7px 10px;border-radius:99px}
+h1{font-size:clamp(32px,7vw,64px);line-height:1;margin:0 0 14px}.muted{color:#8d98a8;line-height:1.6}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+button{border:0;border-radius:12px;padding:13px 18px;font-weight:700;cursor:pointer}
+.primary{background:#fff;color:#080a0e}.secondary{background:#151b24;color:#fff;border:1px solid #273140}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.stat{background:#101620;border:1px solid #1d2633;border-radius:16px;padding:18px}.num{font-size:25px;font-weight:800}.label{font-size:12px;color:#7e8999;margin-top:6px}
+.progress{height:8px;background:#171e28;border-radius:99px;overflow:hidden;margin-top:20px}.bar{height:100%;width:0;background:#fff;transition:width .4s}
+.panel{display:none;margin-top:25px;padding-top:25px;border-top:1px solid #1d2633}.panel.show{display:block}
+input{width:100%;padding:13px;border-radius:10px;border:1px solid #273140;background:#090d13;color:#fff;margin:8px 0 12px}
+@media(max-width:600px){.stats{grid-template-columns:1fr}.card{padding:20px}}
+</style>
+</head>
+<body>
+<div class="wrap"><main class="card">
+  <div class="top"><div class="logo" id="logo">NOVA</div><div class="pill">● ONLINE</div></div>
+  <section>
+    <h1 id="title">Your space.<br>Your rules.</h1>
+    <p class="muted" id="desc">A clean personal dashboard you can customize however you want.</p>
+    <div class="actions">
+      <button class="primary" onclick="runDemo()">Start Demo</button>
+      <button class="secondary" onclick="togglePanel()">Customize</button>
+    </div>
+    <div class="progress"><div class="bar" id="bar"></div></div>
+    <div class="stats">
+      <div class="stat"><div class="num" id="count">0</div><div class="label">ACTIVITY</div></div>
+      <div class="stat"><div class="num">24/7</div><div class="label">AVAILABILITY</div></div>
+      <div class="stat"><div class="num">100%</div><div class="label">CONTROL</div></div>
+    </div>
+  </section>
+  <section class="panel" id="panel">
+    <h3>Customize your site</h3>
+    <label>Site name</label><input id="nameInput" value="NOVA">
+    <label>Main title</label><input id="titleInput" value="Your space. Your rules.">
+    <label>Description</label><input id="descInput" value="A clean personal dashboard you can customize however you want.">
+    <button class="primary" onclick="save()">Save changes</button>
+  </section>
+</main></div>
+<script>
+function togglePanel(){document.getElementById('panel').classList.toggle('show')}
+function save(){
+ document.getElementById('logo').textContent=document.getElementById('nameInput').value||'NOVA';
+ document.getElementById('title').innerHTML=(document.getElementById('titleInput').value||'Your space. Your rules.').replace(/\. /g,'.<br>');
+ document.getElementById('desc').textContent=document.getElementById('descInput').value;
+}
+function runDemo(){
+ let n=0,bar=document.getElementById('bar'),count=document.getElementById('count');
+ let t=setInterval(()=>{n+=10;bar.style.width=n+'%';count.textContent=n;if(n>=100)clearInterval(t)},180);
+}
+</script>
+</body>
+</html>
