@@ -28,13 +28,13 @@ body{
 
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:#f3eadb;
     color:#fff;
+    background:#020406;
 }
 
 
 /* =========================
-   MAIN BACKGROUND
+   PAGE
 ========================= */
 
 .page{
@@ -48,9 +48,9 @@ body{
     background:
         radial-gradient(
             circle at center,
-            #fffaf2 0%,
-            #f3eadb 55%,
-            #e7d9c5 100%
+            #101a27 0%,
+            #05090e 50%,
+            #010203 100%
         );
 }
 
@@ -70,22 +70,24 @@ body{
     background:
         linear-gradient(
             135deg,
-            #fffaf2,
-            #f0e4d2 48%,
-            #fffaf2
+            #07090c,
+            #020406 48%,
+            #080d14
         );
 
-    border:2px solid #2b0505;
+    border:2px solid #182635;
 
     box-shadow:
-        0 0 0 3px #160000,
-        0 0 45px rgba(90,0,0,.25);
+        0 0 0 3px #010203,
+        0 0 45px rgba(0,110,255,.20);
 
     overflow:hidden;
 }
 
 
-/* إطار داخلي */
+/* =========================
+   INNER FRAME
+========================= */
 
 .frame:before{
     content:"";
@@ -94,7 +96,7 @@ body{
 
     inset:12px;
 
-    border:1px solid rgba(80,0,0,.35);
+    border:1px solid #18212c;
 
     pointer-events:none;
 
@@ -103,7 +105,7 @@ body{
 
 
 /* =========================
-   RED CORNERS
+   BLUE CORNERS
 ========================= */
 
 .corner{
@@ -112,10 +114,11 @@ body{
     width:130px;
     height:5px;
 
-    background:#700000;
+    background:#0878ff;
 
     box-shadow:
-        0 0 12px rgba(100,0,0,.7);
+        0 0 12px #0878ff,
+        0 0 25px rgba(0,110,255,.55);
 
     z-index:40;
 }
@@ -147,10 +150,11 @@ body{
     width:5px;
     height:90px;
 
-    background:#700000;
+    background:#0878ff;
 
     box-shadow:
-        0 0 12px rgba(100,0,0,.7);
+        0 0 12px #0878ff,
+        0 0 25px rgba(0,110,255,.55);
 
     z-index:40;
 }
@@ -242,10 +246,10 @@ body{
     font-size:52px;
     font-weight:900;
 
-    color:#260000;
+    color:#fff;
 
     text-shadow:
-        0 2px 5px rgba(0,0,0,.15);
+        0 4px 15px #000;
 }
 
 .red-line{
@@ -254,10 +258,10 @@ body{
 
     margin:12px auto;
 
-    background:#650000;
+    background:#0878ff;
 
     box-shadow:
-        0 0 12px rgba(100,0,0,.5);
+        0 0 12px #0878ff;
 }
 
 .subtitle{
@@ -265,18 +269,16 @@ body{
     font-weight:bold;
 
     line-height:1.7;
-
-    color:#260000;
 }
 
 .red{
-    color:#650000;
+    color:#1590ff;
 }
 
 .exclusive{
     margin-top:5px;
 
-    color:#4a3333;
+    color:#b9c1cc;
 
     font-size:15px;
 
@@ -293,7 +295,7 @@ body{
 
     width:210px;
 
-    padding:15px;
+    padding:16px;
 
     border:none;
 
@@ -302,8 +304,8 @@ body{
     background:
         linear-gradient(
             135deg,
-            #720000,
-            #3d0000
+            #0878ff,
+            #00429a
         );
 
     color:white;
@@ -317,7 +319,8 @@ body{
     cursor:pointer;
 
     box-shadow:
-        0 8px 25px rgba(80,0,0,.35);
+        0 8px 25px rgba(0,100,255,.40),
+        0 0 20px rgba(0,100,255,.15);
 
     transition:.2s;
 }
@@ -326,7 +329,7 @@ body{
     transform:translateY(-3px);
 
     box-shadow:
-        0 12px 35px rgba(80,0,0,.5);
+        0 12px 35px rgba(0,120,255,.60);
 }
 
 .spin-button:active{
@@ -337,9 +340,6 @@ body{
     opacity:.5;
     cursor:not-allowed;
 }
-
-
-/* السهم محذوف نهائياً */
 
 
 /* =========================
@@ -389,11 +389,14 @@ body{
     border-left:25px solid transparent;
     border-right:25px solid transparent;
 
-    border-top:65px solid #650000;
+    border-top:65px solid #0878ff;
 
     filter:
         drop-shadow(
             0 4px 5px #000
+        )
+        drop-shadow(
+            0 0 8px rgba(0,120,255,.7)
         );
 }
 
@@ -413,12 +416,13 @@ body{
     background:#fff;
 
     box-shadow:
-        0 0 0 4px #111;
+        0 0 0 4px #050505,
+        0 0 12px #0878ff;
 }
 
 
 /* =========================
-   OUTER GLOW
+   WHEEL GLOW
 ========================= */
 
 .wheel-glow{
@@ -428,13 +432,12 @@ body{
 
     border-radius:50%;
 
-    border:4px solid #650000;
+    border:4px solid #0878ff;
 
     box-shadow:
-
-        0 0 10px rgba(100,0,0,.7),
-        0 0 25px rgba(100,0,0,.5),
-        0 0 55px rgba(100,0,0,.25);
+        0 0 10px #0878ff,
+        0 0 25px rgba(0,120,255,.75),
+        0 0 55px rgba(0,100,255,.35);
 
     pointer-events:none;
 
@@ -456,14 +459,14 @@ body{
     overflow:hidden;
 
     border:
-        8px solid #080808;
+        8px solid #020305;
 
-    background:#111;
+    background:#05070a;
 
     box-shadow:
-
-        0 0 0 3px #777,
-        0 15px 40px rgba(0,0,0,.7);
+        0 0 0 3px #26313d,
+        0 15px 40px #000,
+        0 0 35px rgba(0,100,255,.20);
 
     transition:
         transform
@@ -475,7 +478,7 @@ body{
 
 
 /* =========================
-   10 SECTORS
+   BLACK + BLUE SECTORS
 ========================= */
 
 .sectors{
@@ -487,20 +490,20 @@ body{
 
     background:
         conic-gradient(
-            #650000 0deg 36deg,
-            #111111 36deg 72deg,
+            #0878ff 0deg 36deg,
+            #080b0f 36deg 72deg,
 
-            #650000 72deg 108deg,
-            #111111 108deg 144deg,
+            #0878ff 72deg 108deg,
+            #080b0f 108deg 144deg,
 
-            #650000 144deg 180deg,
-            #111111 180deg 216deg,
+            #0878ff 144deg 180deg,
+            #080b0f 180deg 216deg,
 
-            #650000 216deg 252deg,
-            #111111 252deg 288deg,
+            #0878ff 216deg 252deg,
+            #080b0f 252deg 288deg,
 
-            #650000 288deg 324deg,
-            #111111 324deg 360deg
+            #0878ff 288deg 324deg,
+            #080b0f 324deg 360deg
         );
 }
 
@@ -518,9 +521,9 @@ body{
 
     background:
         repeating-conic-gradient(
-            from 0deg,
+            from -18deg,
             transparent 0deg 35deg,
-            rgba(255,255,255,.7) 35deg 36deg
+            rgba(255,255,255,.65) 35deg 36deg
         );
 
     z-index:2;
@@ -545,14 +548,7 @@ body{
     transform-origin:center;
 }
 
-
-/*
-   كل صورة موجودة بزاوية
-   ثابتة 36 درجة
-*/
-
 .prize img{
-
     position:absolute;
 
     width:105px;
@@ -563,7 +559,7 @@ body{
     object-fit:contain;
 
     left:50%;
-    top:-88px;
+    top:-90px;
 
     transform:
         translateX(-50%);
@@ -629,7 +625,6 @@ body{
 ========================= */
 
 .center-logo{
-
     position:absolute;
 
     z-index:50;
@@ -648,17 +643,17 @@ body{
     background:
         radial-gradient(
             circle,
-            #242424,
-            #080808
+            #151a20,
+            #020305
         );
 
     border:
-        5px solid #650000;
+        5px solid #0878ff;
 
     box-shadow:
-
         0 0 0 5px #050505,
-        0 0 25px rgba(100,0,0,.7);
+        0 0 25px rgba(0,120,255,.75),
+        0 0 45px rgba(0,100,255,.25);
 
     display:flex;
 
@@ -669,7 +664,6 @@ body{
 }
 
 .center-logo img{
-
     width:88%;
     height:88%;
 
@@ -682,7 +676,6 @@ body{
 ========================= */
 
 .right{
-
     height:100%;
 
     display:flex;
@@ -698,7 +691,6 @@ body{
 ========================= */
 
 .result-box{
-
     width:220px;
 
     min-height:250px;
@@ -710,6 +702,7 @@ body{
     flex-direction:column;
 
     align-items:center;
+
     justify-content:center;
 
     text-align:center;
@@ -717,56 +710,49 @@ body{
     background:
         linear-gradient(
             145deg,
-            #fffaf2,
-            #eee0cd
+            #0c1117,
+            #030507
         );
 
     border:
-        2px solid #4a0000;
+        1px solid #26313d;
 
     border-top:
-        5px solid #650000;
+        4px solid #0878ff;
 
     box-shadow:
-        0 10px 35px rgba(60,0,0,.25);
-
-    border-radius:8px;
+        0 10px 35px rgba(0,0,0,.7),
+        0 0 20px rgba(0,100,255,.10);
 }
 
 
-/* صورة النتيجة */
+/* =========================
+   RESULT IMAGE
+========================= */
 
 .result-image{
-
-    width:105px;
-    height:105px;
+    width:100px;
+    height:100px;
 
     object-fit:contain;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 
     display:none;
 
     filter:
         drop-shadow(
-            0 5px 8px rgba(0,0,0,.35)
+            0 5px 8px rgba(0,0,0,.9)
         );
 }
 
 
-/* أيقونة البداية */
-
-.gift{
-    font-size:55px;
-    margin-bottom:12px;
-}
-
-
-/* عنوان النتيجة */
+/* =========================
+   RESULT TITLE
+========================= */
 
 .result-title{
-
-    color:#4b3030;
+    color:#9faab7;
 
     font-size:15px;
 
@@ -774,13 +760,14 @@ body{
 }
 
 
-/* النتيجة */
+/* =========================
+   RESULT
+========================= */
 
 .result{
+    color:#1590ff;
 
-    color:#650000;
-
-    font-size:23px;
+    font-size:22px;
 
     font-weight:900;
 
@@ -788,13 +775,25 @@ body{
 }
 
 
-/* النص السفلي */
+/* =========================
+   GIFT
+========================= */
+
+.gift{
+    font-size:55px;
+
+    margin-bottom:10px;
+}
+
+
+/* =========================
+   HELP
+========================= */
 
 .help{
-
     margin-top:12px;
 
-    color:#6b5555;
+    color:#8f9aa7;
 
     font-size:12px;
 
@@ -807,7 +806,6 @@ body{
 ========================= */
 
 .footer{
-
     position:absolute;
 
     z-index:60;
@@ -822,11 +820,12 @@ body{
 
     font-size:12px;
 
-    color:#4a3030;
+    color:#8994a0;
 }
 
 .footer span{
-    color:#650000;
+    color:#1590ff;
+
     font-weight:bold;
 }
 
@@ -894,9 +893,9 @@ body{
     }
 
     .prize img{
-        width:80px;
-        height:80px;
-        top:-70px;
+        width:75px;
+        height:75px;
+        top:-67px;
     }
 
     .center-logo{
@@ -910,8 +909,8 @@ body{
     }
 
     .result-image{
-        width:80px;
-        height:80px;
+        width:75px;
+        height:75px;
     }
 }
 
@@ -923,7 +922,6 @@ body{
 @media(max-width:700px){
 
     .frame{
-
         width:100vw;
         height:100vh;
 
@@ -942,16 +940,13 @@ body{
         gap:0;
     }
 
-
     .left{
-
         height:auto;
 
         flex-shrink:0;
     }
 
     .top-logo{
-
         width:40px;
         height:40px;
 
@@ -965,6 +960,7 @@ body{
     .red-line{
         width:55px;
         height:3px;
+
         margin:5px auto;
     }
 
@@ -978,7 +974,6 @@ body{
         margin-top:1px;
     }
 
-
     .spin-button{
 
         margin-top:8px;
@@ -989,7 +984,6 @@ body{
 
         font-size:16px;
     }
-
 
     .center{
 
@@ -1009,31 +1003,29 @@ body{
             );
     }
 
-
     .prize img{
 
         width:
             clamp(
-                60px,
-                14vw,
-                82px
+                55px,
+                13vw,
+                78px
             );
 
         height:
             clamp(
-                60px,
-                14vw,
-                82px
+                55px,
+                13vw,
+                78px
             );
 
         top:
             clamp(
-                -70px,
-                -11vw,
-                -58px
+                -68px,
+                -10vw,
+                -55px
             );
     }
-
 
     .center-logo{
 
@@ -1043,11 +1035,9 @@ body{
         border-width:4px;
     }
 
-
     .right{
         display:none;
     }
-
 
     .footer{
 
@@ -1055,7 +1045,6 @@ body{
 
         font-size:8px;
     }
-
 
     .corner{
         width:70px;
@@ -1102,7 +1091,9 @@ body{
 
     .spin-button{
         margin-top:4px;
+
         padding:5px;
+
         font-size:13px;
     }
 
@@ -1122,6 +1113,7 @@ body{
     .prize img{
         width:48px;
         height:48px;
+
         top:-50px;
     }
 }
@@ -1164,7 +1156,9 @@ body{
 
     .spin-button{
         margin-top:7px;
+
         padding:7px;
+
         font-size:14px;
     }
 
@@ -1184,12 +1178,13 @@ body{
     .prize img{
         width:55px;
         height:55px;
+
         top:-55px;
     }
 
     .result-box{
         width:160px;
-        min-height:170px;
+        min-height:180px;
     }
 
     .result-image{
@@ -1213,7 +1208,9 @@ body{
 <div class="frame">
 
 
-<!-- الإطار -->
+<!-- =========================
+     CORNERS
+========================= -->
 
 <div class="corner c1"></div>
 <div class="corner c2"></div>
@@ -1250,6 +1247,7 @@ body{
 <div class="subtitle">
 
     الراعي الرسمي لـ
+
     <span class="red">
         مؤتمر CGC IRAQ 🇮🇶
     </span>
@@ -1304,7 +1302,7 @@ body{
 
 
 <!-- =========================
-     الجوائز
+     PRIZES
 ========================= -->
 
 <div class="prize p1">
@@ -1351,7 +1349,9 @@ body{
 </div>
 
 
-<!-- اللوغو بالنص -->
+<!-- =========================
+     CENTER LOGO
+========================= -->
 
 <div class="center-logo">
 
@@ -1377,7 +1377,14 @@ body{
 
 <div class="result-box">
 
-    <!-- صورة الجائزة الفائزة -->
+    <div
+        class="gift"
+        id="gift"
+    >
+        🎁
+    </div>
+
+
     <img
         id="resultImage"
         class="result-image"
@@ -1385,23 +1392,19 @@ body{
         alt="الجائزة الفائزة"
     >
 
-    <div
-        class="gift"
-        id="giftIcon"
-    >
-        🎁
-    </div>
 
     <div class="result-title">
         نتيجة السحب
     </div>
 
+
     <div
         class="result"
         id="result"
     >
-        اضغط واربح
+        اضغط واربح جائزتك
     </div>
+
 
     <div class="help">
         حظاً موفقاً ❤️
@@ -1414,6 +1417,10 @@ body{
 
 </div>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <div class="footer">
 
@@ -1438,58 +1445,191 @@ body{
 
 <script>
 
-/* =========================
+/* =====================================================
    PRIZES
-========================= */
+===================================================== */
 
-const prizeImages = [
+const prizes = [
 
-    "F_1.JPG",
-    "F_2.JPG",
-    "F_3.JPG",
-    "F_4.JPG",
-    "F_5.JPG",
-    "F_6.JPG",
-    "F_7.JPG",
-    "F_8.JPG",
-    "F_9.JPG",
-    "F_10.JPG"
+    {
+        id: "F_1",
+        image: "F_1.JPG",
+        name: "الجائزة رقم 1"
+    },
+
+    {
+        id: "F_2",
+        image: "F_2.JPG",
+        name: "الجائزة رقم 2"
+    },
+
+    {
+        id: "F_3",
+        image: "F_3.JPG",
+        name: "الجائزة رقم 3"
+    },
+
+    {
+        id: "F_4",
+        image: "F_4.JPG",
+        name: "الجائزة رقم 4"
+    },
+
+    {
+        id: "F_5",
+        image: "F_5.JPG",
+        name: "الجائزة رقم 5"
+    },
+
+    {
+        id: "F_6",
+        image: "F_6.JPG",
+        name: "الجائزة رقم 6"
+    },
+
+    {
+        id: "F_7",
+        image: "F_7.JPG",
+        name: "الجائزة رقم 7"
+    },
+
+    {
+        id: "F_8",
+        image: "F_8.JPG",
+        name: "الجائزة رقم 8"
+    },
+
+    {
+        id: "F_9",
+        image: "F_9.JPG",
+        name: "الجائزة رقم 9"
+    },
+
+    {
+        id: "F_10",
+        image: "F_10.JPG",
+        name: "الجائزة رقم 10"
+    }
 
 ];
 
 
-/* أسماء الجوائز */
+/* =====================================================
+   SPIN COUNTER
+===================================================== */
 
-const prizeNames = [
-
-    "الجائزة رقم 1",
-    "الجائزة رقم 2",
-    "الجائزة رقم 3",
-    "الجائزة رقم 4",
-    "الجائزة رقم 5",
-    "الجائزة رقم 6",
-    "الجائزة رقم 7",
-    "الجائزة رقم 8",
-    "الجائزة رقم 9",
-    "الجائزة رقم 10"
-
-];
-
+let spinCount = 0;
 
 let currentRotation = 0;
 
 let spinning = false;
 
 
-/* =========================
+/* =====================================================
+   SPECIAL PRIZES
+===================================================== */
+
+/*
+   F_3 = كل 20 سحبة
+   F_5 = كل 15 سحبة
+   F_1 = كل 10 سحبات
+
+   الأولوية:
+   F_3
+   ثم F_5
+   ثم F_1
+*/
+
+
+function getScheduledPrize(){
+
+    /* F_3 */
+
+    if(spinCount % 20 === 0){
+
+        return 2;
+
+    }
+
+
+    /* F_5 */
+
+    if(spinCount % 15 === 0){
+
+        return 4;
+
+    }
+
+
+    /* F_1 */
+
+    if(spinCount % 10 === 0){
+
+        return 0;
+
+    }
+
+
+    return null;
+
+}
+
+
+/* =====================================================
+   NORMAL PRIZES
+===================================================== */
+
+function getRandomNormalPrize(){
+
+    /*
+       الجوائز العادية فقط:
+
+       F_2
+       F_4
+       F_6
+       F_7
+       F_8
+       F_9
+       F_10
+    */
+
+    const normalPrizes = [
+
+        1,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9
+
+    ];
+
+
+    const randomIndex =
+        Math.floor(
+            Math.random() *
+            normalPrizes.length
+        );
+
+
+    return normalPrizes[randomIndex];
+
+}
+
+
+/* =====================================================
    SPIN
-========================= */
+===================================================== */
 
 function spinWheel(){
 
     if(spinning){
+
         return;
+
     }
+
 
     spinning = true;
 
@@ -1497,17 +1637,22 @@ function spinWheel(){
     const wheel =
         document.getElementById("wheel");
 
+
     const button =
         document.getElementById("spinButton");
+
 
     const result =
         document.getElementById("result");
 
+
     const resultImage =
         document.getElementById("resultImage");
 
-    const giftIcon =
-        document.getElementById("giftIcon");
+
+    const gift =
+        document.getElementById("gift");
+
 
     const wheelArea =
         document.getElementById("wheelArea");
@@ -1516,66 +1661,74 @@ function spinWheel(){
     button.disabled = true;
 
 
+    /* زيادة رقم السحبة */
+
+    spinCount++;
+
+
+    /* النتيجة أثناء الدوران */
+
     result.innerHTML =
         "الرولة تدور...";
 
 
-    /*
-       نخفي صورة النتيجة
-       أثناء الدوران
-    */
-
     resultImage.style.display =
         "none";
 
-    giftIcon.style.display =
+
+    gift.style.display =
         "block";
 
 
+    /* تحديد الجائزة */
+
+    let selected =
+        getScheduledPrize();
+
+
     /*
-       اختيار الجائزة
+       إذا مو موعد جائزة خاصة
+       نختار جائزة عادية
     */
 
-    const selected =
-        Math.floor(
-            Math.random() *
-            prizeImages.length
-        );
+    if(selected === null){
+
+        selected =
+            getRandomNormalPrize();
+
+    }
 
 
     /*
-       كل صورة تبعد 36 درجة
+       عدد درجات كل خانة
     */
 
     const sector =
-        360 / prizeImages.length;
+        360 / prizes.length;
 
 
     /*
-       زاوية الصورة المطلوبة
-       بالنسبة للسهم
-
-       مهم جداً:
-       الصور عندنا مو في منتصف القطاع
-       وإنما على زاوية 0،36،72...
+       منتصف الخانة المطلوبة
     */
 
-    const desiredAngle =
-        selected * sector;
+    const target =
+        selected * sector + (sector / 2);
 
 
     /*
-       نحسب الدوران الإضافي
-       حتى الصورة المختارة بالضبط
-       تصير تحت السهم.
+       الموقع الحالي للرولة
     */
 
     const currentMod =
         ((currentRotation % 360) + 360) % 360;
 
 
+    /*
+       حساب مقدار الدوران
+    */
+
     let correction =
-        (360 - desiredAngle - currentMod) % 360;
+        (360 - ((currentMod + target) % 360)) % 360;
 
 
     /*
@@ -1597,7 +1750,7 @@ function spinWheel(){
 
 
     /*
-       تدوير الرولة
+       تشغيل الرولة
     */
 
     wheel.style.transform =
@@ -1605,33 +1758,39 @@ function spinWheel(){
 
 
     /*
-       بعد انتهاء الدوران
+       انتهاء الدوران
     */
 
     setTimeout(function(){
 
+        const prize =
+            prizes[selected];
+
+
         /*
-           إظهار نفس الصورة
-           الموجودة تحت السهم
+           نفس صورة الجائزة
+           تظهر في مربع النتيجة
         */
 
         resultImage.src =
-            prizeImages[selected];
+            prize.image;
+
 
         resultImage.style.display =
             "block";
 
-        giftIcon.style.display =
+
+        gift.style.display =
             "none";
 
 
         /*
-           عرض اسم الجائزة
+           اسم الجائزة
         */
 
         result.innerHTML =
             "🎉 مبروك!<br>" +
-            prizeNames[selected];
+            prize.name;
 
 
         /*
@@ -1662,21 +1821,22 @@ function spinWheel(){
 }
 
 
-/* =========================
+/* =====================================================
    PRELOAD
-========================= */
+===================================================== */
 
 window.addEventListener(
     "load",
     function(){
 
-        prizeImages.forEach(
-            function(src){
+        prizes.forEach(
+            function(prize){
 
                 const image =
                     new Image();
 
-                image.src = src;
+                image.src =
+                    prize.image;
 
             }
         );
