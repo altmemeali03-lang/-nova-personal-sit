@@ -228,16 +228,94 @@ body{
 
 
 /* =====================================================
-   LOGO
+   BANNER
 ===================================================== */
 
-.top-logo{
-    width:75px;
-    height:75px;
+.brand-banner{
+
+    position:relative;
+
+    width:190px;
+    height:95px;
+
+    margin-bottom:10px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    border-radius:12px;
+
+    background:#050505;
+}
+
+.brand-banner img{
+
+    width:100%;
+    height:100%;
 
     object-fit:contain;
 
-    margin-bottom:10px;
+    display:block;
+}
+
+
+/* =====================================================
+   BY FOUAD PHONE
+===================================================== */
+
+.banner-by{
+
+    position:absolute;
+
+    left:50%;
+    bottom:5px;
+
+    transform:
+        translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    line-height:1.1;
+
+    text-align:center;
+
+    pointer-events:none;
+
+    text-shadow:
+        0 2px 5px #000,
+        0 0 8px rgba(0,0,0,.9);
+}
+
+.banner-by span{
+
+    color:#087cff;
+
+    font-size:14px;
+
+    font-weight:900;
+
+    text-transform:lowercase;
+}
+
+.banner-by strong{
+
+    color:#087cff;
+
+    font-size:20px;
+
+    font-weight:900;
+
+    white-space:nowrap;
 }
 
 
@@ -246,6 +324,7 @@ body{
 ===================================================== */
 
 .title{
+
     font-size:52px;
 
     font-weight:900;
@@ -257,6 +336,7 @@ body{
 }
 
 .red-line{
+
     width:80px;
     height:4px;
 
@@ -269,6 +349,7 @@ body{
 }
 
 .subtitle{
+
     font-size:19px;
 
     font-weight:bold;
@@ -277,10 +358,12 @@ body{
 }
 
 .red{
+
     color:#087cff;
 }
 
 .exclusive{
+
     margin-top:5px;
 
     color:#ddd;
@@ -296,6 +379,7 @@ body{
 ===================================================== */
 
 .spin-button{
+
     margin-top:30px;
 
     width:210px;
@@ -330,18 +414,24 @@ body{
 }
 
 .spin-button:hover{
-    transform:translateY(-3px);
+
+    transform:
+        translateY(-3px);
 
     box-shadow:
         0 12px 35px rgba(0,110,255,.55);
 }
 
 .spin-button:active{
-    transform:scale(.95);
+
+    transform:
+        scale(.95);
 }
 
 .spin-button:disabled{
+
     opacity:.5;
+
     cursor:not-allowed;
 }
 
@@ -351,6 +441,7 @@ body{
 ===================================================== */
 
 .center{
+
     height:100%;
 
     display:flex;
@@ -365,6 +456,7 @@ body{
 ===================================================== */
 
 .wheel-area{
+
     position:relative;
 
     width:min(48vw,600px);
@@ -378,6 +470,7 @@ body{
 ===================================================== */
 
 .pointer{
+
     position:absolute;
 
     z-index:100;
@@ -385,15 +478,20 @@ body{
     top:-4px;
     left:50%;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%);
 
     width:0;
     height:0;
 
-    border-left:25px solid transparent;
-    border-right:25px solid transparent;
+    border-left:
+        25px solid transparent;
 
-    border-top:65px solid #087cff;
+    border-right:
+        25px solid transparent;
+
+    border-top:
+        65px solid #087cff;
 
     filter:
         drop-shadow(
@@ -402,6 +500,7 @@ body{
 }
 
 .pointer:after{
+
     content:"";
 
     position:absolute;
@@ -426,6 +525,7 @@ body{
 ===================================================== */
 
 .wheel-glow{
+
     position:absolute;
 
     inset:-12px;
@@ -435,8 +535,11 @@ body{
     border:4px solid #087cff;
 
     box-shadow:
+
         0 0 10px #087cff,
+
         0 0 25px rgba(0,110,255,.8),
+
         0 0 55px rgba(0,110,255,.35);
 
     pointer-events:none;
@@ -450,6 +553,7 @@ body{
 ===================================================== */
 
 .wheel{
+
     position:absolute;
 
     inset:0;
@@ -458,28 +562,40 @@ body{
 
     overflow:hidden;
 
-    border:8px solid #080808;
+    border:
+        8px solid #080808;
 
     background:#111;
 
     box-shadow:
+
         0 0 0 3px #777,
+
         0 15px 40px #000;
 
     transition:
+
         transform
+
         5.5s
-        cubic-bezier(.12,.75,.12,1);
+
+        cubic-bezier(
+            .12,
+            .75,
+            .12,
+            1
+        );
 
     z-index:5;
 }
 
 
 /* =====================================================
-   القطاعات
+   SECTORS
 ===================================================== */
 
 .sectors{
+
     position:absolute;
 
     inset:0;
@@ -487,7 +603,9 @@ body{
     border-radius:50%;
 
     background:
+
         conic-gradient(
+
             from -18deg,
 
             #ffd900 0deg 36deg,
@@ -509,10 +627,11 @@ body{
 
 
 /* =====================================================
-   خطوط الخانات
+   SECTOR LINES
 ===================================================== */
 
 .sector-lines{
+
     position:absolute;
 
     inset:0;
@@ -520,12 +639,15 @@ body{
     border-radius:50%;
 
     background:
+
         repeating-conic-gradient(
+
             from -18deg,
 
             transparent 0deg 35deg,
 
-            rgba(255,255,255,.8) 35deg 36deg
+            rgba(255,255,255,.8)
+            35deg 36deg
         );
 
     z-index:2;
@@ -537,6 +659,7 @@ body{
 ===================================================== */
 
 .prize{
+
     position:absolute;
 
     width:36%;
@@ -552,7 +675,7 @@ body{
 
 
 /* =====================================================
-   صور الجوائز
+   PRIZE IMAGES
 ===================================================== */
 
 .prize img{
@@ -585,7 +708,7 @@ body{
 
 
 /* =====================================================
-   حظ أوفر
+   LUCK TEXT
 ===================================================== */
 
 .luck-text{
@@ -662,10 +785,10 @@ body{
 
 /* =====================================================
    CENTER LOGO
-   logo.png.PNG
 ===================================================== */
 
 .center-logo{
+
     position:absolute;
 
     z-index:50;
@@ -688,23 +811,28 @@ body{
             #050505
         );
 
-    border:5px solid #087cff;
+    border:
+        5px solid #087cff;
 
     box-shadow:
+
         0 0 0 5px #050505,
+
         0 0 25px rgba(0,110,255,.8);
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     overflow:hidden;
 }
 
 .center-logo img{
-    width:90%;
-    height:90%;
+
+    width:88%;
+    height:88%;
 
     object-fit:contain;
 }
@@ -715,40 +843,14 @@ body{
 ===================================================== */
 
 .right{
+
     height:100%;
 
     display:flex;
 
-    flex-direction:column;
-
     align-items:center;
 
     justify-content:center;
-
-    gap:15px;
-}
-
-
-/* =====================================================
-   BANNER فوق النتيجة
-   banner.jpg.PNG
-===================================================== */
-
-.result-banner{
-
-    width:220px;
-    height:100px;
-
-    object-fit:contain;
-
-    display:block;
-
-    border-radius:10px;
-
-    filter:
-        drop-shadow(
-            0 6px 12px rgba(0,0,0,.7)
-        );
 }
 
 
@@ -757,6 +859,7 @@ body{
 ===================================================== */
 
 .result-box{
+
     width:220px;
 
     min-height:270px;
@@ -774,15 +877,18 @@ body{
     text-align:center;
 
     background:
+
         linear-gradient(
             145deg,
             #111820,
             #05080c
         );
 
-    border:1px solid #24476d;
+    border:
+        1px solid #24476d;
 
-    border-top:4px solid #087cff;
+    border-top:
+        4px solid #087cff;
 
     box-shadow:
         0 10px 35px rgba(0,0,0,.6);
@@ -859,6 +965,7 @@ body{
 ===================================================== */
 
 .help{
+
     margin-top:15px;
 
     color:#bbb;
@@ -894,6 +1001,7 @@ body{
 }
 
 .footer span{
+
     color:#087cff;
 
     font-weight:bold;
@@ -901,10 +1009,11 @@ body{
 
 
 /* =====================================================
-   WIN
+   WIN ANIMATION
 ===================================================== */
 
 .winner{
+
     animation:
         winner .7s ease;
 }
@@ -958,7 +1067,22 @@ body{
         font-size:13px;
     }
 
+    .brand-banner{
+
+        width:160px;
+        height:80px;
+    }
+
+    .banner-by span{
+        font-size:12px;
+    }
+
+    .banner-by strong{
+        font-size:17px;
+    }
+
     .wheel-area{
+
         width:
             min(47vw,500px);
     }
@@ -982,12 +1106,6 @@ body{
 
         width:120px;
         height:120px;
-    }
-
-    .result-banner{
-
-        width:180px;
-        height:80px;
     }
 
     .result-box{
@@ -1038,15 +1156,29 @@ body{
         flex-shrink:0;
     }
 
-    .top-logo{
+    .brand-banner{
 
-        width:40px;
-        height:40px;
+        width:135px;
+        height:68px;
 
-        margin-bottom:2px;
+        margin-bottom:4px;
+    }
+
+    .banner-by{
+
+        bottom:3px;
+    }
+
+    .banner-by span{
+        font-size:9px;
+    }
+
+    .banner-by strong{
+        font-size:13px;
     }
 
     .title{
+
         font-size:27px;
     }
 
@@ -1186,10 +1318,20 @@ body{
         padding-top:10px;
     }
 
-    .top-logo{
+    .brand-banner{
 
-        width:30px;
-        height:30px;
+        width:105px;
+        height:53px;
+
+        margin-bottom:2px;
+    }
+
+    .banner-by span{
+        font-size:7px;
+    }
+
+    .banner-by strong{
+        font-size:10px;
     }
 
     .title{
@@ -1268,6 +1410,20 @@ body{
             25px 45px;
     }
 
+    .brand-banner{
+
+        width:135px;
+        height:68px;
+    }
+
+    .banner-by span{
+        font-size:9px;
+    }
+
+    .banner-by strong{
+        font-size:13px;
+    }
+
     .title{
         font-size:28px;
     }
@@ -1319,12 +1475,6 @@ body{
         font-size:13px;
     }
 
-    .result-banner{
-
-        width:160px;
-        height:65px;
-    }
-
     .result-box{
 
         width:160px;
@@ -1374,12 +1524,36 @@ body{
 
 <section class="left">
 
-<img
-    src="Flogo.HEIC"
-    class="top-logo"
-    alt="فؤاد فون"
->
 
+<!-- =====================================================
+     BANNER
+===================================================== -->
+
+<div class="brand-banner">
+
+    <img
+        src="banner.jpg.PNG"
+        alt="Banner"
+    >
+
+    <div class="banner-by">
+
+        <span>
+            by
+        </span>
+
+        <strong>
+            فؤاد فون
+        </strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TITLE
+===================================================== -->
 
 <h1 class="title">
     فؤاد فون
@@ -1406,6 +1580,10 @@ body{
 
 </div>
 
+
+<!-- =====================================================
+     BUTTON
+===================================================== -->
 
 <button
     class="spin-button"
@@ -1452,10 +1630,8 @@ body{
 
 
 <!-- =====================================================
-     ترتيب الرولة
+     F1
 ===================================================== -->
-
-<!-- F1 -->
 
 <div class="prize p1">
 
@@ -1467,7 +1643,9 @@ body{
 </div>
 
 
-<!-- F2 -->
+<!-- =====================================================
+     F2
+===================================================== -->
 
 <div class="prize p2">
 
@@ -1479,7 +1657,9 @@ body{
 </div>
 
 
-<!-- F3 -->
+<!-- =====================================================
+     F3
+===================================================== -->
 
 <div class="prize p3">
 
@@ -1491,7 +1671,9 @@ body{
 </div>
 
 
-<!-- حظ أوفر -->
+<!-- =====================================================
+     حظ أوفر
+===================================================== -->
 
 <div class="prize p4">
 
@@ -1502,7 +1684,9 @@ body{
 </div>
 
 
-<!-- F4 -->
+<!-- =====================================================
+     F4
+===================================================== -->
 
 <div class="prize p5">
 
@@ -1514,7 +1698,9 @@ body{
 </div>
 
 
-<!-- F5 -->
+<!-- =====================================================
+     F5
+===================================================== -->
 
 <div class="prize p6">
 
@@ -1526,7 +1712,9 @@ body{
 </div>
 
 
-<!-- حظ أوفر -->
+<!-- =====================================================
+     حظ أوفر
+===================================================== -->
 
 <div class="prize p7">
 
@@ -1537,7 +1725,9 @@ body{
 </div>
 
 
-<!-- F6 -->
+<!-- =====================================================
+     F6
+===================================================== -->
 
 <div class="prize p8">
 
@@ -1549,7 +1739,9 @@ body{
 </div>
 
 
-<!-- F7 -->
+<!-- =====================================================
+     F7
+===================================================== -->
 
 <div class="prize p9">
 
@@ -1561,7 +1753,9 @@ body{
 </div>
 
 
-<!-- حظ أوفر -->
+<!-- =====================================================
+     حظ أوفر
+===================================================== -->
 
 <div class="prize p10">
 
@@ -1576,14 +1770,14 @@ body{
 
 
 <!-- =====================================================
-     LOGO وسط الرولة
+     CENTER LOGO
 ===================================================== -->
 
 <div class="center-logo">
 
     <img
         src="logo.png.PNG"
-        alt="Logo"
+        alt="فؤاد فون"
     >
 
 </div>
@@ -1596,26 +1790,11 @@ body{
 
 
 <!-- =====================================================
-     RIGHT
+     RESULT
 ===================================================== -->
 
 <section class="right">
 
-
-<!-- =====================================================
-     BANNER فوق النتيجة
-===================================================== -->
-
-<img
-    src="banner.jpg.PNG"
-    class="result-banner"
-    alt="Banner"
->
-
-
-<!-- =====================================================
-     RESULT
-===================================================== -->
 
 <div class="result-box">
 
@@ -1691,7 +1870,7 @@ body{
 <script>
 
 /* =====================================================
-   بيانات الرولة
+   WHEEL DATA
 ===================================================== */
 
 const wheelItems = [
@@ -1757,7 +1936,7 @@ const wheelItems = [
 
 
 /* =====================================================
-   الخانات الرابحة
+   PRODUCT INDEXES
 ===================================================== */
 
 const productIndexes = [
@@ -1774,7 +1953,7 @@ const productIndexes = [
 
 
 /* =====================================================
-   خانات حظ أوفر
+   LUCK INDEXES
 ===================================================== */
 
 const luckyIndexes = [
@@ -1787,7 +1966,7 @@ const luckyIndexes = [
 
 
 /* =====================================================
-   حالة الرولة
+   STATE
 ===================================================== */
 
 let currentRotation = 0;
@@ -1798,7 +1977,7 @@ let spinCount = 0;
 
 
 /* =====================================================
-   اختيار حظ أوفر
+   CHOOSE LUCKY
 ===================================================== */
 
 function chooseLucky(){
@@ -1814,7 +1993,7 @@ function chooseLucky(){
 
 
 /* =====================================================
-   اختيار جائزة
+   CHOOSE PRIZE
 ===================================================== */
 
 function choosePrize(){
@@ -1926,7 +2105,7 @@ function spinWheel(){
 
 
     /* =================================================
-       حساب الزاوية
+       CALCULATE ROTATION
     ================================================= */
 
     const sectorAngle =
@@ -1948,6 +2127,12 @@ function spinWheel(){
         centerOfSector;
 
 
+    /*
+       نستخدم باقي الزاوية الحالية
+       حتى تبقى الحركة صحيحة
+       مهما كانت السحبة السابقة.
+    */
+
     const finalRotation =
 
         currentRotation +
@@ -1966,7 +2151,7 @@ function spinWheel(){
 
 
     /* =================================================
-       عرض النتيجة من نفس selectedIndex
+       SHOW RESULT
     ================================================= */
 
     setTimeout(
@@ -1980,7 +2165,7 @@ function spinWheel(){
 
 
             /* =========================================
-               حظ أوفر
+               LUCK
             ========================================= */
 
             if(
@@ -2002,7 +2187,7 @@ function spinWheel(){
 
 
             /* =========================================
-               جائزة
+               PRODUCT
             ========================================= */
 
             else{
@@ -2025,6 +2210,10 @@ function spinWheel(){
 
             }
 
+
+            /* =========================================
+               WIN ANIMATION
+            ========================================= */
 
             wheelArea.classList.add(
                 "winner"
@@ -2070,11 +2259,9 @@ window.addEventListener(
 
         const images = [
 
-            "Flogo.HEIC",
+            "banner.jpg.PNG",
 
             "logo.png.PNG",
-
-            "banner.jpg.PNG",
 
             "F_1.JPG",
             "F_2.JPG",
