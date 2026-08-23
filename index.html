@@ -28,11 +28,7 @@ body{
 }
 
 body{
-    font-family:
-        Tahoma,
-        Arial,
-        sans-serif;
-
+    font-family:Tahoma,Arial,sans-serif;
     background:#050505;
     color:#fff;
 }
@@ -231,51 +227,9 @@ body{
    BANNER
 ===================================================== */
 
-.brand-banner{
+.banner-area{
 
-    position:relative;
-
-    width:190px;
-    height:95px;
-
-    margin-bottom:10px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    overflow:hidden;
-
-    border-radius:12px;
-
-    background:#050505;
-}
-
-.brand-banner img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:contain;
-
-    display:block;
-}
-
-
-/* =====================================================
-   BY FOUAD PHONE
-===================================================== */
-
-.banner-by{
-
-    position:absolute;
-
-    left:50%;
-    bottom:5px;
-
-    transform:
-        translateX(-50%);
+    width:230px;
 
     display:flex;
 
@@ -285,37 +239,33 @@ body{
 
     justify-content:center;
 
-    line-height:1.1;
+    margin-bottom:8px;
+}
 
-    text-align:center;
+.banner-image{
 
-    pointer-events:none;
+    width:220px;
+    height:110px;
+
+    object-fit:contain;
+
+    display:block;
+}
+
+.banner-by{
+
+    margin-top:-12px;
+
+    color:#087cff;
+
+    font-size:16px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
 
     text-shadow:
-        0 2px 5px #000,
-        0 0 8px rgba(0,0,0,.9);
-}
-
-.banner-by span{
-
-    color:#087cff;
-
-    font-size:14px;
-
-    font-weight:900;
-
-    text-transform:lowercase;
-}
-
-.banner-by strong{
-
-    color:#087cff;
-
-    font-size:20px;
-
-    font-weight:900;
-
-    white-space:nowrap;
+        0 0 8px rgba(0,124,255,.6);
 }
 
 
@@ -324,7 +274,6 @@ body{
 ===================================================== */
 
 .title{
-
     font-size:52px;
 
     font-weight:900;
@@ -336,7 +285,6 @@ body{
 }
 
 .red-line{
-
     width:80px;
     height:4px;
 
@@ -349,7 +297,6 @@ body{
 }
 
 .subtitle{
-
     font-size:19px;
 
     font-weight:bold;
@@ -358,12 +305,10 @@ body{
 }
 
 .red{
-
     color:#087cff;
 }
 
 .exclusive{
-
     margin-top:5px;
 
     color:#ddd;
@@ -415,23 +360,18 @@ body{
 
 .spin-button:hover{
 
-    transform:
-        translateY(-3px);
+    transform:translateY(-3px);
 
     box-shadow:
         0 12px 35px rgba(0,110,255,.55);
 }
 
 .spin-button:active{
-
-    transform:
-        scale(.95);
+    transform:scale(.95);
 }
 
 .spin-button:disabled{
-
     opacity:.5;
-
     cursor:not-allowed;
 }
 
@@ -441,7 +381,6 @@ body{
 ===================================================== */
 
 .center{
-
     height:100%;
 
     display:flex;
@@ -456,7 +395,6 @@ body{
 ===================================================== */
 
 .wheel-area{
-
     position:relative;
 
     width:min(48vw,600px);
@@ -478,20 +416,15 @@ body{
     top:-4px;
     left:50%;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     width:0;
     height:0;
 
-    border-left:
-        25px solid transparent;
+    border-left:25px solid transparent;
+    border-right:25px solid transparent;
 
-    border-right:
-        25px solid transparent;
-
-    border-top:
-        65px solid #087cff;
+    border-top:65px solid #087cff;
 
     filter:
         drop-shadow(
@@ -537,9 +470,7 @@ body{
     box-shadow:
 
         0 0 10px #087cff,
-
         0 0 25px rgba(0,110,255,.8),
-
         0 0 55px rgba(0,110,255,.35);
 
     pointer-events:none;
@@ -562,29 +493,19 @@ body{
 
     overflow:hidden;
 
-    border:
-        8px solid #080808;
+    border:8px solid #080808;
 
     background:#111;
 
     box-shadow:
 
         0 0 0 3px #777,
-
         0 15px 40px #000;
 
     transition:
-
         transform
-
         5.5s
-
-        cubic-bezier(
-            .12,
-            .75,
-            .12,
-            1
-        );
+        cubic-bezier(.12,.75,.12,1);
 
     z-index:5;
 }
@@ -603,9 +524,7 @@ body{
     border-radius:50%;
 
     background:
-
         conic-gradient(
-
             from -18deg,
 
             #ffd900 0deg 36deg,
@@ -639,15 +558,12 @@ body{
     border-radius:50%;
 
     background:
-
         repeating-conic-gradient(
-
             from -18deg,
 
             transparent 0deg 35deg,
 
-            rgba(255,255,255,.8)
-            35deg 36deg
+            rgba(255,255,255,.8) 35deg 36deg
         );
 
     z-index:2;
@@ -675,7 +591,7 @@ body{
 
 
 /* =====================================================
-   PRIZE IMAGES
+   PRODUCT IMAGES
 ===================================================== */
 
 .prize img{
@@ -690,6 +606,10 @@ body{
     object-fit:contain;
 
     left:50%;
+
+    /*
+       رفع الصور إلى أعلى الخانة
+    */
 
     top:-125px;
 
@@ -811,19 +731,16 @@ body{
             #050505
         );
 
-    border:
-        5px solid #087cff;
+    border:5px solid #087cff;
 
     box-shadow:
 
         0 0 0 5px #050505,
-
         0 0 25px rgba(0,110,255,.8);
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     overflow:hidden;
@@ -877,18 +794,15 @@ body{
     text-align:center;
 
     background:
-
         linear-gradient(
             145deg,
             #111820,
             #05080c
         );
 
-    border:
-        1px solid #24476d;
+    border:1px solid #24476d;
 
-    border-top:
-        4px solid #087cff;
+    border-top:4px solid #087cff;
 
     box-shadow:
         0 10px 35px rgba(0,0,0,.6);
@@ -1067,22 +981,20 @@ body{
         font-size:13px;
     }
 
-    .brand-banner{
-
-        width:160px;
-        height:80px;
+    .banner-area{
+        width:190px;
     }
 
-    .banner-by span{
-        font-size:12px;
+    .banner-image{
+        width:185px;
+        height:90px;
     }
 
-    .banner-by strong{
-        font-size:17px;
+    .banner-by{
+        font-size:14px;
     }
 
     .wheel-area{
-
         width:
             min(47vw,500px);
     }
@@ -1156,25 +1068,26 @@ body{
         flex-shrink:0;
     }
 
-    .brand-banner{
+    .banner-area{
 
-        width:135px;
-        height:68px;
+        width:150px;
 
-        margin-bottom:4px;
+        margin-bottom:2px;
+    }
+
+    .banner-image{
+
+        width:145px;
+        height:65px;
     }
 
     .banner-by{
 
-        bottom:3px;
-    }
+        margin-top:-7px;
 
-    .banner-by span{
-        font-size:9px;
-    }
+        font-size:11px;
 
-    .banner-by strong{
-        font-size:13px;
+        letter-spacing:1px;
     }
 
     .title{
@@ -1318,20 +1231,18 @@ body{
         padding-top:10px;
     }
 
-    .brand-banner{
-
-        width:105px;
-        height:53px;
-
-        margin-bottom:2px;
+    .banner-area{
+        width:120px;
     }
 
-    .banner-by span{
-        font-size:7px;
+    .banner-image{
+        width:115px;
+        height:50px;
     }
 
-    .banner-by strong{
-        font-size:10px;
+    .banner-by{
+        font-size:9px;
+        margin-top:-5px;
     }
 
     .title{
@@ -1410,18 +1321,18 @@ body{
             25px 45px;
     }
 
-    .brand-banner{
-
-        width:135px;
-        height:68px;
+    .banner-area{
+        width:150px;
     }
 
-    .banner-by span{
-        font-size:9px;
+    .banner-image{
+        width:145px;
+        height:60px;
     }
 
-    .banner-by strong{
-        font-size:13px;
+    .banner-by{
+        font-size:10px;
+        margin-top:-6px;
     }
 
     .title{
@@ -1527,33 +1438,24 @@ body{
 
 <!-- =====================================================
      BANNER
+     
+     فقط البانر + BY
 ===================================================== -->
 
-<div class="brand-banner">
+<div class="banner-area">
 
     <img
         src="banner.jpg.PNG"
+        class="banner-image"
         alt="Banner"
     >
 
     <div class="banner-by">
-
-        <span>
-            by
-        </span>
-
-        <strong>
-            فؤاد فون
-        </strong>
-
+        BY
     </div>
 
 </div>
 
-
-<!-- =====================================================
-     TITLE
-===================================================== -->
 
 <h1 class="title">
     فؤاد فون
@@ -1580,10 +1482,6 @@ body{
 
 </div>
 
-
-<!-- =====================================================
-     BUTTON
-===================================================== -->
 
 <button
     class="spin-button"
@@ -1777,7 +1675,7 @@ body{
 
     <img
         src="logo.png.PNG"
-        alt="فؤاد فون"
+        alt="Logo"
     >
 
 </div>
@@ -1870,7 +1768,7 @@ body{
 <script>
 
 /* =====================================================
-   WHEEL DATA
+   بيانات الرولة
 ===================================================== */
 
 const wheelItems = [
@@ -1936,7 +1834,7 @@ const wheelItems = [
 
 
 /* =====================================================
-   PRODUCT INDEXES
+   خانات الجوائز
 ===================================================== */
 
 const productIndexes = [
@@ -1953,7 +1851,7 @@ const productIndexes = [
 
 
 /* =====================================================
-   LUCK INDEXES
+   خانات حظ أوفر
 ===================================================== */
 
 const luckyIndexes = [
@@ -1966,7 +1864,7 @@ const luckyIndexes = [
 
 
 /* =====================================================
-   STATE
+   حالة الرولة
 ===================================================== */
 
 let currentRotation = 0;
@@ -1977,7 +1875,7 @@ let spinCount = 0;
 
 
 /* =====================================================
-   CHOOSE LUCKY
+   اختيار حظ أوفر
 ===================================================== */
 
 function chooseLucky(){
@@ -1993,7 +1891,7 @@ function chooseLucky(){
 
 
 /* =====================================================
-   CHOOSE PRIZE
+   اختيار جائزة
 ===================================================== */
 
 function choosePrize(){
@@ -2105,7 +2003,7 @@ function spinWheel(){
 
 
     /* =================================================
-       CALCULATE ROTATION
+       حساب زاوية الخانة
     ================================================= */
 
     const sectorAngle =
@@ -2127,12 +2025,6 @@ function spinWheel(){
         centerOfSector;
 
 
-    /*
-       نستخدم باقي الزاوية الحالية
-       حتى تبقى الحركة صحيحة
-       مهما كانت السحبة السابقة.
-    */
-
     const finalRotation =
 
         currentRotation +
@@ -2151,7 +2043,7 @@ function spinWheel(){
 
 
     /* =================================================
-       SHOW RESULT
+       إظهار النتيجة من نفس الخانة
     ================================================= */
 
     setTimeout(
@@ -2165,7 +2057,7 @@ function spinWheel(){
 
 
             /* =========================================
-               LUCK
+               حظ أوفر
             ========================================= */
 
             if(
@@ -2187,7 +2079,7 @@ function spinWheel(){
 
 
             /* =========================================
-               PRODUCT
+               جائزة
             ========================================= */
 
             else{
@@ -2210,10 +2102,6 @@ function spinWheel(){
 
             }
 
-
-            /* =========================================
-               WIN ANIMATION
-            ========================================= */
 
             wheelArea.classList.add(
                 "winner"
@@ -2259,9 +2147,9 @@ window.addEventListener(
 
         const images = [
 
-            "banner.jpg.PNG",
-
             "logo.png.PNG",
+
+            "banner.jpg.PNG",
 
             "F_1.JPG",
             "F_2.JPG",
