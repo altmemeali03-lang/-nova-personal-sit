@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -1786,6 +1787,53 @@ const luckSound =
 
 
 /* =====================================================
+   تفعيل الصوت من أول ضغطة
+===================================================== */
+
+function unlockSounds(){
+
+    [winSound, luckSound].forEach(function(sound){
+
+        sound.muted = true;
+
+        const promise = sound.play();
+
+        if(promise !== undefined){
+
+            promise.then(function(){
+
+                sound.pause();
+
+                sound.currentTime = 0;
+
+                sound.muted = false;
+
+            }).catch(function(){
+
+                sound.pause();
+
+                sound.currentTime = 0;
+
+                sound.muted = false;
+
+            });
+
+        }else{
+
+            sound.pause();
+
+            sound.currentTime = 0;
+
+            sound.muted = false;
+
+        }
+
+    });
+
+}
+
+
+/* =====================================================
    بيانات الرولة
 ===================================================== */
 
@@ -1905,6 +1953,7 @@ function chooseLucky(){
         );
 
     return luckyIndexes[random];
+
 }
 
 
@@ -1921,6 +1970,7 @@ function choosePrize(){
         );
 
     return productIndexes[random];
+
 }
 
 
@@ -1933,6 +1983,10 @@ function spinWheel(){
     if(spinning){
         return;
     }
+
+
+    /* تشغيل/تفعيل الصوت من ضغطة المستخدم */
+    unlockSounds();
 
 
     spinning = true;
@@ -2022,12 +2076,6 @@ function spinWheel(){
 
     /* =================================================
        حساب زاوية الخانة
-
-       الرولة تبدأ من -18deg
-
-       لذلك مركز أول خانة = 0deg
-
-       وكل خانة = 36deg
     ================================================= */
 
     const sectorAngle =
@@ -2049,9 +2097,6 @@ function spinWheel(){
 
     /* =================================================
        حساب الزاوية المطلوبة
-
-       حتى مركز الخانة المختارة
-       يصير مباشرة تحت المؤشر
     ================================================= */
 
     let targetAngle =
@@ -2129,7 +2174,11 @@ function spinWheel(){
 
                 /* صوت الخسارة */
 
+                luckSound.pause();
+
                 luckSound.currentTime = 0;
+
+                luckSound.muted = false;
 
                 luckSound.play().catch(
 
@@ -2172,7 +2221,11 @@ function spinWheel(){
 
                 /* صوت الفوز */
 
+                winSound.pause();
+
                 winSound.currentTime = 0;
+
+                winSound.muted = false;
 
                 winSound.play().catch(
 
