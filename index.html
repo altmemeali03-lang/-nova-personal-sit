@@ -9,9 +9,9 @@
 
 <style>
 
-/* ==================================================
+/* =========================
    RESET
-================================================== */
+========================= */
 
 *{
     margin:0;
@@ -28,32 +28,14 @@ body{
 
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:#eee8dc;
+    background:#f3eadb;
     color:#fff;
 }
 
 
-/* ==================================================
-   COLORS
-================================================== */
-
-:root{
-    --dark-red:#650b0b;
-    --deep-red:#420505;
-    --red:#7d1010;
-    --red-light:#a81717;
-
-    --black:#080808;
-    --black-soft:#151111;
-
-    --beige:#eee8dc;
-    --beige-light:#f5f0e7;
-}
-
-
-/* ==================================================
-   PAGE
-================================================== */
+/* =========================
+   MAIN BACKGROUND
+========================= */
 
 .page{
     width:100vw;
@@ -66,16 +48,16 @@ body{
     background:
         radial-gradient(
             circle at center,
-            #f7f1e7 0%,
-            #eee8dc 55%,
-            #e3dacb 100%
+            #fffaf2 0%,
+            #f3eadb 55%,
+            #e7d9c5 100%
         );
 }
 
 
-/* ==================================================
+/* =========================
    FRAME
-================================================== */
+========================= */
 
 .frame{
     position:relative;
@@ -88,24 +70,22 @@ body{
     background:
         linear-gradient(
             135deg,
-            #160303,
-            #090909 48%,
-            #210505
+            #fffaf2,
+            #f0e4d2 48%,
+            #fffaf2
         );
 
-    border:2px solid #2c2020;
+    border:2px solid #2b0505;
 
     box-shadow:
-        0 0 0 3px #e5ddcf,
-        0 15px 55px rgba(45,10,10,.35);
+        0 0 0 3px #160000,
+        0 0 45px rgba(90,0,0,.25);
 
     overflow:hidden;
 }
 
 
-/* ==================================================
-   INNER FRAME
-================================================== */
+/* إطار داخلي */
 
 .frame:before{
     content:"";
@@ -114,7 +94,7 @@ body{
 
     inset:12px;
 
-    border:1px solid #493838;
+    border:1px solid rgba(80,0,0,.35);
 
     pointer-events:none;
 
@@ -122,9 +102,9 @@ body{
 }
 
 
-/* ==================================================
-   CORNERS
-================================================== */
+/* =========================
+   RED CORNERS
+========================= */
 
 .corner{
     position:absolute;
@@ -132,10 +112,10 @@ body{
     width:130px;
     height:5px;
 
-    background:#7d1010;
+    background:#700000;
 
     box-shadow:
-        0 0 12px rgba(125,16,16,.8);
+        0 0 12px rgba(100,0,0,.7);
 
     z-index:40;
 }
@@ -167,10 +147,10 @@ body{
     width:5px;
     height:90px;
 
-    background:#7d1010;
+    background:#700000;
 
     box-shadow:
-        0 0 12px rgba(125,16,16,.8);
+        0 0 12px rgba(100,0,0,.7);
 
     z-index:40;
 }
@@ -196,9 +176,9 @@ body{
 }
 
 
-/* ==================================================
+/* =========================
    CONTENT
-================================================== */
+========================= */
 
 .content{
     position:relative;
@@ -223,9 +203,9 @@ body{
 }
 
 
-/* ==================================================
+/* =========================
    LEFT
-================================================== */
+========================= */
 
 .left{
     height:100%;
@@ -240,9 +220,9 @@ body{
 }
 
 
-/* ==================================================
-   TOP LOGO
-================================================== */
+/* =========================
+   LOGO
+========================= */
 
 .top-logo{
     width:75px;
@@ -254,18 +234,18 @@ body{
 }
 
 
-/* ==================================================
+/* =========================
    TITLE
-================================================== */
+========================= */
 
 .title{
     font-size:52px;
     font-weight:900;
 
-    color:#fff;
+    color:#260000;
 
     text-shadow:
-        0 4px 15px #000;
+        0 2px 5px rgba(0,0,0,.15);
 }
 
 .red-line{
@@ -274,10 +254,10 @@ body{
 
     margin:12px auto;
 
-    background:#7d1010;
+    background:#650000;
 
     box-shadow:
-        0 0 12px rgba(125,16,16,.8);
+        0 0 12px rgba(100,0,0,.5);
 }
 
 .subtitle{
@@ -285,16 +265,18 @@ body{
     font-weight:bold;
 
     line-height:1.7;
+
+    color:#260000;
 }
 
 .red{
-    color:#a81717;
+    color:#650000;
 }
 
 .exclusive{
     margin-top:5px;
 
-    color:#ddd;
+    color:#4a3333;
 
     font-size:15px;
 
@@ -302,9 +284,9 @@ body{
 }
 
 
-/* ==================================================
-   SPIN BUTTON
-================================================== */
+/* =========================
+   BUTTON
+========================= */
 
 .spin-button{
     margin-top:30px;
@@ -320,8 +302,8 @@ body{
     background:
         linear-gradient(
             135deg,
-            #8b1111,
-            #4b0505
+            #720000,
+            #3d0000
         );
 
     color:white;
@@ -335,7 +317,7 @@ body{
     cursor:pointer;
 
     box-shadow:
-        0 8px 25px rgba(70,0,0,.45);
+        0 8px 25px rgba(80,0,0,.35);
 
     transition:.2s;
 }
@@ -343,15 +325,8 @@ body{
 .spin-button:hover{
     transform:translateY(-3px);
 
-    background:
-        linear-gradient(
-            135deg,
-            #a81717,
-            #5a0707
-        );
-
     box-shadow:
-        0 12px 35px rgba(90,0,0,.55);
+        0 12px 35px rgba(80,0,0,.5);
 }
 
 .spin-button:active{
@@ -364,9 +339,12 @@ body{
 }
 
 
-/* ==================================================
+/* السهم محذوف نهائياً */
+
+
+/* =========================
    CENTER
-================================================== */
+========================= */
 
 .center{
     height:100%;
@@ -378,9 +356,9 @@ body{
 }
 
 
-/* ==================================================
+/* =========================
    WHEEL AREA
-================================================== */
+========================= */
 
 .wheel-area{
     position:relative;
@@ -391,9 +369,9 @@ body{
 }
 
 
-/* ==================================================
+/* =========================
    POINTER
-================================================== */
+========================= */
 
 .pointer{
     position:absolute;
@@ -411,7 +389,7 @@ body{
     border-left:25px solid transparent;
     border-right:25px solid transparent;
 
-    border-top:65px solid #7d1010;
+    border-top:65px solid #650000;
 
     filter:
         drop-shadow(
@@ -439,9 +417,9 @@ body{
 }
 
 
-/* ==================================================
-   WHEEL GLOW
-================================================== */
+/* =========================
+   OUTER GLOW
+========================= */
 
 .wheel-glow{
     position:absolute;
@@ -450,13 +428,13 @@ body{
 
     border-radius:50%;
 
-    border:4px solid #7d1010;
+    border:4px solid #650000;
 
     box-shadow:
 
-        0 0 10px rgba(125,16,16,.9),
-        0 0 25px rgba(125,16,16,.65),
-        0 0 55px rgba(125,16,16,.25);
+        0 0 10px rgba(100,0,0,.7),
+        0 0 25px rgba(100,0,0,.5),
+        0 0 55px rgba(100,0,0,.25);
 
     pointer-events:none;
 
@@ -464,9 +442,9 @@ body{
 }
 
 
-/* ==================================================
+/* =========================
    WHEEL
-================================================== */
+========================= */
 
 .wheel{
     position:absolute;
@@ -484,8 +462,8 @@ body{
 
     box-shadow:
 
-        0 0 0 3px #6b5b5b,
-        0 15px 40px #000;
+        0 0 0 3px #777,
+        0 15px 40px rgba(0,0,0,.7);
 
     transition:
         transform
@@ -496,9 +474,9 @@ body{
 }
 
 
-/* ==================================================
-   SECTORS
-================================================== */
+/* =========================
+   10 SECTORS
+========================= */
 
 .sectors{
     position:absolute;
@@ -509,27 +487,27 @@ body{
 
     background:
         conic-gradient(
-            #7d1010 0deg 36deg,
+            #650000 0deg 36deg,
             #111111 36deg 72deg,
 
-            #7d1010 72deg 108deg,
+            #650000 72deg 108deg,
             #111111 108deg 144deg,
 
-            #7d1010 144deg 180deg,
+            #650000 144deg 180deg,
             #111111 180deg 216deg,
 
-            #7d1010 216deg 252deg,
+            #650000 216deg 252deg,
             #111111 252deg 288deg,
 
-            #7d1010 288deg 324deg,
+            #650000 288deg 324deg,
             #111111 324deg 360deg
         );
 }
 
 
-/* ==================================================
+/* =========================
    SECTOR LINES
-================================================== */
+========================= */
 
 .sector-lines{
     position:absolute;
@@ -540,18 +518,18 @@ body{
 
     background:
         repeating-conic-gradient(
-            from -18deg,
+            from 0deg,
             transparent 0deg 35deg,
-            rgba(245,240,231,.7) 35deg 36deg
+            rgba(255,255,255,.7) 35deg 36deg
         );
 
     z-index:2;
 }
 
 
-/* ==================================================
-   PRIZE CONTAINER
-================================================== */
+/* =========================
+   PRIZE IMAGES
+========================= */
 
 .prize{
     position:absolute;
@@ -569,88 +547,30 @@ body{
 
 
 /*
-==================================================
-   IMPORTANT
-
-   كل صورة موجودة في منتصف القطاع.
-
-   القطاع الأول = 18°
-   الثاني = 54°
-   الثالث = 90°
-   وهكذا...
-==================================================
+   كل صورة موجودة بزاوية
+   ثابتة 36 درجة
 */
-
-.p1{
-    transform:rotate(18deg);
-}
-
-.p2{
-    transform:rotate(54deg);
-}
-
-.p3{
-    transform:rotate(90deg);
-}
-
-.p4{
-    transform:rotate(126deg);
-}
-
-.p5{
-    transform:rotate(162deg);
-}
-
-.p6{
-    transform:rotate(198deg);
-}
-
-.p7{
-    transform:rotate(234deg);
-}
-
-.p8{
-    transform:rotate(270deg);
-}
-
-.p9{
-    transform:rotate(306deg);
-}
-
-.p10{
-    transform:rotate(342deg);
-}
-
-
-/* ==================================================
-   PRIZE IMAGE
-================================================== */
 
 .prize img{
 
     position:absolute;
 
-    width:120px;
-    height:120px;
+    width:105px;
+    height:105px;
 
-    max-width:none;
+    max-width:100%;
 
     object-fit:contain;
 
     left:50%;
-
-    /*
-       رفع الصور إلى الأعلى
-    */
-
-    top:-105px;
+    top:-88px;
 
     transform:
         translateX(-50%);
 
     filter:
         drop-shadow(
-            0 6px 8px rgba(0,0,0,.95)
+            0 5px 7px rgba(0,0,0,.95)
         );
 
     background:transparent;
@@ -659,9 +579,54 @@ body{
 }
 
 
-/* ==================================================
+/* =========================
+   POSITIONS
+========================= */
+
+.p1{
+    transform:rotate(0deg);
+}
+
+.p2{
+    transform:rotate(36deg);
+}
+
+.p3{
+    transform:rotate(72deg);
+}
+
+.p4{
+    transform:rotate(108deg);
+}
+
+.p5{
+    transform:rotate(144deg);
+}
+
+.p6{
+    transform:rotate(180deg);
+}
+
+.p7{
+    transform:rotate(216deg);
+}
+
+.p8{
+    transform:rotate(252deg);
+}
+
+.p9{
+    transform:rotate(288deg);
+}
+
+.p10{
+    transform:rotate(324deg);
+}
+
+
+/* =========================
    CENTER LOGO
-================================================== */
+========================= */
 
 .center-logo{
 
@@ -688,12 +653,12 @@ body{
         );
 
     border:
-        5px solid #7d1010;
+        5px solid #650000;
 
     box-shadow:
 
         0 0 0 5px #050505,
-        0 0 25px rgba(125,16,16,.75);
+        0 0 25px rgba(100,0,0,.7);
 
     display:flex;
 
@@ -712,11 +677,12 @@ body{
 }
 
 
-/* ==================================================
+/* =========================
    RIGHT
-================================================== */
+========================= */
 
 .right{
+
     height:100%;
 
     display:flex;
@@ -727,17 +693,17 @@ body{
 }
 
 
-/* ==================================================
+/* =========================
    RESULT BOX
-================================================== */
+========================= */
 
 .result-box{
 
     width:220px;
 
-    min-height:285px;
+    min-height:250px;
 
-    padding:20px 15px;
+    padding:20px 18px;
 
     display:flex;
 
@@ -751,31 +717,29 @@ body{
     background:
         linear-gradient(
             145deg,
-            #181010,
-            #070707
+            #fffaf2,
+            #eee0cd
         );
 
     border:
-        1px solid #4b3838;
+        2px solid #4a0000;
 
     border-top:
-        4px solid #7d1010;
+        5px solid #650000;
 
     box-shadow:
-        0 10px 35px rgba(0,0,0,.6);
+        0 10px 35px rgba(60,0,0,.25);
 
     border-radius:8px;
 }
 
 
-/* ==================================================
-   RESULT IMAGE
-================================================== */
+/* صورة النتيجة */
 
 .result-image{
 
-    width:125px;
-    height:125px;
+    width:105px;
+    height:105px;
 
     object-fit:contain;
 
@@ -785,52 +749,24 @@ body{
 
     filter:
         drop-shadow(
-            0 7px 9px rgba(0,0,0,.9)
+            0 5px 8px rgba(0,0,0,.35)
         );
-
-    border-radius:12px;
 }
 
 
-/* ==================================================
-   RESULT PLACEHOLDER
-================================================== */
+/* أيقونة البداية */
 
-.result-placeholder{
-
-    width:125px;
-    height:125px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    margin-bottom:10px;
-
-    border-radius:12px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #2b2020,
-            #0b0b0b
-        );
-
-    border:
-        1px solid #493333;
-
-    font-size:52px;
+.gift{
+    font-size:55px;
+    margin-bottom:12px;
 }
 
 
-/* ==================================================
-   RESULT TITLE
-================================================== */
+/* عنوان النتيجة */
 
 .result-title{
 
-    color:#aaa;
+    color:#4b3030;
 
     font-size:15px;
 
@@ -838,15 +774,13 @@ body{
 }
 
 
-/* ==================================================
-   RESULT TEXT
-================================================== */
+/* النتيجة */
 
 .result{
 
-    color:#c21b1b;
+    color:#650000;
 
-    font-size:20px;
+    font-size:23px;
 
     font-weight:900;
 
@@ -854,15 +788,13 @@ body{
 }
 
 
-/* ==================================================
-   HELP
-================================================== */
+/* النص السفلي */
 
 .help{
 
     margin-top:12px;
 
-    color:#bbb;
+    color:#6b5555;
 
     font-size:12px;
 
@@ -870,9 +802,9 @@ body{
 }
 
 
-/* ==================================================
+/* =========================
    FOOTER
-================================================== */
+========================= */
 
 .footer{
 
@@ -890,18 +822,18 @@ body{
 
     font-size:12px;
 
-    color:#ccc;
+    color:#4a3030;
 }
 
 .footer span{
-    color:#a81717;
+    color:#650000;
     font-weight:bold;
 }
 
 
-/* ==================================================
-   WIN ANIMATION
-================================================== */
+/* =========================
+   WIN
+========================= */
 
 .winner{
     animation:
@@ -928,36 +860,9 @@ body{
 }
 
 
-/* ==================================================
-   RESULT ANIMATION
-================================================== */
-
-.result-box.win{
-    animation:
-        resultWin .6s ease;
-}
-
-@keyframes resultWin{
-
-    0%{
-        transform:scale(.92);
-        opacity:.6;
-    }
-
-    60%{
-        transform:scale(1.05);
-        opacity:1;
-    }
-
-    100%{
-        transform:scale(1);
-    }
-}
-
-
-/* ==================================================
+/* =========================
    TABLET
-================================================== */
+========================= */
 
 @media(max-width:1150px){
 
@@ -989,9 +894,9 @@ body{
     }
 
     .prize img{
-        width:95px;
-        height:95px;
-        top:-88px;
+        width:80px;
+        height:80px;
+        top:-70px;
     }
 
     .center-logo{
@@ -1001,20 +906,19 @@ body{
 
     .result-box{
         width:180px;
-        min-height:245px;
+        min-height:210px;
     }
 
-    .result-image,
-    .result-placeholder{
-        width:100px;
-        height:100px;
+    .result-image{
+        width:80px;
+        height:80px;
     }
 }
 
 
-/* ==================================================
+/* =========================
    MOBILE
-================================================== */
+========================= */
 
 @media(max-width:700px){
 
@@ -1046,7 +950,6 @@ body{
         flex-shrink:0;
     }
 
-
     .top-logo{
 
         width:40px;
@@ -1055,11 +958,9 @@ body{
         margin-bottom:2px;
     }
 
-
     .title{
         font-size:27px;
     }
-
 
     .red-line{
         width:55px;
@@ -1067,12 +968,10 @@ body{
         margin:5px auto;
     }
 
-
     .subtitle{
         font-size:11px;
         line-height:1.5;
     }
-
 
     .exclusive{
         font-size:9px;
@@ -1101,7 +1000,6 @@ body{
         min-height:0;
     }
 
-
     .wheel-area{
 
         width:
@@ -1116,23 +1014,23 @@ body{
 
         width:
             clamp(
-                65px,
-                16vw,
-                90px
+                60px,
+                14vw,
+                82px
             );
 
         height:
             clamp(
-                65px,
-                16vw,
-                90px
+                60px,
+                14vw,
+                82px
             );
 
         top:
             clamp(
-                -78px,
-                -13vw,
-                -62px
+                -70px,
+                -11vw,
+                -58px
             );
     }
 
@@ -1164,7 +1062,6 @@ body{
         height:3px;
     }
 
-
     .corner-v{
         width:3px;
         height:50px;
@@ -1172,9 +1069,9 @@ body{
 }
 
 
-/* ==================================================
+/* =========================
    VERY SHORT MOBILE
-================================================== */
+========================= */
 
 @media(
     max-width:700px
@@ -1223,16 +1120,16 @@ body{
     }
 
     .prize img{
-        width:58px;
-        height:58px;
-        top:-60px;
+        width:48px;
+        height:48px;
+        top:-50px;
     }
 }
 
 
-/* ==================================================
+/* =========================
    LANDSCAPE MOBILE
-================================================== */
+========================= */
 
 @media(
     max-height:550px
@@ -1285,20 +1182,19 @@ body{
     }
 
     .prize img{
-        width:70px;
-        height:70px;
-        top:-70px;
+        width:55px;
+        height:55px;
+        top:-55px;
     }
 
     .result-box{
         width:160px;
-        min-height:210px;
+        min-height:170px;
     }
 
-    .result-image,
-    .result-placeholder{
-        width:80px;
-        height:80px;
+    .result-image{
+        width:60px;
+        height:60px;
     }
 
     .footer{
@@ -1317,9 +1213,7 @@ body{
 <div class="frame">
 
 
-<!-- ==================================================
-     CORNERS
-================================================== -->
+<!-- الإطار -->
 
 <div class="corner c1"></div>
 <div class="corner c2"></div>
@@ -1335,9 +1229,9 @@ body{
 <div class="content">
 
 
-<!-- ==================================================
+<!-- =========================
      LEFT
-================================================== -->
+========================= -->
 
 <section class="left">
 
@@ -1347,25 +1241,20 @@ body{
     alt="فؤاد فون"
 >
 
-
 <h1 class="title">
     فؤاد فون
 </h1>
 
-
 <div class="red-line"></div>
-
 
 <div class="subtitle">
 
     الراعي الرسمي لـ
-
     <span class="red">
         مؤتمر CGC IRAQ 🇮🇶
     </span>
 
 </div>
-
 
 <div class="exclusive">
 
@@ -1386,9 +1275,9 @@ body{
 
 
 
-<!-- ==================================================
+<!-- =========================
      WHEEL
-================================================== -->
+========================= -->
 
 <section class="center">
 
@@ -1398,17 +1287,10 @@ body{
 >
 
 
-<!-- المؤشر -->
-
 <div class="pointer"></div>
-
-
-<!-- الإضاءة -->
 
 <div class="wheel-glow"></div>
 
-
-<!-- الرولة -->
 
 <div
     class="wheel"
@@ -1421,102 +1303,55 @@ body{
 <div class="sector-lines"></div>
 
 
-<!-- ==================================================
-     PRIZES
-
-     F_1 = القطاع الأول
-     F_2 = القطاع الثاني
-     ...
-     F_10 = القطاع العاشر
-================================================== -->
-
+<!-- =========================
+     الجوائز
+========================= -->
 
 <div class="prize p1">
-    <img
-        src="F_1.JPG"
-        alt="الجائزة 1"
-    >
+    <img src="F_1.JPG" alt="جائزة 1">
 </div>
-
 
 <div class="prize p2">
-    <img
-        src="F_2.JPG"
-        alt="الجائزة 2"
-    >
+    <img src="F_2.JPG" alt="جائزة 2">
 </div>
-
 
 <div class="prize p3">
-    <img
-        src="F_3.JPG"
-        alt="الجائزة 3"
-    >
+    <img src="F_3.JPG" alt="جائزة 3">
 </div>
-
 
 <div class="prize p4">
-    <img
-        src="F_4.JPG"
-        alt="الجائزة 4"
-    >
+    <img src="F_4.JPG" alt="جائزة 4">
 </div>
-
 
 <div class="prize p5">
-    <img
-        src="F_5.JPG"
-        alt="الجائزة 5"
-    >
+    <img src="F_5.JPG" alt="جائزة 5">
 </div>
-
 
 <div class="prize p6">
-    <img
-        src="F_6.JPG"
-        alt="الجائزة 6"
-    >
+    <img src="F_6.JPG" alt="جائزة 6">
 </div>
-
 
 <div class="prize p7">
-    <img
-        src="F_7.JPG"
-        alt="الجائزة 7"
-    >
+    <img src="F_7.JPG" alt="جائزة 7">
 </div>
-
 
 <div class="prize p8">
-    <img
-        src="F_8.JPG"
-        alt="الجائزة 8"
-    >
+    <img src="F_8.JPG" alt="جائزة 8">
 </div>
-
 
 <div class="prize p9">
-    <img
-        src="F_9.JPG"
-        alt="الجائزة 9"
-    >
+    <img src="F_9.JPG" alt="جائزة 9">
 </div>
-
 
 <div class="prize p10">
-    <img
-        src="F_10.JPG"
-        alt="الجائزة 10"
-    >
+    <img src="F_10.JPG" alt="جائزة 10">
 </div>
 
 
 </div>
 
 
-<!-- ==================================================
-     CENTER LOGO
-================================================== -->
+<!-- اللوغو بالنص -->
 
 <div class="center-logo">
 
@@ -1534,55 +1369,43 @@ body{
 
 
 
-<!-- ==================================================
+<!-- =========================
      RESULT
-================================================== -->
+========================= -->
 
 <section class="right">
 
-<div
-    class="result-box"
-    id="resultBox"
->
+<div class="result-box">
 
+    <!-- صورة الجائزة الفائزة -->
+    <img
+        id="resultImage"
+        class="result-image"
+        src=""
+        alt="الجائزة الفائزة"
+    >
 
-<!-- صورة الجائزة -->
+    <div
+        class="gift"
+        id="giftIcon"
+    >
+        🎁
+    </div>
 
-<img
-    id="resultImage"
-    class="result-image"
-    src=""
-    alt="الجائزة الفائزة"
->
+    <div class="result-title">
+        نتيجة السحب
+    </div>
 
+    <div
+        class="result"
+        id="result"
+    >
+        اضغط واربح
+    </div>
 
-<!-- الهدية قبل السحب -->
-
-<div
-    class="result-placeholder"
-    id="resultPlaceholder"
->
-    🎁
-</div>
-
-
-<div class="result-title">
-    نتيجة السحب
-</div>
-
-
-<div
-    class="result"
-    id="result"
->
-    اضغط وخلّي الرولة تختار جائزتك
-</div>
-
-
-<div class="help">
-    حظاً موفقاً ❤️
-</div>
-
+    <div class="help">
+        حظاً موفقاً ❤️
+    </div>
 
 </div>
 
@@ -1592,15 +1415,9 @@ body{
 </div>
 
 
-<!-- ==================================================
-     FOOTER
-================================================== -->
-
 <div class="footer">
 
-    <span>
-        📞 07747885760
-    </span>
+    <span>📞 07747885760</span>
 
     &nbsp; | &nbsp;
 
@@ -1621,9 +1438,9 @@ body{
 
 <script>
 
-/* ==================================================
-   PRIZE IMAGES
-================================================== */
+/* =========================
+   PRIZES
+========================= */
 
 const prizeImages = [
 
@@ -1641,97 +1458,83 @@ const prizeImages = [
 ];
 
 
-/* ==================================================
-   ROTATION
-================================================== */
+/* أسماء الجوائز */
+
+const prizeNames = [
+
+    "الجائزة رقم 1",
+    "الجائزة رقم 2",
+    "الجائزة رقم 3",
+    "الجائزة رقم 4",
+    "الجائزة رقم 5",
+    "الجائزة رقم 6",
+    "الجائزة رقم 7",
+    "الجائزة رقم 8",
+    "الجائزة رقم 9",
+    "الجائزة رقم 10"
+
+];
+
 
 let currentRotation = 0;
 
 let spinning = false;
 
 
-/* ==================================================
-   SPIN WHEEL
-================================================== */
+/* =========================
+   SPIN
+========================= */
 
 function spinWheel(){
-
-    /*
-       منع الضغط أثناء الدوران
-    */
 
     if(spinning){
         return;
     }
 
-
     spinning = true;
 
-
-    /* ==================================================
-       ELEMENTS
-    ================================================== */
 
     const wheel =
         document.getElementById("wheel");
 
-
     const button =
         document.getElementById("spinButton");
-
 
     const result =
         document.getElementById("result");
 
-
     const resultImage =
         document.getElementById("resultImage");
 
-
-    const resultPlaceholder =
-        document.getElementById("resultPlaceholder");
-
-
-    const resultBox =
-        document.getElementById("resultBox");
-
+    const giftIcon =
+        document.getElementById("giftIcon");
 
     const wheelArea =
         document.getElementById("wheelArea");
 
 
-    /* ==================================================
-       DISABLE BUTTON
-    ================================================== */
-
     button.disabled = true;
-
-
-    /* ==================================================
-       RESET RESULT
-    ================================================== */
-
-    resultImage.style.display = "none";
-
-    resultPlaceholder.style.display = "flex";
 
 
     result.innerHTML =
         "الرولة تدور...";
 
 
-    resultBox.classList.remove("win");
+    /*
+       نخفي صورة النتيجة
+       أثناء الدوران
+    */
+
+    resultImage.style.display =
+        "none";
+
+    giftIcon.style.display =
+        "block";
 
 
-    /* ==================================================
-       CHOOSE PRIZE
-
-       نفس الرقم سيتم استخدامه:
-       - في الرولة
-       - وفي صورة النتيجة
-
-       وهذا هو المهم حتى ما يصير اختلاف.
-    ================================================== */
+    /*
+       اختيار الجائزة
+    */
 
     const selected =
         Math.floor(
@@ -1740,126 +1543,103 @@ function spinWheel(){
         );
 
 
-    /* ==================================================
-       SECTOR SIZE
+    /*
+       كل صورة تبعد 36 درجة
+    */
 
-       عندنا 10 جوائز
-       360 ÷ 10 = 36 درجة
-    ================================================== */
-
-    const sector = 36;
+    const sector =
+        360 / prizeImages.length;
 
 
-    /* ==================================================
-       CENTER OF SELECTED SECTOR
+    /*
+       زاوية الصورة المطلوبة
+       بالنسبة للسهم
 
-       الجائزة الأولى:
-       18°
+       مهم جداً:
+       الصور عندنا مو في منتصف القطاع
+       وإنما على زاوية 0،36،72...
+    */
 
-       الثانية:
-       54°
-
-       الثالثة:
-       90°
-
-       وهكذا...
-    ================================================== */
-
-    const target =
-        selected * sector + 18;
+    const desiredAngle =
+        selected * sector;
 
 
-    /* ==================================================
-       NUMBER OF FULL SPINS
-    ================================================== */
+    /*
+       نحسب الدوران الإضافي
+       حتى الصورة المختارة بالضبط
+       تصير تحت السهم.
+    */
+
+    const currentMod =
+        ((currentRotation % 360) + 360) % 360;
+
+
+    let correction =
+        (360 - desiredAngle - currentMod) % 360;
+
+
+    /*
+       7 دورات كاملة
+    */
 
     const extra =
         360 * 7;
 
 
-    /* ==================================================
-       FINAL ROTATION
-
-       نخلي منتصف الجائزة المختارة
-       يجي بالضبط تحت المؤشر.
-    ================================================== */
-
     const finalRotation =
         currentRotation +
         extra +
-        (360 - target);
+        correction;
 
-
-    /* ==================================================
-       SAVE ROTATION
-    ================================================== */
 
     currentRotation =
         finalRotation;
 
 
-    /* ==================================================
-       START SPIN
-    ================================================== */
+    /*
+       تدوير الرولة
+    */
 
     wheel.style.transform =
         `rotate(${finalRotation}deg)`;
 
 
-    /* ==================================================
-       SHOW RESULT AFTER SPIN
-    ================================================== */
+    /*
+       بعد انتهاء الدوران
+    */
 
     setTimeout(function(){
 
-
         /*
-           IMPORTANT:
-
-           نفس selected الذي اختارناه
-           للرولة نستخدمه للنتيجة.
-
-           لذلك:
-           F_1 → F_1
-           F_2 → F_2
-           ...
-           F_10 → F_10
+           إظهار نفس الصورة
+           الموجودة تحت السهم
         */
-
 
         resultImage.src =
             prizeImages[selected];
 
-
         resultImage.style.display =
             "block";
 
-
-        resultPlaceholder.style.display =
+        giftIcon.style.display =
             "none";
 
 
-        /* ==================================================
-           RESULT TEXT
-        ================================================== */
+        /*
+           عرض اسم الجائزة
+        */
 
         result.innerHTML =
             "🎉 مبروك!<br>" +
-            "الجائزة رقم " +
-            (selected + 1);
+            prizeNames[selected];
 
 
-        /* ==================================================
-           WIN ANIMATION
-        ================================================== */
+        /*
+           حركة الفوز
+        */
 
         wheelArea.classList.add(
             "winner"
-        );
-
-
-        resultBox.classList.add(
-            "win"
         );
 
 
@@ -1869,16 +1649,8 @@ function spinWheel(){
                 "winner"
             );
 
-            resultBox.classList.remove(
-                "win"
-            );
-
         },700);
 
-
-        /* ==================================================
-           ENABLE BUTTON
-        ================================================== */
 
         spinning = false;
 
@@ -1890,9 +1662,9 @@ function spinWheel(){
 }
 
 
-/* ==================================================
-   PRELOAD IMAGES
-================================================== */
+/* =========================
+   PRELOAD
+========================= */
 
 window.addEventListener(
     "load",
