@@ -1,62 +1,1432 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NOVA — Personal Dashboard</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>فؤاد فون | اضغط واربح</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;background:#07090d;color:#f5f7fb;font-family:Inter,Arial,sans-serif}
-.wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{width:min(900px,100%);background:#0d1118;border:1px solid #1c2430;border-radius:24px;padding:28px;box-shadow:0 25px 80px #0008}
-.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:30px}
-.logo{font-size:24px;font-weight:800;letter-spacing:.12em}.pill{font-size:12px;color:#8df5b3;border:1px solid #245b3b;padding:7px 10px;border-radius:99px}
-h1{font-size:clamp(32px,7vw,64px);line-height:1;margin:0 0 14px}.muted{color:#8d98a8;line-height:1.6}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-button{border:0;border-radius:12px;padding:13px 18px;font-weight:700;cursor:pointer}
-.primary{background:#fff;color:#080a0e}.secondary{background:#151b24;color:#fff;border:1px solid #273140}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.stat{background:#101620;border:1px solid #1d2633;border-radius:16px;padding:18px}.num{font-size:25px;font-weight:800}.label{font-size:12px;color:#7e8999;margin-top:6px}
-.progress{height:8px;background:#171e28;border-radius:99px;overflow:hidden;margin-top:20px}.bar{height:100%;width:0;background:#fff;transition:width .4s}
-.panel{display:none;margin-top:25px;padding-top:25px;border-top:1px solid #1d2633}.panel.show{display:block}
-input{width:100%;padding:13px;border-radius:10px;border:1px solid #273140;background:#090d13;color:#fff;margin:8px 0 12px}
-@media(max-width:600px){.stats{grid-template-columns:1fr}.card{padding:20px}}
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    min-height:100vh;
+
+    color:#222;
+
+    background-color:#f7f7f7;
+
+    overflow-x:hidden;
+}
+
+
+/* =====================================================
+   BACKGROUND LOGO WATERMARK
+===================================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-2;
+
+    opacity:.055;
+
+    background-image:url("logo.png");
+
+    background-repeat:repeat;
+
+    background-size:130px;
+
+    transform:rotate(-10deg);
+
+}
+
+
+/* =====================================================
+   BACKGROUND OVERLAY
+===================================================== */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255,255,255,.95),
+            rgba(255,255,255,.72)
+        );
+
+    pointer-events:none;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+
+    width:100%;
+
+    text-align:center;
+
+    padding:
+        45px
+        20px
+        25px;
+
+}
+
+
+.header-logo{
+
+    width:115px;
+
+    height:115px;
+
+    object-fit:contain;
+
+    margin-bottom:18px;
+
+    filter:
+        drop-shadow(
+            0 8px 15px
+            rgba(0,0,0,.15)
+        );
+
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.title{
+
+    font-size:clamp(
+        32px,
+        6vw,
+        55px
+    );
+
+    font-weight:900;
+
+    color:#111;
+
+    margin-bottom:15px;
+
+}
+
+
+.subtitle{
+
+    font-size:clamp(
+        17px,
+        3vw,
+        25px
+    );
+
+    font-weight:bold;
+
+    color:#333;
+
+    line-height:1.8;
+
+}
+
+
+.subtitle .iraq{
+
+    color:#b38a16;
+
+}
+
+
+.exclusive{
+
+    margin-top:5px;
+
+    font-size:clamp(
+        16px,
+        3vw,
+        23px
+    );
+
+    font-weight:bold;
+
+    color:#555;
+
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta-area{
+
+    margin-top:25px;
+
+    text-align:center;
+
+}
+
+
+.cta-button{
+
+    display:inline-flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:5px;
+
+    min-width:250px;
+
+    padding:17px 35px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:24px;
+
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c99a24,
+            #8f6810
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(119,83,7,.28);
+
+    transition:.25s;
+
+}
+
+
+.cta-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(119,83,7,.35);
+
+}
+
+
+.cta-button:active{
+
+    transform:scale(.97);
+
+}
+
+
+.arrow{
+
+    font-size:31px;
+
+    line-height:20px;
+
+    animation:
+        arrowDown
+        1.2s
+        infinite;
+
+}
+
+
+@keyframes arrowDown{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(7px);
+    }
+
+}
+
+
+/* =====================================================
+   WHEEL SECTION
+===================================================== */
+
+.wheel-section{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding:
+        30px
+        15px
+        80px;
+
+}
+
+
+.wheel-title{
+
+    font-size:30px;
+
+    font-weight:900;
+
+    margin-bottom:30px;
+
+    color:#222;
+
+}
+
+
+/* =====================================================
+   WHEEL AREA
+===================================================== */
+
+.wheel-area{
+
+    position:relative;
+
+    width:min(
+        92vw,
+        580px
+    );
+
+    aspect-ratio:1;
+
+}
+
+
+/* =====================================================
+   POINTER
+===================================================== */
+
+.pointer{
+
+    position:absolute;
+
+    top:-18px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    width:0;
+
+    height:0;
+
+    border-left:
+        25px solid transparent;
+
+    border-right:
+        25px solid transparent;
+
+    border-top:
+        60px solid #b71919;
+
+    filter:
+        drop-shadow(
+            0 5px 4px
+            rgba(0,0,0,.35)
+        );
+
+    z-index:50;
+
+}
+
+
+/* =====================================================
+   POINTER CIRCLE
+===================================================== */
+
+.pointer::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:32px;
+
+    height:32px;
+
+    border-radius:50%;
+
+    background:#b71919;
+
+    left:-16px;
+
+    top:-58px;
+
+}
+
+
+/* =====================================================
+   WHEEL
+===================================================== */
+
+.wheel{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    border:
+        9px solid #222;
+
+    overflow:hidden;
+
+    background:
+
+        conic-gradient(
+
+            #d9a928 0deg 36deg,
+
+            #f4df8b 36deg 72deg,
+
+            #b98512 72deg 108deg,
+
+            #f8e8a9 108deg 144deg,
+
+            #d9a928 144deg 180deg,
+
+            #f4df8b 180deg 216deg,
+
+            #b98512 216deg 252deg,
+
+            #f8e8a9 252deg 288deg,
+
+            #d9a928 288deg 324deg,
+
+            #f4df8b 324deg 360deg
+
+        );
+
+    box-shadow:
+
+        0 10px 0 #111,
+
+        0 20px 45px
+        rgba(0,0,0,.25);
+
+    transition:
+        transform
+        5s
+        cubic-bezier(
+            .12,
+            .72,
+            .12,
+            1
+        );
+
+}
+
+
+/* =====================================================
+   DIVIDER LINES
+===================================================== */
+
+.dividers{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    background:
+
+        repeating-conic-gradient(
+
+            from -18deg,
+
+            transparent 0deg 35deg,
+
+            rgba(0,0,0,.65) 35deg 36deg
+
+        );
+
+    z-index:2;
+
+    pointer-events:none;
+
+}
+
+
+/* =====================================================
+   PRIZES
+===================================================== */
+
+.prize{
+
+    position:absolute;
+
+    width:50%;
+
+    height:50%;
+
+    left:50%;
+
+    top:50%;
+
+    transform-origin:0 0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding-top:28px;
+
+    z-index:5;
+
+}
+
+
+.prize span{
+
+    width:120px;
+
+    text-align:center;
+
+    font-size:17px;
+
+    font-weight:900;
+
+    color:#241a07;
+
+    line-height:1.4;
+
+    text-shadow:
+        0 1px 1px white;
+
+}
+
+
+/* =====================================================
+   10 SECTORS
+===================================================== */
+
+.p1{
+    transform:
+        rotate(0deg)
+        skewY(-54deg);
+}
+
+.p2{
+    transform:
+        rotate(36deg)
+        skewY(-54deg);
+}
+
+.p3{
+    transform:
+        rotate(72deg)
+        skewY(-54deg);
+}
+
+.p4{
+    transform:
+        rotate(108deg)
+        skewY(-54deg);
+}
+
+.p5{
+    transform:
+        rotate(144deg)
+        skewY(-54deg);
+}
+
+.p6{
+    transform:
+        rotate(180deg)
+        skewY(-54deg);
+}
+
+.p7{
+    transform:
+        rotate(216deg)
+        skewY(-54deg);
+}
+
+.p8{
+    transform:
+        rotate(252deg)
+        skewY(-54deg);
+}
+
+.p9{
+    transform:
+        rotate(288deg)
+        skewY(-54deg);
+}
+
+.p10{
+    transform:
+        rotate(324deg)
+        skewY(-54deg);
+}
+
+
+/* =====================================================
+   CENTER LOGO
+===================================================== */
+
+.center{
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border-radius:50%;
+
+    background:#fff;
+
+    border:
+        8px solid #222;
+
+    box-shadow:
+
+        0 0 0 5px #d3a52b,
+
+        0 8px 20px
+        rgba(0,0,0,.35);
+
+    z-index:20;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+
+.center img{
+
+    width:85%;
+
+    height:85%;
+
+    object-fit:contain;
+
+}
+
+
+/* =====================================================
+   SPIN BUTTON
+===================================================== */
+
+.spin-button{
+
+    margin-top:45px;
+
+    min-width:270px;
+
+    padding:18px 35px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c99a24,
+            #8e650d
+        );
+
+    color:#fff;
+
+    font-size:25px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,.2);
+
+    transition:.2s;
+
+}
+
+
+.spin-button:hover{
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.spin-button:active{
+
+    transform:
+        scale(.97);
+
+}
+
+
+.spin-button:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+
+    margin-top:30px;
+
+    min-height:80px;
+
+    width:min(
+        90vw,
+        500px
+    );
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .9
+        );
+
+    border:
+        2px solid #d2a52b;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.1);
+
+}
+
+
+.result-title{
+
+    font-size:16px;
+
+    color:#777;
+
+    margin-bottom:6px;
+
+}
+
+
+.result-text{
+
+    font-size:25px;
+
+    font-weight:900;
+
+    color:#8b640e;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+
+    width:100%;
+
+    text-align:center;
+
+    padding:25px 15px;
+
+    background:
+        rgba(0,0,0,.04);
+
+    color:#555;
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .header{
+
+        padding-top:30px;
+
+    }
+
+    .header-logo{
+
+        width:90px;
+
+        height:90px;
+
+    }
+
+    .wheel-title{
+
+        font-size:24px;
+
+    }
+
+    .prize span{
+
+        width:85px;
+
+        font-size:12px;
+
+    }
+
+    .center{
+
+        width:90px;
+
+        height:90px;
+
+        border-width:6px;
+
+    }
+
+    .pointer{
+
+        border-left-width:20px;
+
+        border-right-width:20px;
+
+        border-top-width:48px;
+
+    }
+
+    .pointer::before{
+
+        width:27px;
+
+        height:27px;
+
+        left:-13.5px;
+
+        top:-47px;
+
+    }
+
+    .spin-button{
+
+        min-width:230px;
+
+        font-size:21px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media(max-width:380px){
+
+    .prize span{
+
+        width:70px;
+
+        font-size:10px;
+
+    }
+
+    .center{
+
+        width:75px;
+
+        height:75px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SHAKE EFFECT
+===================================================== */
+
+.wheel-area.win{
+
+    animation:
+
+        winnerShake
+
+        .5s
+
+        ease;
+
+}
+
+
+@keyframes winnerShake{
+
+    0%{
+        transform:scale(1);
+    }
+
+    25%{
+        transform:scale(1.03);
+    }
+
+    50%{
+        transform:scale(.98);
+    }
+
+    75%{
+        transform:scale(1.03);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
 </style>
+
 </head>
+
+
 <body>
-<div class="wrap"><main class="card">
-  <div class="top"><div class="logo" id="logo">NOVA</div><div class="pill">● ONLINE</div></div>
-  <section>
-    <h1 id="title">Your space.<br>Your rules.</h1>
-    <p class="muted" id="desc">A clean personal dashboard you can customize however you want.</p>
-    <div class="actions">
-      <button class="primary" onclick="runDemo()">Start Demo</button>
-      <button class="secondary" onclick="togglePanel()">Customize</button>
-    </div>
-    <div class="progress"><div class="bar" id="bar"></div></div>
-    <div class="stats">
-      <div class="stat"><div class="num" id="count">0</div><div class="label">ACTIVITY</div></div>
-      <div class="stat"><div class="num">24/7</div><div class="label">AVAILABILITY</div></div>
-      <div class="stat"><div class="num">100%</div><div class="label">CONTROL</div></div>
-    </div>
-  </section>
-  <section class="panel" id="panel">
-    <h3>Customize your site</h3>
-    <label>Site name</label><input id="nameInput" value="NOVA">
-    <label>Main title</label><input id="titleInput" value="Your space. Your rules.">
-    <label>Description</label><input id="descInput" value="A clean personal dashboard you can customize however you want.">
-    <button class="primary" onclick="save()">Save changes</button>
-  </section>
-</main></div>
+
+
+<div class="main">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================= -->
+
+    <header class="header">
+
+        <!-- حط لوغو فؤاد فون هنا باسم logo.png -->
+
+        <img
+            src="logo.png"
+            class="header-logo"
+            alt="فؤاد فون"
+        >
+
+        <h1 class="title">
+            فؤاد فون
+        </h1>
+
+
+        <div class="subtitle">
+
+            الراعي الرسمي لـ
+            <span class="iraq">
+                مؤتمر CGC IRAQ 🇮🇶
+            </span>
+
+        </div>
+
+
+        <div class="exclusive">
+
+            الوكيل الحصري لشركة UAM في العراق
+
+        </div>
+
+
+        <!-- =================================================
+             CTA
+        ================================================= -->
+
+        <div class="cta-area">
+
+            <button
+                class="cta-button"
+                onclick="scrollToWheel()"
+            >
+
+                اضغط واربح
+
+                <span class="arrow">
+                    ↓
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =================================================
+         WHEEL
+    ================================================= -->
+
+    <section
+        class="wheel-section"
+        id="wheelSection"
+    >
+
+        <div class="wheel-title">
+
+            🎁 جرّب حظك
+
+        </div>
+
+
+        <div class="wheel-area" id="wheelArea">
+
+
+            <!-- POINTER -->
+
+            <div class="pointer"></div>
+
+
+            <!-- WHEEL -->
+
+            <div
+                class="wheel"
+                id="wheel"
+            >
+
+
+                <!-- DIVIDER -->
+
+                <div class="dividers"></div>
+
+
+                <!-- PRIZES -->
+
+                <div class="prize p1">
+                    <span>
+                        جائزة ١
+                    </span>
+                </div>
+
+
+                <div class="prize p2">
+                    <span>
+                        جائزة ٢
+                    </span>
+                </div>
+
+
+                <div class="prize p3">
+                    <span>
+                        جائزة ٣
+                    </span>
+                </div>
+
+
+                <div class="prize p4">
+                    <span>
+                        جائزة ٤
+                    </span>
+                </div>
+
+
+                <div class="prize p5">
+                    <span>
+                        جائزة ٥
+                    </span>
+                </div>
+
+
+                <div class="prize p6">
+                    <span>
+                        جائزة ٦
+                    </span>
+                </div>
+
+
+                <div class="prize p7">
+                    <span>
+                        جائزة ٧
+                    </span>
+                </div>
+
+
+                <div class="prize p8">
+                    <span>
+                        جائزة ٨
+                    </span>
+                </div>
+
+
+                <div class="prize p9">
+                    <span>
+                        جائزة ٩
+                    </span>
+                </div>
+
+
+                <div class="prize p10">
+                    <span>
+                        جائزة ١٠
+                    </span>
+                </div>
+
+
+            </div>
+
+
+            <!-- CENTER LOGO -->
+
+            <div class="center">
+
+                <img
+                    src="logo.png"
+                    alt="فؤاد فون"
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             SPIN BUTTON
+        ================================================= -->
+
+        <button
+            class="spin-button"
+            id="spinButton"
+            onclick="spinWheel()"
+        >
+
+            🎡 اضغط واربح
+
+        </button>
+
+
+        <!-- =================================================
+             RESULT
+        ================================================= -->
+
+        <div class="result">
+
+            <div class="result-title">
+                نتيجتك
+            </div>
+
+            <div
+                class="result-text"
+                id="resultText"
+            >
+                اضغط على الرولة لتجربة حظك
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================= -->
+
+    <footer class="footer">
+
+        © 2026 فؤاد فون
+        <br>
+        الوكيل الحصري لشركة UAM في العراق
+
+    </footer>
+
+
+</div>
+
+
+
 <script>
-function togglePanel(){document.getElementById('panel').classList.toggle('show')}
-function save(){
- document.getElementById('logo').textContent=document.getElementById('nameInput').value||'NOVA';
- document.getElementById('title').innerHTML=(document.getElementById('titleInput').value||'Your space. Your rules.').replace(/\. /g,'.<br>');
- document.getElementById('desc').textContent=document.getElementById('descInput').value;
+
+/* =====================================================
+   SETTINGS
+===================================================== */
+
+const prizes = [
+
+    "جائزة ١",
+    "جائزة ٢",
+    "جائزة ٣",
+    "جائزة ٤",
+    "جائزة ٥",
+    "جائزة ٦",
+    "جائزة ٧",
+    "جائزة ٨",
+    "جائزة ٩",
+    "جائزة ١٠"
+
+];
+
+
+let currentRotation = 0;
+
+let spinning = false;
+
+
+/* =====================================================
+   SCROLL TO WHEEL
+===================================================== */
+
+function scrollToWheel(){
+
+    document
+        .getElementById("wheelSection")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
 }
-function runDemo(){
- let n=0,bar=document.getElementById('bar'),count=document.getElementById('count');
- let t=setInterval(()=>{n+=10;bar.style.width=n+'%';count.textContent=n;if(n>=100)clearInterval(t)},180);
+
+
+/* =====================================================
+   SPIN WHEEL
+===================================================== */
+
+function spinWheel(){
+
+    if(spinning){
+
+        return;
+
+    }
+
+
+    spinning = true;
+
+
+    const wheel =
+        document.getElementById("wheel");
+
+
+    const button =
+        document.getElementById("spinButton");
+
+
+    const result =
+        document.getElementById("resultText");
+
+
+    const wheelArea =
+        document.getElementById("wheelArea");
+
+
+    button.disabled = true;
+
+
+    result.innerText =
+        "الرولة تدور... 🎡";
+
+
+    /*
+        10 خانات
+        كل خانة = 36 درجة
+    */
+
+    const randomIndex =
+        Math.floor(
+            Math.random() *
+            prizes.length
+        );
+
+
+    /*
+        مركز الخانة
+    */
+
+    const sector =
+        36;
+
+
+    const targetAngle =
+        randomIndex * sector + 18;
+
+
+    /*
+        عدة دورات كاملة
+    */
+
+    const extraSpins =
+        360 * 6;
+
+
+    /*
+        نخلي الجائزة المطلوبة
+        توصل للسهم العلوي
+    */
+
+    const finalRotation =
+        currentRotation +
+        extraSpins +
+        (360 - targetAngle);
+
+
+    currentRotation =
+        finalRotation;
+
+
+    wheel.style.transform =
+        `rotate(${finalRotation}deg)`;
+
+
+    setTimeout(function(){
+
+        result.innerText =
+            "🎉 مبروك! " +
+            prizes[randomIndex];
+
+
+        wheelArea.classList.add("win");
+
+
+        setTimeout(function(){
+
+            wheelArea.classList.remove("win");
+
+        },600);
+
+
+        spinning = false;
+
+        button.disabled = false;
+
+
+    },5200);
+
 }
+
+
+/* =====================================================
+   PREVENT IMAGE DRAG
+===================================================== */
+
+document
+    .querySelectorAll("img")
+    .forEach(function(img){
+
+        img.addEventListener(
+            "dragstart",
+            function(e){
+
+                e.preventDefault();
+
+            }
+        );
+
+    });
+
 </script>
+
+
 </body>
+
 </html>
