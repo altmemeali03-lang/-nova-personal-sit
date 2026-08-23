@@ -9,9 +9,9 @@
 
 <style>
 
-/* =====================================================
-   GENERAL
-===================================================== */
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     margin:0;
@@ -27,177 +27,287 @@ body{
 }
 
 body{
-    font-family:
-        Tahoma,
-        Arial,
-        sans-serif;
-
+    font-family:Tahoma, Arial, sans-serif;
     background:
-        radial-gradient(
-            circle at center,
-            #292929 0%,
-            #111 55%,
-            #050505 100%
-        );
-
+        radial-gradient(circle at center,#242424 0%,#0b0b0b 70%);
     color:#fff;
 }
 
 
-/* =====================================================
+/* =========================================================
    BACKGROUND LOGO
-===================================================== */
+========================================================= */
 
 body::before{
-
     content:"";
-
     position:fixed;
-
     inset:-100px;
-
     z-index:0;
 
     background-image:url("logo.png");
-
     background-repeat:repeat;
-
-    background-size:170px;
+    background-size:180px;
 
     opacity:.035;
-
-    transform:rotate(-12deg);
-
+    transform:rotate(-10deg);
     pointer-events:none;
-
 }
 
 
-/* =====================================================
-   RED LIGHT EFFECT
-===================================================== */
+/* =========================================================
+   SCREEN
+========================================================= */
 
-body::after{
+.screen{
+    width:100vw;
+    height:100vh;
 
-    content:"";
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    position:fixed;
-
-    width:700px;
-    height:700px;
-
-    border-radius:50%;
-
-    top:50%;
-    left:50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(210,0,0,.12),
-            transparent 65%
-        );
-
-    pointer-events:none;
-
+    padding:18px;
 }
 
 
-/* =====================================================
-   MAIN SCREEN
-===================================================== */
+/* =========================================================
+   MAIN HORIZONTAL FRAME
+========================================================= */
 
-.main{
+.frame{
 
     position:relative;
 
-    z-index:2;
+    width:min(1450px,96vw);
+    height:min(780px,94vh);
 
-    width:100vw;
+    background:
+        linear-gradient(
+            135deg,
+            #101010,
+            #181818 50%,
+            #080808
+        );
 
-    height:100vh;
+    border:2px solid #333;
 
-    min-height:500px;
+    box-shadow:
+        0 0 0 2px #070707,
+        0 0 35px rgba(220,0,0,.15),
+        inset 0 0 40px rgba(0,0,0,.8);
 
-    display:flex;
+    overflow:hidden;
+}
 
-    flex-direction:column;
+
+/* =========================================================
+   CYBER FRAME LINES
+========================================================= */
+
+.frame::before{
+    content:"";
+
+    position:absolute;
+    inset:12px;
+
+    border:2px solid #444;
+
+    pointer-events:none;
+    z-index:20;
+
+    clip-path:polygon(
+        0 0,
+        12% 0,
+        13% 3px,
+        87% 3px,
+        88% 0,
+        100% 0,
+        100% 12%,
+        calc(100% - 3px) 13%,
+        calc(100% - 3px) 87%,
+        100% 88%,
+        100% 100%,
+        88% 100%,
+        87% calc(100% - 3px),
+        13% calc(100% - 3px),
+        12% 100%,
+        0 100%,
+        0 88%,
+        3px 87%,
+        3px 13%,
+        0 12%
+    );
+}
+
+
+/* =========================================================
+   RED CYBER CORNERS
+========================================================= */
+
+.corner{
+    position:absolute;
+    z-index:25;
+    pointer-events:none;
+}
+
+.corner span{
+    display:block;
+    background:#e00000;
+    box-shadow:0 0 10px rgba(255,0,0,.5);
+}
+
+
+/* TOP LEFT */
+
+.corner.tl{
+    top:22px;
+    left:28px;
+    width:145px;
+    height:45px;
+}
+
+.corner.tl span:nth-child(1){
+    width:90px;
+    height:4px;
+}
+
+.corner.tl span:nth-child(2){
+    width:4px;
+    height:35px;
+    margin-left:0;
+}
+
+.corner.tl span:nth-child(3){
+    width:45px;
+    height:4px;
+    margin-left:0;
+}
+
+
+/* TOP RIGHT */
+
+.corner.tr{
+    top:22px;
+    right:28px;
+    width:145px;
+    height:45px;
+    transform:scaleX(-1);
+}
+
+
+/* BOTTOM LEFT */
+
+.corner.bl{
+    bottom:22px;
+    left:28px;
+    width:145px;
+    height:45px;
+    transform:scaleY(-1);
+}
+
+
+/* BOTTOM RIGHT */
+
+.corner.br{
+    bottom:22px;
+    right:28px;
+    width:145px;
+    height:45px;
+    transform:scale(-1,-1);
+}
+
+
+/* =========================================================
+   SIDE RED LINES
+========================================================= */
+
+.side-line{
+    position:absolute;
+    top:110px;
+    bottom:110px;
+    width:4px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #e00000 0 55px,
+            transparent 55px 85px
+        );
+
+    box-shadow:
+        0 0 10px rgba(255,0,0,.4);
+
+    z-index:21;
+}
+
+.side-line.left{
+    left:27px;
+}
+
+.side-line.right{
+    right:27px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content{
+
+    position:relative;
+    z-index:10;
+
+    width:100%;
+    height:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(280px, .85fr)
+        minmax(400px, 1.35fr)
+        minmax(280px, .85fr);
 
     align-items:center;
 
-    justify-content:flex-start;
+    gap:15px;
 
-    padding:
-        clamp(10px,2vh,25px)
-        15px;
-
+    padding:45px 70px;
 }
 
 
-/* =====================================================
-   HEADER
-===================================================== */
+/* =========================================================
+   LEFT AREA
+========================================================= */
 
-.header{
+.left-area{
 
-    width:100%;
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
     text-align:center;
-
-    flex-shrink:0;
-
 }
 
 
-/* =====================================================
-   LOGO
-===================================================== */
-
-.header-logo{
-
-    width:
-        clamp(
-            45px,
-            8vh,
-            80px
-        );
-
-    height:
-        clamp(
-            45px,
-            8vh,
-            80px
-        );
-
+.logo-top{
+    width:90px;
+    height:90px;
     object-fit:contain;
 
-    margin-bottom:
-        clamp(2px,1vh,10px);
+    margin-bottom:15px;
 
     filter:
-        drop-shadow(
-            0 4px 12px
-            rgba(0,0,0,.5)
-        );
-
+        drop-shadow(0 5px 15px rgba(0,0,0,.6));
 }
 
-
-/* =====================================================
-   TITLE
-===================================================== */
 
 .title{
 
-    font-size:
-        clamp(
-            25px,
-            5vh,
-            48px
-        );
+    font-size:clamp(32px,4vw,58px);
 
     font-weight:900;
 
@@ -205,8 +315,7 @@ body::after{
 
     line-height:1.1;
 
-    margin-bottom:7px;
-
+    margin-bottom:12px;
 }
 
 
@@ -216,178 +325,115 @@ body::after{
 
     display:block;
 
-    width:70px;
+    width:80px;
+    height:4px;
 
-    height:3px;
-
-    margin:8px auto 0;
+    margin:12px auto;
 
     background:#e00000;
 
-    border-radius:10px;
-
+    box-shadow:
+        0 0 10px rgba(255,0,0,.5);
 }
 
 
-/* =====================================================
-   SUBTITLE
-===================================================== */
-
 .subtitle{
 
-    font-size:
-        clamp(
-            13px,
-            2.4vh,
-            21px
-        );
+    font-size:clamp(16px,1.7vw,23px);
 
     font-weight:bold;
 
-    line-height:1.45;
+    line-height:1.7;
 
     color:#fff;
-
 }
 
 
 .subtitle .red{
-
     color:#e00000;
-
 }
 
-
-/* =====================================================
-   EXCLUSIVE
-===================================================== */
 
 .exclusive{
 
-    font-size:
-        clamp(
-            12px,
-            2vh,
-            18px
-        );
+    margin-top:8px;
 
-    color:#cfcfcf;
+    font-size:clamp(14px,1.4vw,19px);
 
-    margin-top:2px;
+    color:#bbb;
 
+    line-height:1.6;
 }
 
 
-/* =====================================================
+/* =========================================================
    BUTTON
-===================================================== */
-
-.cta{
-
-    margin-top:
-        clamp(8px,1.8vh,18px);
-
-}
-
+========================================================= */
 
 .spin-button{
 
-    border:2px solid #ff1a1a;
+    margin-top:30px;
+
+    min-width:220px;
+
+    padding:16px 30px;
+
+    border:2px solid #ff2222;
+
+    border-radius:10px;
 
     background:
         linear-gradient(
             135deg,
             #e00000,
-            #9c0000
+            #970000
         );
 
     color:#fff;
 
-    min-width:
-        clamp(
-            180px,
-            28vw,
-            270px
-        );
-
-    padding:
-        clamp(9px,1.5vh,15px)
-        25px;
-
-    border-radius:12px;
-
-    font-size:
-        clamp(
-            16px,
-            2.5vh,
-            24px
-        );
+    font-size:22px;
 
     font-weight:900;
 
     cursor:pointer;
 
     box-shadow:
-        0 7px 25px
-        rgba(220,0,0,.3);
+        0 8px 25px rgba(220,0,0,.3);
 
     transition:.2s;
-
 }
 
 
 .spin-button:hover{
 
-    transform:translateY(-2px);
+    transform:translateY(-3px);
 
-    background:
-        linear-gradient(
-            135deg,
-            #ff1010,
-            #b00000
-        );
-
+    box-shadow:
+        0 12px 30px rgba(220,0,0,.5);
 }
 
 
 .spin-button:active{
-
     transform:scale(.96);
-
 }
 
 
 .spin-button:disabled{
-
     opacity:.55;
-
     cursor:not-allowed;
-
 }
 
-
-/* =====================================================
-   ARROW
-===================================================== */
 
 .arrow{
 
     display:block;
 
-    font-size:
-        clamp(
-            18px,
-            2.5vh,
-            25px
-        );
+    font-size:25px;
 
-    line-height:12px;
+    line-height:15px;
 
     animation:
-        arrowMove
-        1s
-        infinite;
-
+        arrowMove 1s infinite;
 }
 
 
@@ -398,44 +444,46 @@ body::after{
     }
 
     50%{
-        transform:translateY(4px);
+        transform:translateY(5px);
     }
-
 }
 
 
-/* =====================================================
-   WHEEL AREA
-===================================================== */
+/* =========================================================
+   CENTER AREA
+========================================================= */
+
+.center-area{
+
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+}
+
+
+/* =========================================================
+   WHEEL
+========================================================= */
 
 .wheel-area{
 
     position:relative;
 
-    width:
-        min(
-            65vh,
-            72vw,
-            560px
-        );
+    width:min(42vw,560px);
 
     aspect-ratio:1;
-
-    margin-top:
-        clamp(
-            8px,
-            1.5vh,
-            18px
-        );
-
-    flex-shrink:1;
-
 }
 
 
-/* =====================================================
+/* =========================================================
    POINTER
-===================================================== */
+========================================================= */
 
 .pointer{
 
@@ -443,39 +491,25 @@ body::after{
 
     z-index:50;
 
-    top:-4px;
+    top:-14px;
 
     left:50%;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     width:0;
-
     height:0;
 
-    border-left:
-        clamp(16px,3vw,27px)
-        solid transparent;
-
-    border-right:
-        clamp(16px,3vw,27px)
-        solid transparent;
-
-    border-top:
-        clamp(40px,6vh,62px)
-        solid #e00000;
+    border-left:25px solid transparent;
+    border-right:25px solid transparent;
+    border-top:62px solid #e00000;
 
     filter:
         drop-shadow(
-            0 5px 4px
-            rgba(0,0,0,.7)
+            0 5px 5px rgba(0,0,0,.8)
         );
-
 }
 
-
-/* pointer top circle */
 
 .pointer::before{
 
@@ -483,44 +517,23 @@ body::after{
 
     position:absolute;
 
-    width:
-        clamp(
-            22px,
-            4vh,
-            35px
-        );
-
-    height:
-        clamp(
-            22px,
-            4vh,
-            35px
-        );
+    width:32px;
+    height:32px;
 
     border-radius:50%;
 
-    background:#111;
+    background:#090909;
 
     border:3px solid #e00000;
 
-    left:50%;
-
-    top:
-        clamp(
-            -56px,
-            -5.5vh,
-            -35px
-        );
-
-    transform:
-        translateX(-50%);
-
+    left:-16px;
+    top:-60px;
 }
 
 
-/* =====================================================
+/* =========================================================
    WHEEL
-===================================================== */
+========================================================= */
 
 .wheel{
 
@@ -530,65 +543,44 @@ body::after{
 
     border-radius:50%;
 
-    border:
-        clamp(
-            5px,
-            1vh,
-            10px
-        )
-        solid #080808;
-
-    overflow:hidden;
+    border:9px solid #050505;
 
     background:
 
         conic-gradient(
 
             #e00000 0deg 36deg,
-
-            #181818 36deg 72deg,
-
-            #c90000 72deg 108deg,
-
+            #171717 36deg 72deg,
+            #c50000 72deg 108deg,
             #292929 108deg 144deg,
-
             #e00000 144deg 180deg,
-
-            #181818 180deg 216deg,
-
-            #c90000 216deg 252deg,
-
+            #171717 180deg 216deg,
+            #c50000 216deg 252deg,
             #292929 252deg 288deg,
-
             #e00000 288deg 324deg,
-
-            #181818 324deg 360deg
+            #171717 324deg 360deg
 
         );
+
+    overflow:hidden;
 
     box-shadow:
 
         0 8px 0 #000,
 
-        0 18px 45px
-        rgba(0,0,0,.7);
+        0 20px 45px
+        rgba(0,0,0,.75);
 
     transition:
         transform
         5s
-        cubic-bezier(
-            .12,
-            .72,
-            .12,
-            1
-        );
-
+        cubic-bezier(.12,.72,.12,1);
 }
 
 
-/* =====================================================
+/* =========================================================
    WHEEL DIVIDERS
-===================================================== */
+========================================================= */
 
 .dividers{
 
@@ -606,55 +598,47 @@ body::after{
 
             transparent 0deg 35deg,
 
-            rgba(255,255,255,.28)
-            35deg 36deg
+            rgba(255,255,255,.3) 35deg 36deg
 
         );
+
+    z-index:4;
+
+}
+
+
+/* =========================================================
+   INNER RING
+========================================================= */
+
+.inner-ring{
+
+    position:absolute;
+
+    inset:18px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.25);
 
     z-index:3;
 
     pointer-events:none;
-
 }
 
 
-/* =====================================================
-   INNER CIRCLE BORDER
-===================================================== */
-
-.wheel::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:15px;
-
-    border-radius:50%;
-
-    border:
-        1px solid
-        rgba(255,255,255,.2);
-
-    z-index:2;
-
-}
-
-
-/* =====================================================
+/* =========================================================
    PRIZES
-===================================================== */
+========================================================= */
 
 .prize{
 
     position:absolute;
 
     width:50%;
-
     height:50%;
 
     left:50%;
-
     top:50%;
 
     transform-origin:0 0;
@@ -665,138 +649,88 @@ body::after{
 
     align-items:flex-start;
 
-    padding-top:
-        clamp(
-            18px,
-            4vh,
-            42px
-        );
+    padding-top:38px;
 
-    z-index:6;
-
+    z-index:7;
 }
 
 
 .prize span{
 
-    width:
-        clamp(
-            75px,
-            12vh,
-            125px
-        );
+    width:125px;
 
     text-align:center;
 
-    font-size:
-        clamp(
-            10px,
-            2vh,
-            17px
-        );
+    font-size:16px;
 
     font-weight:900;
 
-    line-height:1.35;
+    line-height:1.4;
 
     color:#fff;
 
     text-shadow:
-        0 2px 3px
-        rgba(0,0,0,.8);
-
+        0 2px 4px #000;
 }
 
 
-/* =====================================================
+/* =========================================================
    10 SECTORS
-===================================================== */
+========================================================= */
 
 .p1{
-    transform:
-        rotate(0deg)
-        skewY(-54deg);
+    transform:rotate(0deg) skewY(-54deg);
 }
 
 .p2{
-    transform:
-        rotate(36deg)
-        skewY(-54deg);
+    transform:rotate(36deg) skewY(-54deg);
 }
 
 .p3{
-    transform:
-        rotate(72deg)
-        skewY(-54deg);
+    transform:rotate(72deg) skewY(-54deg);
 }
 
 .p4{
-    transform:
-        rotate(108deg)
-        skewY(-54deg);
+    transform:rotate(108deg) skewY(-54deg);
 }
 
 .p5{
-    transform:
-        rotate(144deg)
-        skewY(-54deg);
+    transform:rotate(144deg) skewY(-54deg);
 }
 
 .p6{
-    transform:
-        rotate(180deg)
-        skewY(-54deg);
+    transform:rotate(180deg) skewY(-54deg);
 }
 
 .p7{
-    transform:
-        rotate(216deg)
-        skewY(-54deg);
+    transform:rotate(216deg) skewY(-54deg);
 }
 
 .p8{
-    transform:
-        rotate(252deg)
-        skewY(-54deg);
+    transform:rotate(252deg) skewY(-54deg);
 }
 
 .p9{
-    transform:
-        rotate(288deg)
-        skewY(-54deg);
+    transform:rotate(288deg) skewY(-54deg);
 }
 
 .p10{
-    transform:
-        rotate(324deg)
-        skewY(-54deg);
+    transform:rotate(324deg) skewY(-54deg);
 }
 
 
-/* =====================================================
+/* =========================================================
    CENTER LOGO
-===================================================== */
+========================================================= */
 
-.center{
+.center-logo{
 
     position:absolute;
 
-    width:
-        clamp(
-            70px,
-            14vh,
-            125px
-        );
-
-    height:
-        clamp(
-            70px,
-            14vh,
-            125px
-        );
+    width:125px;
+    height:125px;
 
     left:50%;
-
     top:50%;
 
     transform:
@@ -806,111 +740,161 @@ body::after{
 
     background:#fff;
 
-    border:
-        clamp(
-            4px,
-            .8vh,
-            8px
-        )
-        solid #000;
+    border:8px solid #050505;
 
     box-shadow:
 
-        0 0 0
-        clamp(
-            3px,
-            .7vh,
-            6px
-        )
-        #e00000,
+        0 0 0 5px #e00000,
 
-        0 6px 20px
-        rgba(0,0,0,.7);
+        0 8px 20px
+        rgba(0,0,0,.8);
 
     z-index:30;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     overflow:hidden;
-
 }
 
 
-.center img{
+.center-logo img{
 
     width:88%;
-
     height:88%;
 
     object-fit:contain;
-
 }
 
 
-/* =====================================================
-   RESULT
-===================================================== */
+/* =========================================================
+   RIGHT AREA
+========================================================= */
+
+.right-area{
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+}
+
+
+.result-box{
+
+    width:100%;
+
+    max-width:300px;
+
+    padding:25px 20px;
+
+    border:1px solid #3d3d3d;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #191919,
+            #090909
+        );
+
+    box-shadow:
+        inset 0 0 25px rgba(0,0,0,.8),
+        0 8px 25px rgba(0,0,0,.3);
+}
+
+
+.result-label{
+
+    color:#aaa;
+
+    font-size:15px;
+
+    margin-bottom:10px;
+}
+
 
 .result{
 
+    font-size:25px;
+
+    font-weight:900;
+
+    color:#e00000;
+
+    min-height:38px;
+}
+
+
+.info-line{
+
+    width:100%;
+
+    max-width:300px;
+
+    margin-top:20px;
+
+    padding:13px;
+
+    border-right:4px solid #e00000;
+
+    background:#111;
+
+    color:#ddd;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
     position:absolute;
+
+    bottom:23px;
 
     left:50%;
 
-    bottom:
-        clamp(
-            -70px,
-            -8vh,
-            -40px
-        );
+    transform:translateX(-50%);
 
-    transform:
-        translateX(-50%);
+    z-index:30;
 
-    width:
-        min(
-            90vw,
-            400px
-        );
+    white-space:nowrap;
 
-    text-align:center;
+    font-size:12px;
 
-    font-size:
-        clamp(
-            12px,
-            2vh,
-            18px
-        );
-
-    font-weight:bold;
-
-    color:#fff;
-
+    color:#aaa;
 }
 
 
-.result span{
-
-    color:#ff1717;
-
+.footer .red{
+    color:#e00000;
 }
 
 
-/* =====================================================
-   WIN ANIMATION
-===================================================== */
+/* =========================================================
+   WIN
+========================================================= */
 
 .winner{
 
     animation:
-        winner
-        .6s
-        ease;
-
+        winner .6s ease;
 }
 
 
@@ -931,197 +915,341 @@ body::after{
     100%{
         transform:scale(1);
     }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1050px){
+
+    .content{
+
+        grid-template-columns:
+            .8fr
+            1.3fr
+            .8fr;
+
+        padding:
+            40px 50px;
+    }
+
+    .wheel-area{
+
+        width:min(42vw,480px);
+    }
+
+    .prize{
+
+        padding-top:28px;
+    }
+
+    .prize span{
+
+        width:95px;
+        font-size:12px;
+    }
+
+    .center-logo{
+
+        width:100px;
+        height:100px;
+    }
 
 }
 
 
-/* =====================================================
-   SMALL SCREEN HEIGHT
-===================================================== */
+/* =========================================================
+   MOBILE PORTRAIT
+========================================================= */
+
+@media(max-width:700px){
+
+    html,
+    body{
+
+        overflow:hidden;
+    }
+
+    .screen{
+
+        padding:8px;
+    }
+
+    .frame{
+
+        width:100vw;
+        height:calc(100vh - 16px);
+
+        min-height:0;
+    }
+
+    .content{
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:flex-start;
+
+        padding:
+            25px 35px 20px;
+
+        gap:5px;
+    }
+
+    .left-area{
+
+        height:auto;
+
+        flex-shrink:0;
+    }
+
+    .logo-top{
+
+        width:45px;
+        height:45px;
+
+        margin-bottom:4px;
+    }
+
+    .title{
+
+        font-size:28px;
+
+        margin-bottom:3px;
+    }
+
+    .title::after{
+
+        width:50px;
+        height:2px;
+
+        margin:5px auto;
+    }
+
+    .subtitle{
+
+        font-size:12px;
+
+        line-height:1.45;
+    }
+
+    .exclusive{
+
+        font-size:11px;
+
+        margin-top:0;
+    }
+
+    .spin-button{
+
+        margin-top:8px;
+
+        min-width:170px;
+
+        padding:8px 20px;
+
+        font-size:17px;
+    }
+
+    .arrow{
+
+        font-size:19px;
+    }
+
+    .center-area{
+
+        height:auto;
+
+        flex:1;
+
+        min-height:0;
+
+        width:100%;
+    }
+
+    .wheel-area{
+
+        width:min(65vh,82vw);
+
+        max-width:430px;
+    }
+
+    .right-area{
+
+        position:absolute;
+
+        bottom:30px;
+
+        right:25px;
+
+        height:auto;
+    }
+
+    .result-box{
+
+        display:none;
+    }
+
+    .info-line{
+
+        display:none;
+    }
+
+    .footer{
+
+        bottom:12px;
+
+        font-size:9px;
+    }
+
+    .side-line{
+
+        top:80px;
+        bottom:80px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SHORT SCREEN
+========================================================= */
 
 @media(max-height:650px){
 
-    .main{
+    .content{
 
-        padding-top:7px;
-
+        padding-top:25px;
+        padding-bottom:25px;
     }
 
-    .header-logo{
+    .logo-top{
 
-        width:42px;
+        width:45px;
+        height:45px;
+    }
 
-        height:42px;
+    .title{
 
-        margin-bottom:2px;
+        font-size:28px;
+    }
 
+    .subtitle{
+
+        font-size:12px;
+    }
+
+    .exclusive{
+
+        font-size:11px;
+    }
+
+    .spin-button{
+
+        margin-top:8px;
+
+        padding:7px 20px;
+
+        font-size:16px;
+    }
+
+    .wheel-area{
+
+        width:min(60vh,75vw);
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+========================================================= */
+
+@media(
+    max-height:550px
+) and (
+    orientation:landscape
+){
+
+    .content{
+
+        grid-template-columns:
+            .9fr
+            1.4fr
+            .8fr;
+
+        display:grid;
+
+        padding:
+            25px 45px;
+    }
+
+    .left-area{
+
+        height:100%;
+    }
+
+    .logo-top{
+
+        width:40px;
+        height:40px;
     }
 
     .title{
 
         font-size:25px;
-
-    }
-
-    .title::after{
-
-        margin-top:4px;
-
     }
 
     .subtitle{
 
-        font-size:13px;
-
+        font-size:11px;
     }
 
     .exclusive{
 
-        font-size:12px;
-
-    }
-
-    .cta{
-
-        margin-top:5px;
-
+        font-size:10px;
     }
 
     .spin-button{
 
-        padding:7px 22px;
+        margin-top:8px;
 
-        font-size:16px;
+        padding:7px 15px;
 
+        font-size:14px;
     }
 
     .wheel-area{
 
-        margin-top:5px;
-
-        width:
-            min(
-                61vh,
-                70vw
-            );
-
+        width:min(75vh,42vw);
     }
 
-}
+    .center-logo{
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:600px){
-
-    .main{
-
-        padding-left:8px;
-
-        padding-right:8px;
-
+        width:75px;
+        height:75px;
     }
 
-    .wheel-area{
+    .prize{
 
-        width:
-            min(
-                61vh,
-                94vw
-            );
-
+        padding-top:20px;
     }
 
     .prize span{
 
-        font-size:10px;
-
+        font-size:9px;
+        width:65px;
     }
 
 }
 
 
-/* =====================================================
-   VERY SMALL HEIGHT
-===================================================== */
-
-@media(max-height:550px){
-
-    .wheel-area{
-
-        width:
-            min(
-                55vh,
-                65vw
-            );
-
-    }
-
-    .result{
-
-        display:none;
-
-    }
-
-}
-
-
-/* =====================================================
-   LANDSCAPE MOBILE
-===================================================== */
-
-@media(
-    max-height:500px
-) and (
-    orientation:landscape
-){
-
-    .main{
-
-        flex-direction:row;
-
-        justify-content:center;
-
-        align-items:center;
-
-        gap:35px;
-
-        padding:10px 25px;
-
-    }
-
-    .header{
-
-        width:38%;
-
-    }
-
-    .wheel-area{
-
-        width:
-            min(
-                85vh,
-                48vw
-            );
-
-        margin:0;
-
-    }
-
-    .cta{
-
-        margin-top:10px;
-
-    }
-
-}
-
-
-/* =====================================================
+/* =========================================================
    NO SELECT
-===================================================== */
+========================================================= */
 
 button,
 img{
@@ -1130,186 +1258,257 @@ img{
 
     -webkit-user-select:none;
 
-    -webkit-tap-highlight-color:
-        transparent;
-
+    -webkit-tap-highlight-color:transparent;
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<div class="main">
+<div class="screen">
+
+    <div class="frame">
 
 
-    <!-- =================================================
-         HEADER
-    ================================================= -->
+        <!-- CYBER CORNERS -->
 
-    <header class="header">
+        <div class="corner tl">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="corner tr">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="corner bl">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="corner br">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
 
-        <img
-            src="logo.png"
-            class="header-logo"
-            alt="فؤاد فون"
-        >
+        <div class="side-line left"></div>
+        <div class="side-line right"></div>
 
 
-        <h1 class="title">
+        <!-- CONTENT -->
+
+        <div class="content">
+
+
+            <!-- =========================================
+                 LEFT
+            ========================================== -->
+
+            <div class="left-area">
+
+
+                <img
+                    src="logo.png"
+                    class="logo-top"
+                    alt="فؤاد فون"
+                >
+
+
+                <h1 class="title">
+                    فؤاد فون
+                </h1>
+
+
+                <div class="subtitle">
+
+                    الراعي الرسمي لـ
+                    <span class="red">
+                        مؤتمر CGC IRAQ 🇮🇶
+                    </span>
+
+                </div>
+
+
+                <div class="exclusive">
+
+                    الوكيل الحصري لشركة UAM في العراق
+
+                </div>
+
+
+                <button
+                    class="spin-button"
+                    id="spinButton"
+                    onclick="spinWheel()"
+                >
+
+                    اضغط واربح
+
+                    <span class="arrow">
+                        ↓
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+            <!-- =========================================
+                 CENTER
+            ========================================== -->
+
+            <div class="center-area">
+
+
+                <div
+                    class="wheel-area"
+                    id="wheelArea"
+                >
+
+
+                    <!-- POINTER -->
+
+                    <div class="pointer"></div>
+
+
+                    <!-- WHEEL -->
+
+                    <div
+                        class="wheel"
+                        id="wheel"
+                    >
+
+
+                        <div class="dividers"></div>
+
+                        <div class="inner-ring"></div>
+
+
+                        <div class="prize p1">
+                            <span>جائزة ١</span>
+                        </div>
+
+                        <div class="prize p2">
+                            <span>جائزة ٢</span>
+                        </div>
+
+                        <div class="prize p3">
+                            <span>جائزة ٣</span>
+                        </div>
+
+                        <div class="prize p4">
+                            <span>جائزة ٤</span>
+                        </div>
+
+                        <div class="prize p5">
+                            <span>جائزة ٥</span>
+                        </div>
+
+                        <div class="prize p6">
+                            <span>جائزة ٦</span>
+                        </div>
+
+                        <div class="prize p7">
+                            <span>جائزة ٧</span>
+                        </div>
+
+                        <div class="prize p8">
+                            <span>جائزة ٨</span>
+                        </div>
+
+                        <div class="prize p9">
+                            <span>جائزة ٩</span>
+                        </div>
+
+                        <div class="prize p10">
+                            <span>جائزة ١٠</span>
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- CENTER LOGO -->
+
+                    <div class="center-logo">
+
+                        <img
+                            src="logo.png"
+                            alt="فؤاد فون"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =========================================
+                 RIGHT
+            ========================================== -->
+
+            <div class="right-area">
+
+
+                <div class="result-box">
+
+                    <div class="result-label">
+                        نتيجة السحب
+                    </div>
+
+                    <div
+                        class="result"
+                        id="result"
+                    >
+                        جرّب حظك 🎁
+                    </div>
+
+                </div>
+
+
+                <div class="info-line">
+
+                    🎁 اضغط على الزر
+                    <br>
+                    وخلي الرولة تختار جائزتك
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            <span class="red">📞</span>
+            07747885760
+            &nbsp; | &nbsp;
             فؤاد فون
-        </h1>
-
-
-        <div class="subtitle">
-
-            الراعي الرسمي لـ
-            <span class="red">
-                مؤتمر CGC IRAQ 🇮🇶
-            </span>
-
-        </div>
-
-
-        <div class="exclusive">
-
-            الوكيل الحصري لشركة UAM في العراق
-
-        </div>
-
-
-        <div class="cta">
-
-            <button
-                class="spin-button"
-                id="spinButton"
-                onclick="spinWheel()"
-            >
-
-                اضغط واربح
-
-                <span class="arrow">
-                    ↓
-                </span>
-
-            </button>
-
-        </div>
-
-
-    </header>
-
-
-
-    <!-- =================================================
-         WHEEL
-    ================================================= -->
-
-    <div
-        class="wheel-area"
-        id="wheelArea"
-    >
-
-
-        <!-- POINTER -->
-
-        <div class="pointer"></div>
-
-
-        <!-- WHEEL -->
-
-        <div
-            class="wheel"
-            id="wheel"
-        >
-
-
-            <div class="dividers"></div>
-
-
-            <div class="prize p1">
-                <span>جائزة ١</span>
-            </div>
-
-
-            <div class="prize p2">
-                <span>جائزة ٢</span>
-            </div>
-
-
-            <div class="prize p3">
-                <span>جائزة ٣</span>
-            </div>
-
-
-            <div class="prize p4">
-                <span>جائزة ٤</span>
-            </div>
-
-
-            <div class="prize p5">
-                <span>جائزة ٥</span>
-            </div>
-
-
-            <div class="prize p6">
-                <span>جائزة ٦</span>
-            </div>
-
-
-            <div class="prize p7">
-                <span>جائزة ٧</span>
-            </div>
-
-
-            <div class="prize p8">
-                <span>جائزة ٨</span>
-            </div>
-
-
-            <div class="prize p9">
-                <span>جائزة ٩</span>
-            </div>
-
-
-            <div class="prize p10">
-                <span>جائزة ١٠</span>
-            </div>
-
-
-        </div>
-
-
-        <!-- CENTER LOGO -->
-
-        <div class="center">
-
-            <img
-                src="logo.png"
-                alt="فؤاد فون"
-            >
-
-        </div>
-
-
-        <!-- RESULT -->
-
-        <div
-            class="result"
-            id="result"
-        >
-
-            جرّب حظك 🎁
+            &nbsp; | &nbsp;
+            بغداد
 
         </div>
 
 
     </div>
-
 
 </div>
 
@@ -1317,9 +1516,9 @@ img{
 
 <script>
 
-/* =====================================================
+/* =========================================================
    PRIZES
-===================================================== */
+========================================================= */
 
 const prizes = [
 
@@ -1342,16 +1541,14 @@ let currentRotation = 0;
 let spinning = false;
 
 
-/* =====================================================
-   SPIN
-===================================================== */
+/* =========================================================
+   SPIN WHEEL
+========================================================= */
 
 function spinWheel(){
 
     if(spinning){
-
         return;
-
     }
 
 
@@ -1361,14 +1558,11 @@ function spinWheel(){
     const wheel =
         document.getElementById("wheel");
 
-
     const button =
         document.getElementById("spinButton");
 
-
     const result =
         document.getElementById("result");
-
 
     const wheelArea =
         document.getElementById("wheelArea");
@@ -1378,10 +1572,10 @@ function spinWheel(){
 
 
     result.innerHTML =
-        "الرولة تدور... 🎡";
+        "الرولة تدور...";
 
 
-    /* اختيار جائزة عشوائية */
+    /* اختيار الخانة */
 
     const randomIndex =
         Math.floor(
@@ -1395,21 +1589,20 @@ function spinWheel(){
     const sector = 36;
 
 
-    /* منتصف القطاع */
+    /* منتصف الخانة */
 
     const targetAngle =
         randomIndex * sector + 18;
 
 
-    /* عدد الدورات */
+    /* 7 دورات كاملة */
 
     const extraSpins =
         360 * 7;
 
 
     /*
-       نخلي القطاع المختار
-       يوقف عند السهم بالأعلى
+       توجيه الجائزة للسهم
     */
 
     const finalRotation =
@@ -1426,12 +1619,12 @@ function spinWheel(){
         `rotate(${finalRotation}deg)`;
 
 
-    /* انتظار انتهاء الدوران */
+    /* انتهاء الدوران */
 
     setTimeout(function(){
 
         result.innerHTML =
-            `🎉 مبروك! <span>${prizes[randomIndex]}</span>`;
+            `🎉 ${prizes[randomIndex]}`;
 
 
         wheelArea.classList.add(
@@ -1457,29 +1650,7 @@ function spinWheel(){
 
 }
 
-
-/* =====================================================
-   IMAGE DRAG DISABLE
-===================================================== */
-
-document
-    .querySelectorAll("img")
-    .forEach(function(img){
-
-        img.addEventListener(
-            "dragstart",
-            function(e){
-
-                e.preventDefault();
-
-            }
-        );
-
-    });
-
 </script>
 
-
 </body>
-
 </html>
