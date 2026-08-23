@@ -28,8 +28,24 @@ body{
 
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:#050505;
+    background:#eee8dc;
     color:#fff;
+}
+
+
+/* =========================
+   COLORS
+========================= */
+
+:root{
+    --dark-red:#650b0b;
+    --deep-red:#3f0505;
+    --red:#7d1010;
+    --bright-red:#a81717;
+    --black:#090909;
+    --soft-black:#151111;
+    --beige:#eee8dc;
+    --light-beige:#f5f0e7;
 }
 
 
@@ -48,9 +64,9 @@ body{
     background:
         radial-gradient(
             circle at center,
-            #241010 0%,
-            #0b0b0b 55%,
-            #000 100%
+            #f7f1e7 0%,
+            #eee8dc 55%,
+            #e5ddcf 100%
         );
 }
 
@@ -70,16 +86,16 @@ body{
     background:
         linear-gradient(
             135deg,
-            #100000,
-            #090909 45%,
-            #130000
+            #160303,
+            #090909 48%,
+            #220505
         );
 
-    border:2px solid #444;
+    border:2px solid #2b2020;
 
     box-shadow:
-        0 0 0 3px #050505,
-        0 0 45px rgba(255,0,0,.25);
+        0 0 0 3px #e5ddcf,
+        0 12px 55px rgba(45,10,10,.35);
 
     overflow:hidden;
 }
@@ -94,7 +110,7 @@ body{
 
     inset:12px;
 
-    border:1px solid #333;
+    border:1px solid #4a3838;
 
     pointer-events:none;
 
@@ -108,12 +124,14 @@ body{
 
 .corner{
     position:absolute;
+
     width:130px;
     height:5px;
-    background:#ff1717;
+
+    background:#7d1010;
 
     box-shadow:
-        0 0 12px #ff0000;
+        0 0 12px rgba(125,16,16,.8);
 
     z-index:40;
 }
@@ -144,10 +162,10 @@ body{
     width:5px;
     height:90px;
 
-    background:#ff1717;
+    background:#7d1010;
 
     box-shadow:
-        0 0 12px #ff0000;
+        0 0 12px rgba(125,16,16,.8);
 
     z-index:40;
 }
@@ -251,10 +269,10 @@ body{
 
     margin:12px auto;
 
-    background:#ed1111;
+    background:#7d1010;
 
     box-shadow:
-        0 0 12px #f00;
+        0 0 12px rgba(125,16,16,.8);
 }
 
 .subtitle{
@@ -265,7 +283,7 @@ body{
 }
 
 .red{
-    color:#ff2929;
+    color:#a81717;
 }
 
 .exclusive{
@@ -297,8 +315,8 @@ body{
     background:
         linear-gradient(
             135deg,
-            #ff1717,
-            #9e0000
+            #8b1111,
+            #4b0505
         );
 
     color:white;
@@ -312,7 +330,7 @@ body{
     cursor:pointer;
 
     box-shadow:
-        0 8px 25px rgba(255,0,0,.35);
+        0 8px 25px rgba(70,0,0,.45);
 
     transition:.2s;
 }
@@ -320,8 +338,15 @@ body{
 .spin-button:hover{
     transform:translateY(-3px);
 
+    background:
+        linear-gradient(
+            135deg,
+            #a81717,
+            #5a0707
+        );
+
     box-shadow:
-        0 12px 35px rgba(255,0,0,.55);
+        0 12px 35px rgba(90,0,0,.55);
 }
 
 .spin-button:active{
@@ -331,24 +356,6 @@ body{
 .spin-button:disabled{
     opacity:.5;
     cursor:not-allowed;
-}
-
-.arrow{
-    display:block;
-    font-size:24px;
-
-    animation:arrow 1s infinite;
-}
-
-@keyframes arrow{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(5px);
-    }
 }
 
 
@@ -397,7 +404,7 @@ body{
     border-left:25px solid transparent;
     border-right:25px solid transparent;
 
-    border-top:65px solid #ff1111;
+    border-top:65px solid #7d1010;
 
     filter:
         drop-shadow(
@@ -436,13 +443,13 @@ body{
 
     border-radius:50%;
 
-    border:4px solid #ed1111;
+    border:4px solid #7d1010;
 
     box-shadow:
 
-        0 0 10px #f00,
-        0 0 25px rgba(255,0,0,.8),
-        0 0 55px rgba(255,0,0,.3);
+        0 0 10px rgba(125,16,16,.9),
+        0 0 25px rgba(125,16,16,.65),
+        0 0 55px rgba(125,16,16,.25);
 
     pointer-events:none;
 
@@ -470,7 +477,7 @@ body{
 
     box-shadow:
 
-        0 0 0 3px #777,
+        0 0 0 3px #6b5b5b,
         0 15px 40px #000;
 
     transition:
@@ -495,20 +502,20 @@ body{
 
     background:
         conic-gradient(
-            #e50909 0deg 36deg,
-            #151515 36deg 72deg,
+            #7d1010 0deg 36deg,
+            #111111 36deg 72deg,
 
-            #e50909 72deg 108deg,
-            #151515 108deg 144deg,
+            #7d1010 72deg 108deg,
+            #111111 108deg 144deg,
 
-            #e50909 144deg 180deg,
-            #151515 180deg 216deg,
+            #7d1010 144deg 180deg,
+            #111111 180deg 216deg,
 
-            #e50909 216deg 252deg,
-            #151515 252deg 288deg,
+            #7d1010 216deg 252deg,
+            #111111 252deg 288deg,
 
-            #e50909 288deg 324deg,
-            #151515 324deg 360deg
+            #7d1010 288deg 324deg,
+            #111111 324deg 360deg
         );
 }
 
@@ -526,7 +533,7 @@ body{
         repeating-conic-gradient(
             from -18deg,
             transparent 0deg 35deg,
-            rgba(255,255,255,.65) 35deg 36deg
+            rgba(245,240,231,.7) 35deg 36deg
         );
 
     z-index:2;
@@ -553,29 +560,30 @@ body{
 
 
 /*
-   الصورة تكون باتجاه مركز الخانة
+   الصور مرفوعة للأعلى
+   وأكبر من قبل
 */
 
 .prize img{
 
     position:absolute;
 
-    width:95px;
-    height:95px;
+    width:120px;
+    height:120px;
 
-    max-width:100%;
+    max-width:none;
 
     object-fit:contain;
 
     left:50%;
-    top:-82px;
+    top:-105px;
 
     transform:
         translateX(-50%);
 
     filter:
         drop-shadow(
-            0 5px 7px rgba(0,0,0,.95)
+            0 6px 8px rgba(0,0,0,.95)
         );
 
     background:transparent;
@@ -658,12 +666,12 @@ body{
         );
 
     border:
-        5px solid #ff1515;
+        5px solid #7d1010;
 
     box-shadow:
 
         0 0 0 5px #050505,
-        0 0 25px rgba(255,0,0,.8);
+        0 0 25px rgba(125,16,16,.75);
 
     display:flex;
 
@@ -699,16 +707,16 @@ body{
 
 
 /* =========================
-   RESULT
+   RESULT BOX
 ========================= */
 
 .result-box{
 
     width:220px;
 
-    min-height:220px;
+    min-height:270px;
 
-    padding:25px 18px;
+    padding:20px 15px;
 
     display:flex;
 
@@ -722,19 +730,73 @@ body{
     background:
         linear-gradient(
             145deg,
-            #171717,
+            #181010,
             #070707
         );
 
     border:
-        1px solid #444;
+        1px solid #4b3838;
 
     border-top:
-        4px solid #e00000;
+        4px solid #7d1010;
 
     box-shadow:
         0 10px 35px rgba(0,0,0,.6);
+
+    border-radius:8px;
 }
+
+
+/* صورة النتيجة */
+
+.result-image{
+
+    width:125px;
+    height:125px;
+
+    object-fit:contain;
+
+    margin-bottom:10px;
+
+    display:none;
+
+    filter:
+        drop-shadow(
+            0 7px 9px rgba(0,0,0,.9)
+        );
+
+    border-radius:12px;
+}
+
+
+/* الصورة الافتراضية */
+
+.result-placeholder{
+
+    width:125px;
+    height:125px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:10px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2b2020,
+            #0b0b0b
+        );
+
+    border:1px solid #493333;
+
+    font-size:52px;
+}
+
 
 .result-title{
 
@@ -742,28 +804,23 @@ body{
 
     font-size:15px;
 
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 
 .result{
 
-    color:#ff2222;
+    color:#c21b1b;
 
-    font-size:24px;
+    font-size:20px;
 
     font-weight:900;
 
     line-height:1.5;
 }
 
-.gift{
-    font-size:55px;
-    margin-bottom:12px;
-}
-
 .help{
 
-    margin-top:15px;
+    margin-top:12px;
 
     color:#bbb;
 
@@ -797,7 +854,7 @@ body{
 }
 
 .footer span{
-    color:#ff1818;
+    color:#a81717;
     font-weight:bold;
 }
 
@@ -823,6 +880,33 @@ body{
 
     70%{
         transform:scale(.98);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+
+/* =========================
+   RESULT WIN ANIMATION
+========================= */
+
+.result-box.win{
+    animation:
+        resultWin .6s ease;
+}
+
+@keyframes resultWin{
+
+    0%{
+        transform:scale(.92);
+        opacity:.6;
+    }
+
+    60%{
+        transform:scale(1.05);
+        opacity:1;
     }
 
     100%{
@@ -865,9 +949,9 @@ body{
     }
 
     .prize img{
-        width:75px;
-        height:75px;
-        top:-67px;
+        width:95px;
+        height:95px;
+        top:-88px;
     }
 
     .center-logo{
@@ -877,7 +961,13 @@ body{
 
     .result-box{
         width:180px;
-        min-height:190px;
+        min-height:235px;
+    }
+
+    .result-image,
+    .result-placeholder{
+        width:100px;
+        height:100px;
     }
 }
 
@@ -956,10 +1046,6 @@ body{
         font-size:16px;
     }
 
-    .arrow{
-        font-size:18px;
-    }
-
 
     .center{
 
@@ -984,23 +1070,23 @@ body{
 
         width:
             clamp(
-                55px,
-                13vw,
-                78px
+                65px,
+                16vw,
+                90px
             );
 
         height:
             clamp(
-                55px,
-                13vw,
-                78px
+                65px,
+                16vw,
+                90px
             );
 
         top:
             clamp(
-                -68px,
-                -10vw,
-                -55px
+                -78px,
+                -13vw,
+                -62px
             );
     }
 
@@ -1090,9 +1176,9 @@ body{
     }
 
     .prize img{
-        width:48px;
-        height:48px;
-        top:-50px;
+        width:58px;
+        height:58px;
+        top:-60px;
     }
 }
 
@@ -1152,14 +1238,20 @@ body{
     }
 
     .prize img{
-        width:55px;
-        height:55px;
-        top:-55px;
+        width:70px;
+        height:70px;
+        top:-70px;
     }
 
     .result-box{
         width:160px;
-        min-height:150px;
+        min-height:210px;
+    }
+
+    .result-image,
+    .result-placeholder{
+        width:80px;
+        height:80px;
     }
 
     .footer{
@@ -1178,7 +1270,9 @@ body{
 <div class="frame">
 
 
-<!-- الإطار -->
+<!-- =========================
+     الإطار
+========================= -->
 
 <div class="corner c1"></div>
 <div class="corner c2"></div>
@@ -1235,10 +1329,6 @@ body{
 >
 
     اضغط واربح
-
-    <span class="arrow">
-        ↓
-    </span>
 
 </button>
 
@@ -1346,15 +1436,29 @@ body{
 
 <section class="right">
 
-<div class="result-box">
+<div class="result-box" id="resultBox">
 
-    <div class="gift">
+    <!-- صورة الجائزة -->
+    <img
+        id="resultImage"
+        class="result-image"
+        src=""
+        alt="الجائزة الفائزة"
+    >
+
+    <!-- الشكل قبل السحب -->
+    <div
+        class="result-placeholder"
+        id="resultPlaceholder"
+    >
         🎁
     </div>
+
 
     <div class="result-title">
         نتيجة السحب
     </div>
+
 
     <div
         class="result"
@@ -1362,6 +1466,7 @@ body{
     >
         اضغط وخلّي الرولة تختار جائزتك
     </div>
+
 
     <div class="help">
         حظاً موفقاً ❤️
@@ -1445,11 +1550,27 @@ function spinWheel(){
     const result =
         document.getElementById("result");
 
+    const resultImage =
+        document.getElementById("resultImage");
+
+    const resultPlaceholder =
+        document.getElementById("resultPlaceholder");
+
+    const resultBox =
+        document.getElementById("resultBox");
+
     const wheelArea =
         document.getElementById("wheelArea");
 
 
     button.disabled = true;
+
+
+    /* إخفاء صورة النتيجة القديمة */
+
+    resultImage.style.display = "none";
+
+    resultPlaceholder.style.display = "flex";
 
 
     result.innerHTML =
@@ -1463,7 +1584,7 @@ function spinWheel(){
     const selected =
         Math.floor(
             Math.random() *
-            10
+            prizeImages.length
         );
 
 
@@ -1506,18 +1627,45 @@ function spinWheel(){
 
 
     /*
-       النتيجة
+       إظهار النتيجة بعد انتهاء الدوران
     */
 
     setTimeout(function(){
 
+        /*
+           وضع صورة الجائزة
+        */
+
+        resultImage.src =
+            prizeImages[selected];
+
+        resultImage.style.display =
+            "block";
+
+        resultPlaceholder.style.display =
+            "none";
+
+
+        /*
+           كتابة اسم الجائزة
+        */
+
         result.innerHTML =
-            "🎉 مبروك!<br>الجائزة رقم " +
+            "🎉 مبروك!<br>" +
+            "الجائزة رقم " +
             (selected + 1);
 
 
+        /*
+           تأثير الفوز
+        */
+
         wheelArea.classList.add(
             "winner"
+        );
+
+        resultBox.classList.add(
+            "win"
         );
 
 
@@ -1525,6 +1673,10 @@ function spinWheel(){
 
             wheelArea.classList.remove(
                 "winner"
+            );
+
+            resultBox.classList.remove(
+                "win"
             );
 
         },700);
