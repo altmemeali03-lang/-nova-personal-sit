@@ -607,6 +607,10 @@ body{
 
     left:50%;
 
+    /*
+       رفع الصور إلى أعلى الخانة
+    */
+
     top:-125px;
 
     transform:
@@ -1874,60 +1878,11 @@ let spinCount = 0;
    الأصوات
 ===================================================== */
 
-const winSound =
-    new Audio("win.mp3.mp3");
-
-const luckSound =
-    new Audio("Luck.mp3.mp3");
-
-
-/* =====================================================
-   تجهيز الأصوات
-===================================================== */
+const winSound = new Audio("Win.mp3.mp3");
+const luckSound = new Audio("luck.mp3.mp3");
 
 winSound.preload = "auto";
-
 luckSound.preload = "auto";
-
-
-/* =====================================================
-   تشغيل صوت الفوز
-===================================================== */
-
-function playWinSound(){
-
-    winSound.currentTime = 0;
-
-    winSound.play().catch(
-        function(error){
-            console.log(
-                "تعذر تشغيل صوت الفوز:",
-                error
-            );
-        }
-    );
-
-}
-
-
-/* =====================================================
-   تشغيل صوت الخسارة
-===================================================== */
-
-function playLuckSound(){
-
-    luckSound.currentTime = 0;
-
-    luckSound.play().catch(
-        function(error){
-            console.log(
-                "تعذر تشغيل صوت حظ أوفر:",
-                error
-            );
-        }
-    );
-
-}
 
 
 /* =====================================================
@@ -2132,9 +2087,18 @@ function spinWheel(){
                     "حظ أوفر";
 
 
-                /* تشغيل صوت الخسارة */
+                /* صوت حظ أوفر */
 
-                playLuckSound();
+                luckSound.currentTime = 0;
+
+                luckSound.play().catch(
+                    function(error){
+                        console.log(
+                            "تعذر تشغيل صوت حظ أوفر:",
+                            error
+                        );
+                    }
+                );
 
             }
 
@@ -2162,9 +2126,18 @@ function spinWheel(){
                     selectedItem.name;
 
 
-                /* تشغيل صوت الفوز */
+                /* صوت الفوز */
 
-                playWinSound();
+                winSound.currentTime = 0;
+
+                winSound.play().catch(
+                    function(error){
+                        console.log(
+                            "تعذر تشغيل صوت الفوز:",
+                            error
+                        );
+                    }
+                );
 
             }
 
@@ -2242,7 +2215,7 @@ window.addEventListener(
         );
 
 
-        /* تجهيز ملفات الصوت */
+        /* تحميل الأصوات مسبقاً */
 
         winSound.load();
 
