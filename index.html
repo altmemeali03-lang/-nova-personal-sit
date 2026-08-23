@@ -486,15 +486,6 @@ body{
 
     border-radius:50%;
 
-    /*
-       كل خانة 36 درجة
-
-       F1 مركزها 0°
-       F2 مركزها 36°
-       F3 مركزها 72°
-       وهكذا
-    */
-
     background:
         conic-gradient(
             from -18deg,
@@ -532,14 +523,12 @@ body{
         repeating-conic-gradient(
             from -18deg,
 
-            transparent 0deg 35.2deg,
+            transparent 0deg 35deg,
 
-            rgba(255,255,255,.85) 35.2deg 36deg
+            rgba(255,255,255,.8) 35deg 36deg
         );
 
     z-index:2;
-
-    pointer-events:none;
 }
 
 
@@ -578,11 +567,6 @@ body{
     object-fit:contain;
 
     left:50%;
-
-    /*
-       الصورة مرفوعة للأعلى
-       ومتمركزة داخل خانتها
-    */
 
     top:-125px;
 
@@ -678,6 +662,7 @@ body{
 
 /* =====================================================
    CENTER LOGO
+   logo.png.PNG
 ===================================================== */
 
 .center-logo{
@@ -718,8 +703,8 @@ body{
 }
 
 .center-logo img{
-    width:88%;
-    height:88%;
+    width:90%;
+    height:90%;
 
     object-fit:contain;
 }
@@ -734,9 +719,36 @@ body{
 
     display:flex;
 
+    flex-direction:column;
+
     align-items:center;
 
     justify-content:center;
+
+    gap:15px;
+}
+
+
+/* =====================================================
+   BANNER فوق النتيجة
+   banner.jpg.PNG
+===================================================== */
+
+.result-banner{
+
+    width:220px;
+    height:100px;
+
+    object-fit:contain;
+
+    display:block;
+
+    border-radius:10px;
+
+    filter:
+        drop-shadow(
+            0 6px 12px rgba(0,0,0,.7)
+        );
 }
 
 
@@ -970,6 +982,12 @@ body{
 
         width:120px;
         height:120px;
+    }
+
+    .result-banner{
+
+        width:180px;
+        height:80px;
     }
 
     .result-box{
@@ -1301,6 +1319,12 @@ body{
         font-size:13px;
     }
 
+    .result-banner{
+
+        width:160px;
+        height:65px;
+    }
+
     .result-box{
 
         width:160px;
@@ -1428,23 +1452,8 @@ body{
 
 
 <!-- =====================================================
-     الخانات
-
-     0  = F1
-     1  = F2
-     2  = F3
-     3  = حظ أوفر
-     4  = F4
-     5  = F5
-     6  = حظ أوفر
-     7  = F6
-     8  = F7
-     9  = حظ أوفر
-
-     كل خانة مركزها:
-     0° / 36° / 72° / 108° ...
+     ترتيب الرولة
 ===================================================== -->
-
 
 <!-- F1 -->
 
@@ -1567,14 +1576,14 @@ body{
 
 
 <!-- =====================================================
-     CENTER LOGO
+     LOGO وسط الرولة
 ===================================================== -->
 
 <div class="center-logo">
 
     <img
-        src="Flogo.HEIC"
-        alt="فؤاد فون"
+        src="logo.png.PNG"
+        alt="Logo"
     >
 
 </div>
@@ -1587,11 +1596,26 @@ body{
 
 
 <!-- =====================================================
-     RESULT
+     RIGHT
 ===================================================== -->
 
 <section class="right">
 
+
+<!-- =====================================================
+     BANNER فوق النتيجة
+===================================================== -->
+
+<img
+    src="banner.jpg.PNG"
+    class="result-banner"
+    alt="Banner"
+>
+
+
+<!-- =====================================================
+     RESULT
+===================================================== -->
 
 <div class="result-box">
 
@@ -1738,13 +1762,13 @@ const wheelItems = [
 
 const productIndexes = [
 
-    0,  // F1
-    1,  // F2
-    2,  // F3
-    4,  // F4
-    5,  // F5
-    7,  // F6
-    8   // F7
+    0,
+    1,
+    2,
+    4,
+    5,
+    7,
+    8
 
 ];
 
@@ -1802,77 +1826,6 @@ function choosePrize(){
         );
 
     return productIndexes[random];
-}
-
-
-/* =====================================================
-   حساب أقصر زاوية للوصول للخانة
-===================================================== */
-
-function getRotationToIndex(index){
-
-    /*
-       مركز الخانة:
-
-       F1  = 0°
-       F2  = 36°
-       F3  = 72°
-       F4  = 144°
-       ...
-
-       لأن المؤشر موجود في الأعلى = 0°
-
-       نحتاج ندور الرولة بعكس
-       زاوية مركز الخانة.
-    */
-
-    const sectorAngle = 36;
-
-    const itemAngle =
-        index * sectorAngle;
-
-
-    /*
-       الزاوية المطلوبة للرولة
-       حتى يصبح itemAngle عند 0°
-    */
-
-    const desiredRotation =
-        (360 - itemAngle) % 360;
-
-
-    /*
-       زاوية الرولة الحالية بعد
-       أخذ باقي الـ360.
-    */
-
-    const currentNormalized =
-        ((currentRotation % 360) + 360) % 360;
-
-
-    /*
-       الفرق المطلوب من الوضع الحالي
-       إلى الخانة الجديدة.
-    */
-
-    let difference =
-        desiredRotation -
-        currentNormalized;
-
-
-    /*
-       نخلي الفرق موجب حتى لا
-       ترجع الرولة للخلف.
-    */
-
-    if(difference < 0){
-
-        difference += 360;
-
-    }
-
-
-    return difference;
 }
 
 
@@ -1950,8 +1903,6 @@ function spinWheel(){
        2 = جائزة
        3 = جائزة
        4 = حظ أوفر
-
-       ثم تتكرر
     ================================================= */
 
     let selectedIndex;
@@ -1975,63 +1926,52 @@ function spinWheel(){
 
 
     /* =================================================
-       حساب الزاوية الصحيحة
-
-       هذه هي النقطة المهمة جداً.
-
-       لا نضيف 18 درجة.
-
-       لأن تصميم الرولة نفسه يجعل
-       مركز F1 عند 0 درجة.
-
-       لذلك نستخدم getRotationToIndex().
+       حساب الزاوية
     ================================================= */
 
-    const correction =
-        getRotationToIndex(
-            selectedIndex
-        );
+    const sectorAngle =
+        36;
 
 
-    /*
-       7 دورات كاملة
-       + الزاوية المطلوبة.
-    */
+    const centerOfSector =
+        selectedIndex *
+        sectorAngle +
+        18;
+
 
     const fullTurns =
         360 * 7;
 
 
+    const targetAngle =
+        360 -
+        centerOfSector;
+
+
     const finalRotation =
+
         currentRotation +
+
         fullTurns +
-        correction;
+
+        targetAngle;
 
 
     currentRotation =
         finalRotation;
 
 
-    /*
-       تدوير الرولة.
-    */
-
     wheel.style.transform =
         `rotate(${finalRotation}deg)`;
 
 
     /* =================================================
-       بعد انتهاء الدوران
+       عرض النتيجة من نفس selectedIndex
     ================================================= */
 
     setTimeout(
 
         function(){
-
-            /*
-               نأخذ النتيجة من نفس
-               selectedIndex الذي تم تدويره إليه.
-            */
 
             const selectedItem =
                 wheelItems[
@@ -2086,10 +2026,6 @@ function spinWheel(){
             }
 
 
-            /* =========================================
-               Animation
-            ========================================= */
-
             wheelArea.classList.add(
                 "winner"
             );
@@ -2135,6 +2071,10 @@ window.addEventListener(
         const images = [
 
             "Flogo.HEIC",
+
+            "logo.png.PNG",
+
+            "banner.jpg.PNG",
 
             "F_1.JPG",
             "F_2.JPG",
