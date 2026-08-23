@@ -9,9 +9,9 @@
 
 <style>
 
-/* =========================
+/* =====================================================
    RESET
-========================= */
+===================================================== */
 
 *{
     margin:0;
@@ -29,13 +29,33 @@ body{
 body{
     font-family:Tahoma,Arial,sans-serif;
     color:#fff;
-    background:#020406;
+    background:#010305;
 }
 
 
-/* =========================
+/* =====================================================
+   COLORS
+===================================================== */
+
+:root{
+
+    --blue:#062B55;
+    --blue-light:#0A3F78;
+    --blue-glow:#0B4F91;
+
+    --gold:#D6A900;
+    --gold-light:#F0C928;
+
+    --black:#010305;
+    --black-2:#05080c;
+    --white:#ffffff;
+
+}
+
+
+/* =====================================================
    PAGE
-========================= */
+===================================================== */
 
 .page{
     width:100vw;
@@ -48,16 +68,16 @@ body{
     background:
         radial-gradient(
             circle at center,
-            #101a27 0%,
-            #05090e 50%,
+            #071522 0%,
+            #03070b 52%,
             #010203 100%
         );
 }
 
 
-/* =========================
+/* =====================================================
    FRAME
-========================= */
+===================================================== */
 
 .frame{
     position:relative;
@@ -70,24 +90,24 @@ body{
     background:
         linear-gradient(
             135deg,
-            #07090c,
+            #05080c,
             #020406 48%,
-            #080d14
+            #07101a
         );
 
-    border:2px solid #182635;
+    border:2px solid #102B46;
 
     box-shadow:
         0 0 0 3px #010203,
-        0 0 45px rgba(0,110,255,.20);
+        0 0 45px rgba(6,43,85,.45);
 
     overflow:hidden;
 }
 
 
-/* =========================
+/* =====================================================
    INNER FRAME
-========================= */
+===================================================== */
 
 .frame:before{
     content:"";
@@ -96,7 +116,7 @@ body{
 
     inset:12px;
 
-    border:1px solid #18212c;
+    border:1px solid #17334F;
 
     pointer-events:none;
 
@@ -104,9 +124,9 @@ body{
 }
 
 
-/* =========================
-   BLUE CORNERS
-========================= */
+/* =====================================================
+   CORNERS
+===================================================== */
 
 .corner{
     position:absolute;
@@ -114,11 +134,11 @@ body{
     width:130px;
     height:5px;
 
-    background:#0878ff;
+    background:var(--blue);
 
     box-shadow:
-        0 0 12px #0878ff,
-        0 0 25px rgba(0,110,255,.55);
+        0 0 10px var(--blue-glow),
+        0 0 25px rgba(6,43,85,.8);
 
     z-index:40;
 }
@@ -150,11 +170,11 @@ body{
     width:5px;
     height:90px;
 
-    background:#0878ff;
+    background:var(--blue);
 
     box-shadow:
-        0 0 12px #0878ff,
-        0 0 25px rgba(0,110,255,.55);
+        0 0 10px var(--blue-glow),
+        0 0 25px rgba(6,43,85,.8);
 
     z-index:40;
 }
@@ -180,9 +200,9 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    CONTENT
-========================= */
+===================================================== */
 
 .content{
     position:relative;
@@ -207,9 +227,9 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    LEFT
-========================= */
+===================================================== */
 
 .left{
     height:100%;
@@ -224,9 +244,9 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    LOGO
-========================= */
+===================================================== */
 
 .top-logo{
     width:75px;
@@ -238,12 +258,13 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    TITLE
-========================= */
+===================================================== */
 
 .title{
     font-size:52px;
+
     font-weight:900;
 
     color:#fff;
@@ -258,27 +279,31 @@ body{
 
     margin:12px auto;
 
-    background:#0878ff;
+    background:var(--blue);
 
     box-shadow:
-        0 0 12px #0878ff;
+        0 0 12px var(--blue-glow);
 }
 
 .subtitle{
     font-size:19px;
+
     font-weight:bold;
 
     line-height:1.7;
 }
 
 .red{
-    color:#1590ff;
+    color:var(--gold-light);
+
+    text-shadow:
+        0 0 8px rgba(214,169,0,.25);
 }
 
 .exclusive{
     margin-top:5px;
 
-    color:#b9c1cc;
+    color:#b8c2ce;
 
     font-size:15px;
 
@@ -286,11 +311,12 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    BUTTON
-========================= */
+===================================================== */
 
 .spin-button{
+
     margin-top:30px;
 
     width:210px;
@@ -304,8 +330,8 @@ body{
     background:
         linear-gradient(
             135deg,
-            #0878ff,
-            #00429a
+            #0A3F78,
+            #062B55
         );
 
     color:white;
@@ -319,48 +345,55 @@ body{
     cursor:pointer;
 
     box-shadow:
-        0 8px 25px rgba(0,100,255,.40),
-        0 0 20px rgba(0,100,255,.15);
+        0 8px 25px rgba(6,43,85,.65),
+        0 0 20px rgba(6,43,85,.25);
 
     transition:.2s;
 }
 
 .spin-button:hover{
+
     transform:translateY(-3px);
 
     box-shadow:
-        0 12px 35px rgba(0,120,255,.60);
+        0 12px 35px rgba(6,43,85,.85);
 }
 
 .spin-button:active{
+
     transform:scale(.95);
 }
 
 .spin-button:disabled{
+
     opacity:.5;
+
     cursor:not-allowed;
 }
 
 
-/* =========================
+/* =====================================================
    CENTER
-========================= */
+===================================================== */
 
 .center{
+
     height:100%;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 }
 
 
-/* =========================
+/* =====================================================
    WHEEL AREA
-========================= */
+===================================================== */
 
 .wheel-area{
+
     position:relative;
 
     width:min(48vw,600px);
@@ -369,16 +402,18 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    POINTER
-========================= */
+===================================================== */
 
 .pointer{
+
     position:absolute;
 
     z-index:100;
 
     top:-4px;
+
     left:50%;
 
     transform:translateX(-50%);
@@ -387,28 +422,30 @@ body{
     height:0;
 
     border-left:25px solid transparent;
+
     border-right:25px solid transparent;
 
-    border-top:65px solid #0878ff;
+    border-top:65px solid var(--gold);
 
     filter:
+        drop-shadow(0 4px 5px #000)
         drop-shadow(
-            0 4px 5px #000
-        )
-        drop-shadow(
-            0 0 8px rgba(0,120,255,.7)
+            0 0 8px rgba(214,169,0,.7)
         );
 }
 
 .pointer:after{
+
     content:"";
 
     position:absolute;
 
     left:-10px;
+
     top:-58px;
 
     width:20px;
+
     height:20px;
 
     border-radius:50%;
@@ -417,27 +454,31 @@ body{
 
     box-shadow:
         0 0 0 4px #050505,
-        0 0 12px #0878ff;
+        0 0 10px var(--gold);
 }
 
 
-/* =========================
+/* =====================================================
    WHEEL GLOW
-========================= */
+===================================================== */
 
 .wheel-glow{
+
     position:absolute;
 
     inset:-12px;
 
     border-radius:50%;
 
-    border:4px solid #0878ff;
+    border:4px solid var(--blue);
 
     box-shadow:
-        0 0 10px #0878ff,
-        0 0 25px rgba(0,120,255,.75),
-        0 0 55px rgba(0,100,255,.35);
+
+        0 0 10px var(--blue-glow),
+
+        0 0 25px rgba(6,43,85,.9),
+
+        0 0 55px rgba(6,43,85,.45);
 
     pointer-events:none;
 
@@ -445,11 +486,12 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    WHEEL
-========================= */
+===================================================== */
 
 .wheel{
+
     position:absolute;
 
     inset:0;
@@ -459,29 +501,37 @@ body{
     overflow:hidden;
 
     border:
-        8px solid #020305;
+        8px solid #010305;
 
-    background:#05070a;
+    background:#05080c;
 
     box-shadow:
-        0 0 0 3px #26313d,
+
+        0 0 0 3px #203A55,
+
         0 15px 40px #000,
-        0 0 35px rgba(0,100,255,.20);
+
+        0 0 35px rgba(6,43,85,.35);
 
     transition:
+
         transform
+
         5.5s
+
         cubic-bezier(.12,.75,.12,1);
 
     z-index:5;
 }
 
 
-/* =========================
-   BLACK + BLUE SECTORS
-========================= */
+/* =====================================================
+   WHEEL COLORS
+   BLUE + GOLD
+===================================================== */
 
 .sectors{
+
     position:absolute;
 
     inset:0;
@@ -489,30 +539,39 @@ body{
     border-radius:50%;
 
     background:
+
         conic-gradient(
-            #0878ff 0deg 36deg,
-            #080b0f 36deg 72deg,
 
-            #0878ff 72deg 108deg,
-            #080b0f 108deg 144deg,
+            var(--blue) 0deg 36deg,
 
-            #0878ff 144deg 180deg,
-            #080b0f 180deg 216deg,
+            var(--gold) 36deg 72deg,
 
-            #0878ff 216deg 252deg,
-            #080b0f 252deg 288deg,
+            var(--blue) 72deg 108deg,
 
-            #0878ff 288deg 324deg,
-            #080b0f 324deg 360deg
+            var(--gold) 108deg 144deg,
+
+            var(--blue) 144deg 180deg,
+
+            var(--gold) 180deg 216deg,
+
+            var(--blue) 216deg 252deg,
+
+            var(--gold) 252deg 288deg,
+
+            var(--blue) 288deg 324deg,
+
+            var(--gold) 324deg 360deg
+
         );
 }
 
 
-/* =========================
+/* =====================================================
    SECTOR LINES
-========================= */
+===================================================== */
 
 .sector-lines{
+
     position:absolute;
 
     inset:0;
@@ -520,27 +579,35 @@ body{
     border-radius:50%;
 
     background:
+
         repeating-conic-gradient(
+
             from -18deg,
+
             transparent 0deg 35deg,
+
             rgba(255,255,255,.65) 35deg 36deg
+
         );
 
     z-index:2;
 }
 
 
-/* =========================
+/* =====================================================
    PRIZE IMAGES
-========================= */
+===================================================== */
 
 .prize{
+
     position:absolute;
 
     width:36%;
+
     height:36%;
 
     left:32%;
+
     top:32%;
 
     z-index:8;
@@ -548,10 +615,13 @@ body{
     transform-origin:center;
 }
 
+
 .prize img{
+
     position:absolute;
 
     width:105px;
+
     height:105px;
 
     max-width:100%;
@@ -559,12 +629,14 @@ body{
     object-fit:contain;
 
     left:50%;
+
     top:-90px;
 
     transform:
         translateX(-50%);
 
     filter:
+
         drop-shadow(
             0 5px 7px rgba(0,0,0,.95)
         );
@@ -575,9 +647,9 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    POSITIONS
-========================= */
+===================================================== */
 
 .p1{
     transform:rotate(0deg);
@@ -620,62 +692,73 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    CENTER LOGO
-========================= */
+===================================================== */
 
 .center-logo{
+
     position:absolute;
 
     z-index:50;
 
     left:50%;
+
     top:50%;
 
     transform:
         translate(-50%,-50%);
 
     width:145px;
+
     height:145px;
 
     border-radius:50%;
 
     background:
+
         radial-gradient(
             circle,
-            #151a20,
+            #122235,
             #020305
         );
 
     border:
-        5px solid #0878ff;
+        5px solid var(--gold);
 
     box-shadow:
+
         0 0 0 5px #050505,
-        0 0 25px rgba(0,120,255,.75),
-        0 0 45px rgba(0,100,255,.25);
+
+        0 0 25px rgba(214,169,0,.65),
+
+        0 0 45px rgba(6,43,85,.45);
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     overflow:hidden;
 }
 
 .center-logo img{
+
     width:88%;
+
     height:88%;
 
     object-fit:contain;
 }
 
 
-/* =========================
+/* =====================================================
    RIGHT
-========================= */
+===================================================== */
 
 .right{
+
     height:100%;
 
     display:flex;
@@ -686,11 +769,12 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    RESULT BOX
-========================= */
+===================================================== */
 
 .result-box{
+
     width:220px;
 
     min-height:250px;
@@ -708,30 +792,35 @@ body{
     text-align:center;
 
     background:
+
         linear-gradient(
             145deg,
-            #0c1117,
-            #030507
+            #0a1119,
+            #020406
         );
 
     border:
-        1px solid #26313d;
+        1px solid #19314A;
 
     border-top:
-        4px solid #0878ff;
+        4px solid var(--gold);
 
     box-shadow:
+
         0 10px 35px rgba(0,0,0,.7),
-        0 0 20px rgba(0,100,255,.10);
+
+        0 0 20px rgba(6,43,85,.2);
 }
 
 
-/* =========================
+/* =====================================================
    RESULT IMAGE
-========================= */
+===================================================== */
 
 .result-image{
+
     width:100px;
+
     height:100px;
 
     object-fit:contain;
@@ -747,12 +836,13 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    RESULT TITLE
-========================= */
+===================================================== */
 
 .result-title{
-    color:#9faab7;
+
+    color:#9FAAB7;
 
     font-size:15px;
 
@@ -760,12 +850,13 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    RESULT
-========================= */
+===================================================== */
 
 .result{
-    color:#1590ff;
+
+    color:var(--gold-light);
 
     font-size:22px;
 
@@ -775,25 +866,27 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    GIFT
-========================= */
+===================================================== */
 
 .gift{
+
     font-size:55px;
 
     margin-bottom:10px;
 }
 
 
-/* =========================
+/* =====================================================
    HELP
-========================= */
+===================================================== */
 
 .help{
+
     margin-top:12px;
 
-    color:#8f9aa7;
+    color:#8F9AA7;
 
     font-size:12px;
 
@@ -801,11 +894,12 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 .footer{
+
     position:absolute;
 
     z-index:60;
@@ -820,21 +914,23 @@ body{
 
     font-size:12px;
 
-    color:#8994a0;
+    color:#8994A0;
 }
 
 .footer span{
-    color:#1590ff;
+
+    color:var(--gold-light);
 
     font-weight:bold;
 }
 
 
-/* =========================
-   WIN
-========================= */
+/* =====================================================
+   WIN ANIMATION
+===================================================== */
 
 .winner{
+
     animation:
         winner .7s ease;
 }
@@ -859,9 +955,9 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    TABLET
-========================= */
+===================================================== */
 
 @media(max-width:1150px){
 
@@ -893,36 +989,47 @@ body{
     }
 
     .prize img{
+
         width:75px;
+
         height:75px;
+
         top:-67px;
     }
 
     .center-logo{
+
         width:120px;
+
         height:120px;
     }
 
     .result-box{
+
         width:180px;
+
         min-height:210px;
     }
 
     .result-image{
+
         width:75px;
+
         height:75px;
     }
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:700px){
 
     .frame{
+
         width:100vw;
+
         height:100vh;
 
         border:none;
@@ -941,13 +1048,16 @@ body{
     }
 
     .left{
+
         height:auto;
 
         flex-shrink:0;
     }
 
     .top-logo{
+
         width:40px;
+
         height:40px;
 
         margin-bottom:2px;
@@ -958,19 +1068,25 @@ body{
     }
 
     .red-line{
+
         width:55px;
+
         height:3px;
 
         margin:5px auto;
     }
 
     .subtitle{
+
         font-size:11px;
+
         line-height:1.5;
     }
 
     .exclusive{
+
         font-size:9px;
+
         margin-top:1px;
     }
 
@@ -1030,6 +1146,7 @@ body{
     .center-logo{
 
         width:82px;
+
         height:82px;
 
         border-width:4px;
@@ -1047,20 +1164,24 @@ body{
     }
 
     .corner{
+
         width:70px;
+
         height:3px;
     }
 
     .corner-v{
+
         width:3px;
+
         height:50px;
     }
 }
 
 
-/* =========================
+/* =====================================================
    VERY SHORT MOBILE
-========================= */
+===================================================== */
 
 @media(
     max-width:700px
@@ -1073,7 +1194,9 @@ body{
     }
 
     .top-logo{
+
         width:30px;
+
         height:30px;
     }
 
@@ -1090,6 +1213,7 @@ body{
     }
 
     .spin-button{
+
         margin-top:4px;
 
         padding:5px;
@@ -1098,6 +1222,7 @@ body{
     }
 
     .wheel-area{
+
         width:
             min(
                 60vh,
@@ -1106,12 +1231,16 @@ body{
     }
 
     .center-logo{
+
         width:68px;
+
         height:68px;
     }
 
     .prize img{
+
         width:48px;
+
         height:48px;
 
         top:-50px;
@@ -1119,9 +1248,9 @@ body{
 }
 
 
-/* =========================
+/* =====================================================
    LANDSCAPE MOBILE
-========================= */
+===================================================== */
 
 @media(
     max-height:550px
@@ -1155,6 +1284,7 @@ body{
     }
 
     .spin-button{
+
         margin-top:7px;
 
         padding:7px;
@@ -1163,6 +1293,7 @@ body{
     }
 
     .wheel-area{
+
         width:
             min(
                 72vh,
@@ -1171,30 +1302,39 @@ body{
     }
 
     .center-logo{
+
         width:80px;
+
         height:80px;
     }
 
     .prize img{
+
         width:55px;
+
         height:55px;
 
         top:-55px;
     }
 
     .result-box{
+
         width:160px;
+
         min-height:180px;
     }
 
     .result-image{
+
         width:60px;
+
         height:60px;
     }
 
     .footer{
         font-size:8px;
     }
+
 }
 
 </style>
@@ -1208,9 +1348,9 @@ body{
 <div class="frame">
 
 
-<!-- =========================
+<!-- =====================================================
      CORNERS
-========================= -->
+===================================================== -->
 
 <div class="corner c1"></div>
 <div class="corner c2"></div>
@@ -1226,9 +1366,9 @@ body{
 <div class="content">
 
 
-<!-- =========================
+<!-- =====================================================
      LEFT
-========================= -->
+===================================================== -->
 
 <section class="left">
 
@@ -1273,9 +1413,9 @@ body{
 
 
 
-<!-- =========================
+<!-- =====================================================
      WHEEL
-========================= -->
+===================================================== -->
 
 <section class="center">
 
@@ -1283,7 +1423,6 @@ body{
     class="wheel-area"
     id="wheelArea"
 >
-
 
 <div class="pointer"></div>
 
@@ -1295,15 +1434,14 @@ body{
     id="wheel"
 >
 
-
 <div class="sectors"></div>
 
 <div class="sector-lines"></div>
 
 
-<!-- =========================
+<!-- =====================================================
      PRIZES
-========================= -->
+===================================================== -->
 
 <div class="prize p1">
     <img src="F_1.JPG" alt="جائزة 1">
@@ -1349,9 +1487,9 @@ body{
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      CENTER LOGO
-========================= -->
+===================================================== -->
 
 <div class="center-logo">
 
@@ -1369,9 +1507,9 @@ body{
 
 
 
-<!-- =========================
+<!-- =====================================================
      RESULT
-========================= -->
+===================================================== -->
 
 <section class="right">
 
@@ -1418,9 +1556,9 @@ body{
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <div class="footer">
 
@@ -1515,7 +1653,7 @@ const prizes = [
 
 
 /* =====================================================
-   SPIN COUNTER
+   SPIN SETTINGS
 ===================================================== */
 
 let spinCount = 0;
@@ -1527,19 +1665,13 @@ let spinning = false;
 
 /* =====================================================
    SPECIAL PRIZES
-===================================================== */
+=====================================================
 
-/*
    F_3 = كل 20 سحبة
    F_5 = كل 15 سحبة
    F_1 = كل 10 سحبات
 
-   الأولوية:
-   F_3
-   ثم F_5
-   ثم F_1
-*/
-
+===================================================== */
 
 function getScheduledPrize(){
 
@@ -1582,7 +1714,7 @@ function getScheduledPrize(){
 function getRandomNormalPrize(){
 
     /*
-       الجوائز العادية فقط:
+       الجوائز العادية:
 
        F_2
        F_4
@@ -1619,7 +1751,7 @@ function getRandomNormalPrize(){
 
 
 /* =====================================================
-   SPIN
+   SPIN WHEEL
 ===================================================== */
 
 function spinWheel(){
@@ -1666,7 +1798,7 @@ function spinWheel(){
     spinCount++;
 
 
-    /* النتيجة أثناء الدوران */
+    /* رسالة الدوران */
 
     result.innerHTML =
         "الرولة تدور...";
@@ -1699,36 +1831,47 @@ function spinWheel(){
     }
 
 
-    /*
-       عدد درجات كل خانة
-    */
+    /* =================================================
+       حساب مكان الجائزة
+    ================================================= */
 
     const sector =
         360 / prizes.length;
 
 
     /*
-       منتصف الخانة المطلوبة
+       نريد مركز الخانة بالضبط
     */
 
     const target =
-        selected * sector + (sector / 2);
+        selected * sector +
+        (sector / 2);
 
 
     /*
-       الموقع الحالي للرولة
+       مقدار الدوران الحالي
     */
 
     const currentMod =
-        ((currentRotation % 360) + 360) % 360;
+        (
+            (currentRotation % 360)
+            + 360
+        ) % 360;
 
 
     /*
-       حساب مقدار الدوران
+       تصحيح الدوران حتى الخانة
+       المطلوبة تكون تحت المؤشر
     */
 
     let correction =
-        (360 - ((currentMod + target) % 360)) % 360;
+        (
+            360 -
+            (
+                (currentMod + target)
+                % 360
+            )
+        ) % 360;
 
 
     /*
@@ -1750,16 +1893,16 @@ function spinWheel(){
 
 
     /*
-       تشغيل الرولة
+       تدوير الرولة
     */
 
     wheel.style.transform =
         `rotate(${finalRotation}deg)`;
 
 
-    /*
-       انتهاء الدوران
-    */
+    /* =================================================
+       النتيجة
+    ================================================= */
 
     setTimeout(function(){
 
@@ -1768,8 +1911,8 @@ function spinWheel(){
 
 
         /*
-           نفس صورة الجائزة
-           تظهر في مربع النتيجة
+           نفس صورة الرولة
+           تظهر في النتيجة
         */
 
         resultImage.src =
@@ -1784,17 +1927,13 @@ function spinWheel(){
             "none";
 
 
-        /*
-           اسم الجائزة
-        */
-
         result.innerHTML =
             "🎉 مبروك!<br>" +
             prize.name;
 
 
         /*
-           حركة الفوز
+           Animation
         */
 
         wheelArea.classList.add(
@@ -1822,7 +1961,7 @@ function spinWheel(){
 
 
 /* =====================================================
-   PRELOAD
+   PRELOAD IMAGES
 ===================================================== */
 
 window.addEventListener(
