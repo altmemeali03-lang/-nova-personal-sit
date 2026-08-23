@@ -607,10 +607,6 @@ body{
 
     left:50%;
 
-    /*
-       رفع الصور إلى أعلى الخانة
-    */
-
     top:-125px;
 
     transform:
@@ -1406,6 +1402,23 @@ body{
 <body>
 
 
+<!-- =====================================================
+     الأصوات
+===================================================== -->
+
+<audio
+    id="winSound"
+    src="Win.mp3.mp3"
+    preload="auto">
+</audio>
+
+<audio
+    id="luckSound"
+    src="luck.mp3.mp3"
+    preload="auto">
+</audio>
+
+
 <div class="page">
 
 <div class="frame">
@@ -1435,12 +1448,6 @@ body{
 
 <section class="left">
 
-
-<!-- =====================================================
-     BANNER
-     
-     فقط البانر + BY
-===================================================== -->
 
 <div class="banner-area">
 
@@ -1768,6 +1775,17 @@ body{
 <script>
 
 /* =====================================================
+   الأصوات
+===================================================== */
+
+const winSound =
+    document.getElementById("winSound");
+
+const luckSound =
+    document.getElementById("luckSound");
+
+
+/* =====================================================
    بيانات الرولة
 ===================================================== */
 
@@ -1872,17 +1890,6 @@ let currentRotation = 0;
 let spinning = false;
 
 let spinCount = 0;
-
-
-/* =====================================================
-   الأصوات
-===================================================== */
-
-const winSound = new Audio("Win.mp3.mp3");
-const luckSound = new Audio("luck.mp3.mp3");
-
-winSound.preload = "auto";
-luckSound.preload = "auto";
 
 
 /* =====================================================
@@ -2015,6 +2022,12 @@ function spinWheel(){
 
     /* =================================================
        حساب زاوية الخانة
+
+       الرولة تبدأ من -18deg
+
+       لذلك مركز أول خانة = 0deg
+
+       وكل خانة = 36deg
     ================================================= */
 
     const sectorAngle =
@@ -2023,17 +2036,40 @@ function spinWheel(){
 
     const centerOfSector =
         selectedIndex *
-        sectorAngle +
-        18;
+        sectorAngle;
 
+
+    /* =================================================
+       معرفة زاوية الرولة الحالية
+    ================================================= */
+
+    const currentAngle =
+        ((currentRotation % 360) + 360) % 360;
+
+
+    /* =================================================
+       حساب الزاوية المطلوبة
+
+       حتى مركز الخانة المختارة
+       يصير مباشرة تحت المؤشر
+    ================================================= */
+
+    let targetAngle =
+        360 -
+        centerOfSector -
+        currentAngle;
+
+
+    targetAngle =
+        ((targetAngle % 360) + 360) % 360;
+
+
+    /* =================================================
+       عدد اللفات
+    ================================================= */
 
     const fullTurns =
         360 * 7;
-
-
-    const targetAngle =
-        360 -
-        centerOfSector;
 
 
     const finalRotation =
@@ -2049,12 +2085,16 @@ function spinWheel(){
         finalRotation;
 
 
+    /* =================================================
+       تدوير الرولة
+    ================================================= */
+
     wheel.style.transform =
         `rotate(${finalRotation}deg)`;
 
 
     /* =================================================
-       إظهار النتيجة من نفس الخانة
+       بعد انتهاء الرولة
     ================================================= */
 
     setTimeout(
@@ -2087,17 +2127,21 @@ function spinWheel(){
                     "حظ أوفر";
 
 
-                /* صوت حظ أوفر */
+                /* صوت الخسارة */
 
                 luckSound.currentTime = 0;
 
                 luckSound.play().catch(
+
                     function(error){
+
                         console.log(
-                            "تعذر تشغيل صوت حظ أوفر:",
+                            "تعذر تشغيل صوت الخسارة:",
                             error
                         );
+
                     }
+
                 );
 
             }
@@ -2131,16 +2175,24 @@ function spinWheel(){
                 winSound.currentTime = 0;
 
                 winSound.play().catch(
+
                     function(error){
+
                         console.log(
                             "تعذر تشغيل صوت الفوز:",
                             error
                         );
+
                     }
+
                 );
 
             }
 
+
+            /* =========================================
+               Animation
+            ========================================= */
 
             wheelArea.classList.add(
                 "winner"
@@ -2212,6 +2264,7 @@ window.addEventListener(
                     src;
 
             }
+
         );
 
 
