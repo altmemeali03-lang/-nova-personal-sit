@@ -2,14 +2,10 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>فؤاد فون | اضغط واربح</title>
-
 
 <style>
 
@@ -30,45 +26,16 @@ body{
     overflow:hidden;
 }
 
-
-/* =====================================================
-   FONT
-===================================================== */
-
 body{
-
     font-family:
         "Tajawal",
-        "Arial",
-        "Tahoma",
+        "Cairo",
+        Tahoma,
+        Arial,
         sans-serif;
 
+    background:#02050a;
     color:#fff;
-
-    background:#010305;
-}
-
-
-/* =====================================================
-   COLORS
-===================================================== */
-
-:root{
-
-    --blue:#062B55;
-
-    --blue-light:#0A3F78;
-
-    --blue-glow:#0B4F91;
-
-    --gold:#D6A900;
-
-    --gold-light:#F0C928;
-
-    --black:#010305;
-
-    --black-2:#05080c;
-
 }
 
 
@@ -77,24 +44,19 @@ body{
 ===================================================== */
 
 .page{
-
     width:100vw;
-
     height:100vh;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     background:
-
         radial-gradient(
             circle at center,
-            #071522 0%,
-            #03070b 52%,
-            #010203 100%
+            #07111c 0%,
+            #03070c 55%,
+            #010204 100%
         );
 }
 
@@ -104,32 +66,26 @@ body{
 ===================================================== */
 
 .frame{
-
     position:relative;
 
     width:96vw;
-
     height:94vh;
 
     max-width:1550px;
 
     background:
-
         linear-gradient(
             135deg,
-            #05080c,
-            #020406 48%,
-            #07101a
+            #020406,
+            #05080d 50%,
+            #020406
         );
 
-    border:2px solid #102B46;
+    border:2px solid #17212c;
 
     box-shadow:
-
-        0 0 0 3px #010203,
-
-        0 0 45px
-        rgba(6,43,85,.45);
+        0 0 0 3px #010204,
+        0 0 45px rgba(0,90,150,.25);
 
     overflow:hidden;
 }
@@ -140,14 +96,13 @@ body{
 ===================================================== */
 
 .frame:before{
-
     content:"";
 
     position:absolute;
 
     inset:12px;
 
-    border:1px solid #17334F;
+    border:1px solid #182632;
 
     pointer-events:none;
 
@@ -156,25 +111,19 @@ body{
 
 
 /* =====================================================
-   CORNERS
+   BLUE CORNERS
 ===================================================== */
 
 .corner{
-
     position:absolute;
 
     width:130px;
-
     height:5px;
 
-    background:var(--blue);
+    background:#075b91;
 
     box-shadow:
-
-        0 0 10px var(--blue-glow),
-
-        0 0 25px
-        rgba(6,43,85,.8);
+        0 0 12px #008cff;
 
     z-index:40;
 }
@@ -201,21 +150,15 @@ body{
 
 
 .corner-v{
-
     position:absolute;
 
     width:5px;
-
     height:90px;
 
-    background:var(--blue);
+    background:#075b91;
 
     box-shadow:
-
-        0 0 10px var(--blue-glow),
-
-        0 0 25px
-        rgba(6,43,85,.8);
+        0 0 12px #008cff;
 
     z-index:40;
 }
@@ -246,11 +189,9 @@ body{
 ===================================================== */
 
 .content{
-
     position:relative;
 
     width:100%;
-
     height:100%;
 
     z-index:10;
@@ -275,15 +216,12 @@ body{
 ===================================================== */
 
 .left{
-
     height:100%;
 
     display:flex;
-
     flex-direction:column;
 
     justify-content:center;
-
     align-items:center;
 
     text-align:center;
@@ -295,9 +233,7 @@ body{
 ===================================================== */
 
 .top-logo{
-
     width:75px;
-
     height:75px;
 
     object-fit:contain;
@@ -311,14 +247,13 @@ body{
 ===================================================== */
 
 .title{
-
     font-size:52px;
 
     font-weight:900;
 
-    letter-spacing:-1px;
-
     color:#fff;
+
+    letter-spacing:-1px;
 
     text-shadow:
         0 4px 15px #000;
@@ -326,45 +261,35 @@ body{
 
 
 .red-line{
-
     width:80px;
-
     height:4px;
 
     margin:12px auto;
 
-    background:var(--blue);
+    background:#0877bd;
 
     box-shadow:
-        0 0 12px var(--blue-glow);
+        0 0 12px #008cff;
 }
 
 
 .subtitle{
-
     font-size:19px;
 
-    font-weight:700;
+    font-weight:bold;
 
     line-height:1.7;
 }
 
-
 .red{
-
-    color:var(--gold-light);
-
-    text-shadow:
-        0 0 8px
-        rgba(214,169,0,.25);
+    color:#1599e8;
 }
 
 
 .exclusive{
-
     margin-top:5px;
 
-    color:#b8c2ce;
+    color:#c5cbd1;
 
     font-size:15px;
 
@@ -377,23 +302,21 @@ body{
 ===================================================== */
 
 .spin-button{
-
     margin-top:30px;
 
     width:210px;
 
-    padding:16px;
+    padding:15px;
 
     border:none;
 
     border-radius:10px;
 
     background:
-
         linear-gradient(
             135deg,
-            #0A3F78,
-            #062B55
+            #0879bd,
+            #043d68
         );
 
     color:white;
@@ -407,38 +330,24 @@ body{
     cursor:pointer;
 
     box-shadow:
-
-        0 8px 25px
-        rgba(6,43,85,.65),
-
-        0 0 20px
-        rgba(6,43,85,.25);
+        0 8px 25px rgba(0,120,210,.35);
 
     transition:.2s;
 }
 
-
 .spin-button:hover{
-
     transform:translateY(-3px);
 
     box-shadow:
-
-        0 12px 35px
-        rgba(6,43,85,.85);
+        0 12px 35px rgba(0,150,255,.5);
 }
 
-
 .spin-button:active{
-
     transform:scale(.95);
 }
 
-
 .spin-button:disabled{
-
     opacity:.5;
-
     cursor:not-allowed;
 }
 
@@ -448,13 +357,11 @@ body{
 ===================================================== */
 
 .center{
-
     height:100%;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 }
 
@@ -464,7 +371,6 @@ body{
 ===================================================== */
 
 .wheel-area{
-
     position:relative;
 
     width:min(48vw,600px);
@@ -478,56 +384,38 @@ body{
 ===================================================== */
 
 .pointer{
-
     position:absolute;
 
     z-index:100;
 
-    top:-4px;
-
+    top:-5px;
     left:50%;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     width:0;
-
     height:0;
 
-    border-left:
-        25px solid transparent;
+    border-left:25px solid transparent;
+    border-right:25px solid transparent;
 
-    border-right:
-        25px solid transparent;
-
-    border-top:
-        65px solid var(--gold);
+    border-top:65px solid #087dca;
 
     filter:
-
         drop-shadow(
             0 4px 5px #000
-        )
-
-        drop-shadow(
-            0 0 8px
-            rgba(214,169,0,.7)
         );
 }
 
-
 .pointer:after{
-
     content:"";
 
     position:absolute;
 
     left:-10px;
-
     top:-58px;
 
     width:20px;
-
     height:20px;
 
     border-radius:50%;
@@ -535,36 +423,28 @@ body{
     background:#fff;
 
     box-shadow:
-
-        0 0 0 4px #050505,
-
-        0 0 10px var(--gold);
+        0 0 0 4px #071018;
 }
 
 
 /* =====================================================
-   WHEEL GLOW
+   OUTER GLOW
 ===================================================== */
 
 .wheel-glow{
-
     position:absolute;
 
     inset:-12px;
 
     border-radius:50%;
 
-    border:4px solid var(--blue);
+    border:4px solid #087dcc;
 
     box-shadow:
 
-        0 0 10px var(--blue-glow),
-
-        0 0 25px
-        rgba(6,43,85,.9),
-
-        0 0 55px
-        rgba(6,43,85,.45);
+        0 0 10px #008cff,
+        0 0 25px rgba(0,130,220,.8),
+        0 0 55px rgba(0,120,220,.3);
 
     pointer-events:none;
 
@@ -577,7 +457,6 @@ body{
 ===================================================== */
 
 .wheel{
-
     position:absolute;
 
     inset:0;
@@ -587,25 +466,18 @@ body{
     overflow:hidden;
 
     border:
-        8px solid #010305;
+        8px solid #080b0f;
 
-    background:#05080c;
+    background:#111;
 
     box-shadow:
 
-        0 0 0 3px #203A55,
-
-        0 15px 40px #000,
-
-        0 0 35px
-        rgba(6,43,85,.35);
+        0 0 0 3px #59636d,
+        0 15px 40px #000;
 
     transition:
-
         transform
-
         5.5s
-
         cubic-bezier(.12,.75,.12,1);
 
     z-index:5;
@@ -613,11 +485,12 @@ body{
 
 
 /* =====================================================
-   WHEEL COLORS
+   SECTORS
+   كل خانة 36 درجة
+   أصفر + أزرق چويتي
 ===================================================== */
 
 .sectors{
-
     position:absolute;
 
     inset:0;
@@ -625,28 +498,22 @@ body{
     border-radius:50%;
 
     background:
-
         conic-gradient(
 
-            var(--blue) 0deg 36deg,
+            #f3c400 0deg 36deg,
+            #073f67 36deg 72deg,
 
-            var(--gold) 36deg 72deg,
+            #f3c400 72deg 108deg,
+            #073f67 108deg 144deg,
 
-            var(--blue) 72deg 108deg,
+            #f3c400 144deg 180deg,
+            #073f67 180deg 216deg,
 
-            var(--gold) 108deg 144deg,
+            #f3c400 216deg 252deg,
+            #073f67 252deg 288deg,
 
-            var(--blue) 144deg 180deg,
-
-            var(--gold) 180deg 216deg,
-
-            var(--blue) 216deg 252deg,
-
-            var(--gold) 252deg 288deg,
-
-            var(--blue) 288deg 324deg,
-
-            var(--gold) 324deg 360deg
+            #f3c400 288deg 324deg,
+            #073f67 324deg 360deg
         );
 }
 
@@ -656,7 +523,6 @@ body{
 ===================================================== */
 
 .sector-lines{
-
     position:absolute;
 
     inset:0;
@@ -664,14 +530,12 @@ body{
     border-radius:50%;
 
     background:
-
         repeating-conic-gradient(
-
             from -18deg,
 
             transparent 0deg 35deg,
 
-            rgba(255,255,255,.65)
+            rgba(255,255,255,.8)
             35deg 36deg
         );
 
@@ -684,15 +548,12 @@ body{
 ===================================================== */
 
 .prize{
-
     position:absolute;
 
     width:36%;
-
     height:36%;
 
     left:32%;
-
     top:32%;
 
     z-index:8;
@@ -701,45 +562,93 @@ body{
 }
 
 
-/* =====================================================
-   PRIZE IMAGE
-   أكبر + أعلى
-===================================================== */
+/*
+   الصورة داخل مركز الخانة
+   مرفوعة للأعلى
+*/
 
 .prize img{
 
     position:absolute;
 
-    width:118px;
-
-    height:118px;
+    width:112px;
+    height:112px;
 
     max-width:none;
 
     object-fit:contain;
 
     left:50%;
-
-    top:-105px;
+    top:-103px;
 
     transform:
         translateX(-50%);
 
     filter:
-
         drop-shadow(
-            0 6px 8px
-            rgba(0,0,0,.95)
-        )
-
-        drop-shadow(
-            0 0 5px
-            rgba(255,255,255,.12)
+            0 4px 5px rgba(0,0,0,.85)
         );
 
     background:transparent;
 
-    border-radius:10px;
+    border-radius:8px;
+}
+
+
+/* =====================================================
+   حظ أوفر
+   بدون صورة
+   بدون ظل
+===================================================== */
+
+.no-prize{
+    position:absolute;
+
+    width:36%;
+    height:36%;
+
+    left:32%;
+    top:32%;
+
+    z-index:9;
+
+    transform-origin:center;
+
+    display:flex;
+
+    align-items:flex-start;
+    justify-content:center;
+}
+
+
+.no-prize span{
+
+    position:absolute;
+
+    top:-58px;
+
+    width:130px;
+
+    text-align:center;
+
+    white-space:nowrap;
+
+    color:#111827;
+
+    font-size:19px;
+
+    font-weight:900;
+
+    line-height:1.2;
+
+    text-shadow:none;
+
+    filter:none;
+
+    transform:
+        translateX(-50%);
+
+    left:50%;
 }
 
 
@@ -789,54 +698,6 @@ body{
 
 
 /* =====================================================
-   SPECIAL TEXT
-   F1 / F7 / F10
-===================================================== */
-
-.prize-text{
-
-    position:absolute;
-
-    width:170px;
-
-    left:50%;
-
-    top:-88px;
-
-    transform:
-        translateX(-50%);
-
-    text-align:center;
-
-    color:#fff;
-
-    font-size:18px;
-
-    font-weight:900;
-
-    line-height:1.15;
-
-    white-space:nowrap;
-
-    text-shadow:
-
-        0 3px 7px #000,
-
-        0 0 8px
-        rgba(0,0,0,.9);
-
-    background:
-        rgba(0,0,0,.12);
-
-    padding:5px 8px;
-
-    border-radius:8px;
-
-    letter-spacing:.2px;
-}
-
-
-/* =====================================================
    CENTER LOGO
 ===================================================== */
 
@@ -847,53 +708,42 @@ body{
     z-index:50;
 
     left:50%;
-
     top:50%;
 
     transform:
         translate(-50%,-50%);
 
     width:145px;
-
     height:145px;
 
     border-radius:50%;
 
     background:
-
         radial-gradient(
             circle,
-            #122235,
-            #020305
+            #17212a,
+            #03070b
         );
 
     border:
-        5px solid var(--gold);
+        5px solid #087dcc;
 
     box-shadow:
 
         0 0 0 5px #050505,
-
-        0 0 25px
-        rgba(214,169,0,.65),
-
-        0 0 45px
-        rgba(6,43,85,.45);
+        0 0 25px rgba(0,140,240,.8);
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     overflow:hidden;
 }
 
-
 .center-logo img{
 
     width:88%;
-
     height:88%;
 
     object-fit:contain;
@@ -924,90 +774,83 @@ body{
 
     width:220px;
 
-    min-height:250px;
+    min-height:270px;
 
-    padding:20px 18px;
+    padding:22px 18px;
 
     display:flex;
 
     flex-direction:column;
 
     align-items:center;
-
     justify-content:center;
 
     text-align:center;
 
     background:
-
         linear-gradient(
             145deg,
-            #0a1119,
-            #020406
+            #07131e,
+            #02070c
         );
 
     border:
-        1px solid #19314A;
+        1px solid #23435a;
 
     border-top:
-        4px solid var(--gold);
+        4px solid #087dcc;
 
     box-shadow:
-
-        0 10px 35px
-        rgba(0,0,0,.7),
-
-        0 0 20px
-        rgba(6,43,85,.2);
+        0 10px 35px rgba(0,0,0,.7);
 }
 
 
-/* =====================================================
-   RESULT IMAGE
-===================================================== */
+/* صورة النتيجة */
 
 .result-image{
 
     width:100px;
-
     height:100px;
 
     object-fit:contain;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
+
+    display:none;
+}
+
+
+/* حظ أوفر بالنتيجة */
+
+.result-no-prize{
+
+    color:#f3c400;
+
+    font-size:25px;
+
+    font-weight:900;
+
+    margin-bottom:10px;
 
     display:none;
 
-    filter:
-
-        drop-shadow(
-            0 5px 8px
-            rgba(0,0,0,.9)
-        );
+    text-shadow:none;
 }
 
-
-/* =====================================================
-   RESULT TITLE
-===================================================== */
 
 .result-title{
 
-    color:#9FAAB7;
+    color:#9daab5;
 
     font-size:15px;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 
-/* =====================================================
-   RESULT
-===================================================== */
-
 .result{
 
-    color:var(--gold-light);
+    color:#f3c400;
 
     font-size:22px;
 
@@ -1017,27 +860,11 @@ body{
 }
 
 
-/* =====================================================
-   GIFT
-===================================================== */
-
-.gift{
-
-    font-size:55px;
-
-    margin-bottom:10px;
-}
-
-
-/* =====================================================
-   HELP
-===================================================== */
-
 .help{
 
-    margin-top:12px;
+    margin-top:15px;
 
-    color:#8F9AA7;
+    color:#9daab5;
 
     font-size:12px;
 
@@ -1059,35 +886,29 @@ body{
 
     left:50%;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     white-space:nowrap;
 
     font-size:12px;
 
-    color:#8994A0;
+    color:#b9c0c6;
 }
 
-
 .footer span{
-
-    color:var(--gold-light);
-
+    color:#1599e8;
     font-weight:bold;
 }
 
 
 /* =====================================================
-   WIN ANIMATION
+   WIN
 ===================================================== */
 
 .winner{
-
     animation:
         winner .7s ease;
 }
-
 
 @keyframes winner{
 
@@ -1126,68 +947,46 @@ body{
             40px 45px;
     }
 
-
     .title{
         font-size:42px;
     }
-
 
     .subtitle{
         font-size:15px;
     }
 
-
     .exclusive{
         font-size:13px;
     }
-
 
     .wheel-area{
         width:min(47vw,500px);
     }
 
-
     .prize img{
-
-        width:88px;
-
-        height:88px;
-
-        top:-78px;
+        width:90px;
+        height:90px;
+        top:-83px;
     }
 
-
-    .prize-text{
-
-        width:130px;
-
-        font-size:14px;
-
-        top:-68px;
+    .no-prize span{
+        top:-50px;
+        font-size:16px;
     }
-
 
     .center-logo{
-
         width:120px;
-
         height:120px;
     }
 
-
     .result-box{
-
         width:180px;
-
-        min-height:210px;
+        min-height:220px;
     }
 
-
     .result-image{
-
-        width:75px;
-
-        height:75px;
+        width:80px;
+        height:80px;
     }
 }
 
@@ -1201,12 +1000,10 @@ body{
     .frame{
 
         width:100vw;
-
         height:100vh;
 
         border:none;
     }
-
 
     .content{
 
@@ -1232,7 +1029,6 @@ body{
     .top-logo{
 
         width:40px;
-
         height:40px;
 
         margin-bottom:2px;
@@ -1245,27 +1041,20 @@ body{
 
 
     .red-line{
-
         width:55px;
-
         height:3px;
-
         margin:5px auto;
     }
 
 
     .subtitle{
-
         font-size:11px;
-
         line-height:1.5;
     }
 
 
     .exclusive{
-
         font-size:9px;
-
         margin-top:1px;
     }
 
@@ -1306,41 +1095,48 @@ body{
 
         width:
             clamp(
-                62px,
-                15vw,
-                90px
+                65px,
+                16vw,
+                88px
             );
 
         height:
             clamp(
-                62px,
-                15vw,
-                90px
+                65px,
+                16vw,
+                88px
             );
 
         top:
             clamp(
-                -82px,
+                -78px,
                 -12vw,
                 -62px
             );
     }
 
 
-    .prize-text{
+    .no-prize span{
 
-        width:120px;
+        top:
+            clamp(
+                -52px,
+                -8vw,
+                -42px
+            );
 
-        font-size:13px;
-
-        top:-65px;
+        font-size:
+            clamp(
+                13px,
+                4vw,
+                17px
+            );
     }
 
 
     .center-logo{
 
         width:82px;
-
         height:82px;
 
         border-width:4px;
@@ -1361,17 +1157,13 @@ body{
 
 
     .corner{
-
         width:70px;
-
         height:3px;
     }
 
 
     .corner-v{
-
         width:3px;
-
         height:50px;
     }
 }
@@ -1383,9 +1175,7 @@ body{
 
 @media(
     max-width:700px
-)
-and
-(
+) and (
     max-height:650px
 ){
 
@@ -1393,42 +1183,30 @@ and
         padding-top:10px;
     }
 
-
     .top-logo{
-
         width:30px;
-
         height:30px;
     }
-
 
     .title{
         font-size:22px;
     }
 
-
     .subtitle{
         font-size:9px;
     }
-
 
     .exclusive{
         font-size:8px;
     }
 
-
     .spin-button{
-
         margin-top:4px;
-
         padding:5px;
-
         font-size:13px;
     }
 
-
     .wheel-area{
-
         width:
             min(
                 60vh,
@@ -1436,32 +1214,20 @@ and
             );
     }
 
-
     .center-logo{
-
         width:68px;
-
         height:68px;
     }
 
-
     .prize img{
-
-        width:58px;
-
-        height:58px;
-
-        top:-62px;
+        width:55px;
+        height:55px;
+        top:-55px;
     }
 
-
-    .prize-text{
-
-        font-size:11px;
-
-        width:100px;
-
-        top:-55px;
+    .no-prize span{
+        top:-40px;
+        font-size:12px;
     }
 }
 
@@ -1472,9 +1238,7 @@ and
 
 @media(
     max-height:550px
-)
-and
-(
+) and (
     orientation:landscape
 ){
 
@@ -1491,34 +1255,25 @@ and
             25px 45px;
     }
 
-
     .title{
         font-size:28px;
     }
-
 
     .subtitle{
         font-size:11px;
     }
 
-
     .exclusive{
         font-size:9px;
     }
 
-
     .spin-button{
-
         margin-top:7px;
-
         padding:7px;
-
         font-size:14px;
     }
 
-
     .wheel-area{
-
         width:
             min(
                 72vh,
@@ -1526,73 +1281,50 @@ and
             );
     }
 
-
     .center-logo{
-
         width:80px;
-
         height:80px;
     }
 
-
     .prize img{
-
         width:65px;
-
         height:65px;
-
-        top:-67px;
+        top:-62px;
     }
 
-
-    .prize-text{
-
-        width:100px;
-
-        font-size:11px;
-
-        top:-58px;
+    .no-prize span{
+        top:-45px;
+        font-size:13px;
     }
-
 
     .result-box{
-
         width:160px;
-
         min-height:180px;
     }
 
-
     .result-image{
-
-        width:60px;
-
-        height:60px;
+        width:65px;
+        height:65px;
     }
-
 
     .footer{
         font-size:8px;
     }
-
 }
 
 </style>
-
 </head>
 
 
 <body>
 
-
 <div class="page">
-
 
 <div class="frame">
 
 
 <!-- =====================================================
-     CORNERS
+     الإطار
 ===================================================== -->
 
 <div class="corner c1"></div>
@@ -1606,7 +1338,6 @@ and
 <div class="corner-v cv4"></div>
 
 
-
 <div class="content">
 
 
@@ -1616,21 +1347,17 @@ and
 
 <section class="left">
 
-
 <img
     src="Flogo.HEIC"
     class="top-logo"
     alt="فؤاد فون"
 >
 
-
 <h1 class="title">
     فؤاد فون
 </h1>
 
-
 <div class="red-line"></div>
-
 
 <div class="subtitle">
 
@@ -1642,13 +1369,11 @@ and
 
 </div>
 
-
 <div class="exclusive">
 
     الوكيل الحصري لشركة UAM في العراق
 
 </div>
-
 
 
 <button
@@ -1661,7 +1386,6 @@ and
 
 </button>
 
-
 </section>
 
 
@@ -1672,7 +1396,6 @@ and
 
 <section class="center">
 
-
 <div
     class="wheel-area"
     id="wheelArea"
@@ -1681,9 +1404,7 @@ and
 
 <div class="pointer"></div>
 
-
 <div class="wheel-glow"></div>
-
 
 
 <div
@@ -1694,27 +1415,24 @@ and
 
 <div class="sectors"></div>
 
-
 <div class="sector-lines"></div>
 
 
-
 <!-- =====================================================
-     F1 - TEXT
+     F_1 = حظ أوفر
 ===================================================== -->
 
-<div class="prize p1">
+<div class="no-prize p1">
 
-    <div class="prize-text">
-        حظر اوفر
-    </div>
+    <span>
+        حظ أوفر
+    </span>
 
 </div>
 
 
-
 <!-- =====================================================
-     F2
+     F_2
 ===================================================== -->
 
 <div class="prize p2">
@@ -1727,9 +1445,8 @@ and
 </div>
 
 
-
 <!-- =====================================================
-     F3
+     F_3
 ===================================================== -->
 
 <div class="prize p3">
@@ -1742,9 +1459,8 @@ and
 </div>
 
 
-
 <!-- =====================================================
-     F4
+     F_4
 ===================================================== -->
 
 <div class="prize p4">
@@ -1757,9 +1473,8 @@ and
 </div>
 
 
-
 <!-- =====================================================
-     F5
+     F_5
 ===================================================== -->
 
 <div class="prize p5">
@@ -1772,9 +1487,8 @@ and
 </div>
 
 
-
 <!-- =====================================================
-     F6
+     F_6
 ===================================================== -->
 
 <div class="prize p6">
@@ -1787,23 +1501,21 @@ and
 </div>
 
 
-
 <!-- =====================================================
-     F7 - TEXT
+     F_7 = حظ أوفر
 ===================================================== -->
 
-<div class="prize p7">
+<div class="no-prize p7">
 
-    <div class="prize-text">
-        حظر اوفر
-    </div>
+    <span>
+        حظ أوفر
+    </span>
 
 </div>
 
 
-
 <!-- =====================================================
-     F8
+     F_8
 ===================================================== -->
 
 <div class="prize p8">
@@ -1816,9 +1528,8 @@ and
 </div>
 
 
-
 <!-- =====================================================
-     F9
+     F_9
 ===================================================== -->
 
 <div class="prize p9">
@@ -1831,23 +1542,20 @@ and
 </div>
 
 
-
 <!-- =====================================================
-     F10 - TEXT
+     F_10 = حظ أوفر
 ===================================================== -->
 
-<div class="prize p10">
+<div class="no-prize p10">
 
-    <div class="prize-text">
-        حظر اوفر
-    </div>
-
-</div>
-
-
+    <span>
+        حظ أوفر
+    </span>
 
 </div>
 
+
+</div>
 
 
 <!-- =====================================================
@@ -1876,56 +1584,55 @@ and
 
 <section class="right">
 
-
 <div class="result-box">
-
-
-<div
-    class="gift"
-    id="gift"
->
-    🎁
-</div>
-
 
 
 <img
     id="resultImage"
     class="result-image"
     src=""
-    alt="الجائزة الفائزة"
+    alt="الجائزة"
 >
 
 
-
-<div class="result-title">
-    نتيجة السحب
+<div
+    id="resultNoPrize"
+    class="result-no-prize"
+>
+    حظ أوفر
 </div>
 
+
+<div class="result-title">
+
+    نتيجة السحب
+
+</div>
 
 
 <div
     class="result"
     id="result"
 >
-    اضغط واربح جائزتك
-</div>
 
+    اضغط وخلّي الرولة تختار جائزتك
+
+</div>
 
 
 <div class="help">
+
     حظاً موفقاً ❤️
-</div>
-
 
 </div>
 
+
+</div>
 
 </section>
 
 
 </div>
-
 
 
 <!-- =====================================================
@@ -1957,173 +1664,134 @@ and
 
 <script>
 
-
 /* =====================================================
-   PRIZES
-=====================================================
+   الجوائز
 
-   ملاحظة:
-
-   F1  = حظر اوفر
-   F7  = حظر اوفر
-   F10 = حظر اوفر
-
+   1  = حظ أوفر
+   2  = F_2
+   3  = F_3
+   4  = F_4
+   5  = F_5
+   6  = F_6
+   7  = حظ أوفر
+   8  = F_8
+   9  = F_9
+   10 = حظ أوفر
 ===================================================== */
-
 
 const prizes = [
 
-
     {
-        id:"F_1",
-
-        image:null,
-
-        name:"حظر اوفر",
-
-        textOnly:true
+        name: "حظ أوفر",
+        image: null,
+        lose: true
     },
 
-
     {
-        id:"F_2",
-
-        image:"F_2.JPG",
-
-        name:"الجائزة رقم 2",
-
-        textOnly:false
+        name: "الجائزة رقم 2",
+        image: "F_2.JPG",
+        lose: false
     },
 
-
     {
-        id:"F_3",
-
-        image:"F_3.JPG",
-
-        name:"الجائزة رقم 3",
-
-        textOnly:false
+        name: "الجائزة رقم 3",
+        image: "F_3.JPG",
+        lose: false
     },
 
-
     {
-        id:"F_4",
-
-        image:"F_4.JPG",
-
-        name:"الجائزة رقم 4",
-
-        textOnly:false
+        name: "الجائزة رقم 4",
+        image: "F_4.JPG",
+        lose: false
     },
 
-
     {
-        id:"F_5",
-
-        image:"F_5.JPG",
-
-        name:"الجائزة رقم 5",
-
-        textOnly:false
+        name: "الجائزة رقم 5",
+        image: "F_5.JPG",
+        lose: false
     },
 
-
     {
-        id:"F_6",
-
-        image:"F_6.JPG",
-
-        name:"الجائزة رقم 6",
-
-        textOnly:false
+        name: "الجائزة رقم 6",
+        image: "F_6.JPG",
+        lose: false
     },
 
-
     {
-        id:"F_7",
-
-        image:null,
-
-        name:"حظر اوفر",
-
-        textOnly:true
+        name: "حظ أوفر",
+        image: null,
+        lose: true
     },
 
-
     {
-        id:"F_8",
-
-        image:"F_8.JPG",
-
-        name:"الجائزة رقم 8",
-
-        textOnly:false
+        name: "الجائزة رقم 8",
+        image: "F_8.JPG",
+        lose: false
     },
 
-
     {
-        id:"F_9",
-
-        image:"F_9.JPG",
-
-        name:"الجائزة رقم 9",
-
-        textOnly:false
+        name: "الجائزة رقم 9",
+        image: "F_9.JPG",
+        lose: false
     },
 
-
     {
-        id:"F_10",
-
-        image:null,
-
-        name:"حظر اوفر",
-
-        textOnly:true
+        name: "حظ أوفر",
+        image: null,
+        lose: true
     }
 
 ];
 
 
-
 /* =====================================================
-   SPIN SETTINGS
+   إعدادات الاحتمالات
+
+   F_3 = index 2
+   F_5 = index 4
+   F_1 = index 0
+
+   هذه الجوائز تكون نادرة.
 ===================================================== */
 
+const rareRules = {
+
+    2: 20,   // F_3
+    4: 15,   // F_5
+    0: 10    // F_1 / حظ أوفر
+};
+
+
+/* =====================================================
+   عداد السحبات
+===================================================== */
 
 let spinCount = 0;
 
-
 let currentRotation = 0;
-
 
 let spinning = false;
 
 
-
 /* =====================================================
-   SPECIAL PRIZES
-=====================================================
+   اختيار الجائزة
 
-   F3 = كل 20 سحبة
-   F5 = كل 15 سحبة
-
-   F1 صار حظر اوفر لذلك
-   لا يتم استخدامه كجائزة خاصة.
-
+   الجوائز العادية تظهر بشكل طبيعي.
+   الجوائز النادرة تقل احتمالية ظهورها.
 ===================================================== */
 
+function choosePrize(){
 
-function getScheduledPrize(){
+    const random =
+        Math.random();
 
-
-    /* ==============================
-       كل 20 سحبة = F3
-    ============================== */
+    /*
+       احتمال F_3
+       تقريباً 1 من 20
+    */
 
     if(
-        spinCount % 20 === 0
+        Math.random() < 1 / 20
     ){
 
         return 2;
@@ -2131,13 +1799,13 @@ function getScheduledPrize(){
     }
 
 
-
-    /* ==============================
-       كل 15 سحبة = F5
-    ============================== */
+    /*
+       احتمال F_5
+       تقريباً 1 من 15
+    */
 
     if(
-        spinCount % 15 === 0
+        Math.random() < 1 / 15
     ){
 
         return 4;
@@ -2145,423 +1813,306 @@ function getScheduledPrize(){
     }
 
 
+    /*
+       احتمال F_1 / حظ أوفر
+       تقريباً 1 من 10
+    */
 
-    return null;
+    if(
+        Math.random() < 1 / 10
+    ){
 
-}
+        return 0;
 
-
-
-/* =====================================================
-   NORMAL PRIZES
-===================================================== */
-
-
-function getRandomNormalPrize(){
+    }
 
 
     /*
-       الجوائز العادية:
+       باقي الجوائز
 
-       F2
-       F4
-       F6
-       F8
-       F9
-
-       ونستبعد:
-
-       F1
-       F7
-       F10
-
-       لأنها أصبحت حظر اوفر.
+       نستبعد الجوائز النادرة
+       حتى لا تزيد فرصتها.
     */
 
-
-    const normalPrizes = [
-
+    const normalIndexes = [
 
         1,
-
-
         3,
-
-
         5,
-
-
+        6,
         7,
-
-
-        8
+        8,
+        9
 
     ];
 
 
-
-    const randomIndex =
-
+    return normalIndexes[
         Math.floor(
-
-            Math.random()
-            *
-            normalPrizes.length
-
-        );
-
-
-
-    return normalPrizes[
-        randomIndex
+            Math.random() *
+            normalIndexes.length
+        )
     ];
 
 }
 
 
-
 /* =====================================================
-   SPIN WHEEL
+   SPIN
 ===================================================== */
-
 
 function spinWheel(){
 
-
     if(spinning){
-
         return;
-
     }
 
 
     spinning = true;
 
 
-
     const wheel =
-        document.getElementById(
-            "wheel"
-        );
-
+        document.getElementById("wheel");
 
 
     const button =
-        document.getElementById(
-            "spinButton"
-        );
-
+        document.getElementById("spinButton");
 
 
     const result =
-        document.getElementById(
-            "result"
-        );
-
-
-
-    const resultImage =
-        document.getElementById(
-            "resultImage"
-        );
-
-
-
-    const gift =
-        document.getElementById(
-            "gift"
-        );
-
+        document.getElementById("result");
 
 
     const wheelArea =
-        document.getElementById(
-            "wheelArea"
-        );
+        document.getElementById("wheelArea");
 
 
+    const resultImage =
+        document.getElementById("resultImage");
 
-    /* تعطيل الزر */
+
+    const resultNoPrize =
+        document.getElementById("resultNoPrize");
+
 
     button.disabled = true;
 
 
+    /*
+       نخفي نتيجة السحبة السابقة
+    */
 
-    /* زيادة رقم السحبة */
+    resultImage.style.display =
+        "none";
 
-    spinCount++;
+    resultNoPrize.style.display =
+        "none";
 
-
-
-    /* رسالة الدوران */
 
     result.innerHTML =
         "الرولة تدور...";
 
 
-
-    resultImage.style.display =
-        "none";
-
-
-
-    gift.style.display =
-        "block";
-
-
-
-    /* =================================================
-       تحديد الجائزة
-    ================================================= */
-
-
-    let selected =
-        getScheduledPrize();
-
-
-
-    if(
-        selected === null
-    ){
-
-        selected =
-            getRandomNormalPrize();
-
-    }
-
-
-
-    /* =================================================
-       حساب القطاع
-    ================================================= */
-
-
-    const sector =
-        360 / prizes.length;
-
-
-
     /*
-       منتصف القطاع
+       عداد السحبات
     */
 
-    const target =
-        selected *
-        sector
-        +
-        sector / 2;
-
+    spinCount++;
 
 
     /*
-       الدوران الحالي
+       اختيار الجائزة
+    */
+
+    const selected =
+        choosePrize();
+
+
+    /*
+       كل خانة = 36 درجة
+
+       مهم جداً:
+
+       الصور موجودة في منتصف الخانة
+       لذلك نستخدم مركز الخانة:
+
+       0
+       36
+       72
+       108
+       ...
+    */
+
+    const sector = 36;
+
+    const target =
+        selected * sector;
+
+
+    /*
+       نعرف وضع الرولة الحالي
+       حتى لا يصير اختلاف بالنتيجة
     */
 
     const currentMod =
-
-        (
-            currentRotation
-            %
-            360
-            +
-            360
-        )
-        %
-        360;
-
+        ((currentRotation % 360) + 360) % 360;
 
 
     /*
-       تصحيح اتجاه الرولة
+       مقدار الدوران المطلوب
+       حتى مركز الجائزة المختارة
+       يوصل بالضبط إلى السهم.
     */
 
     let correction =
-
-        (
-            360
-            -
-            (
-                (
-                    currentMod
-                    +
-                    target
-                )
-                %
-                360
-            )
-        )
-        %
-        360;
-
+        (360 - ((target + currentMod) % 360)) % 360;
 
 
     /*
-       7 دورات كاملة
+       دورات كاملة
     */
 
     const extra =
         360 * 7;
 
 
-
     const finalRotation =
-
-        currentRotation
-        +
-        extra
-        +
+        currentRotation +
+        extra +
         correction;
-
 
 
     currentRotation =
         finalRotation;
 
 
-
-    /* =================================================
+    /*
        تدوير الرولة
-    ================================================= */
-
+    */
 
     wheel.style.transform =
-
         `rotate(${finalRotation}deg)`;
 
 
+    /*
+       ننتظر انتهاء الدوران
+    */
 
-    /* =================================================
-       إظهار النتيجة
-    ================================================= */
+    setTimeout(function(){
 
-
-    setTimeout(
-
-        function(){
-
-
-            const prize =
-                prizes[selected];
+        const prize =
+            prizes[selected];
 
 
+        /*
+           إذا كانت حظ أوفر
+        */
 
-            /*
-               إذا عندها صورة
-            */
+        if(prize.lose){
 
-            if(
-                prize.image
-            ){
-
-                resultImage.src =
-                    prize.image;
-
-                resultImage.style.display =
-                    "block";
-
-            }
-
-            else{
-
-                resultImage.style.display =
-                    "none";
-
-            }
-
-
-
-            gift.style.display =
+            resultImage.style.display =
                 "none";
 
 
+            resultNoPrize.style.display =
+                "block";
+
 
             result.innerHTML =
+                "حاول مرة ثانية ❤️";
 
-                "🎉 مبروك!<br>"
-                +
+        }
+
+        else{
+
+            /*
+               عرض صورة الجائزة
+            */
+
+            resultImage.src =
+                prize.image;
+
+
+            resultImage.style.display =
+                "block";
+
+
+            resultNoPrize.style.display =
+                "none";
+
+
+            result.innerHTML =
+                "🎉 مبروك!<br>" +
                 prize.name;
 
+        }
 
 
-            wheelArea.classList.add(
+        /*
+           تأثير الفوز
+        */
+
+        wheelArea.classList.add(
+            "winner"
+        );
+
+
+        setTimeout(function(){
+
+            wheelArea.classList.remove(
                 "winner"
             );
 
+        },700);
 
 
-            setTimeout(
+        spinning = false;
 
-                function(){
-
-                    wheelArea.classList.remove(
-                        "winner"
-                    );
-
-                },
-
-                700
-
-            );
+        button.disabled = false;
 
 
-
-            spinning = false;
-
-
-            button.disabled = false;
-
-
-        },
-
-        5600
-
-    );
+    },5600);
 
 }
 
 
-
 /* =====================================================
-   PRELOAD IMAGES
+   PRELOAD
 ===================================================== */
 
-
 window.addEventListener(
-
     "load",
-
     function(){
 
+        const images = [
 
-        prizes.forEach(
+            "F_2.JPG",
+            "F_3.JPG",
+            "F_4.JPG",
+            "F_5.JPG",
+            "F_6.JPG",
+            "F_8.JPG",
+            "F_9.JPG"
 
-            function(prize){
-
-
-                if(
-                    prize.image
-                ){
-
-                    const image =
-                        new Image();
+        ];
 
 
-                    image.src =
-                        prize.image;
+        images.forEach(
+            function(src){
 
-                }
+                const image =
+                    new Image();
+
+                image.src =
+                    src;
 
             }
-
         );
 
     }
-
 );
 
 </script>
 
-
 </body>
-
 </html>
